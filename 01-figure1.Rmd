@@ -1,0 +1,575 @@
+---
+title: "Figure 1"
+author: "Marc J Williams"
+date: "` r Sys.Date()`"
+output: 
+  html_document: 
+    code_folding: hide
+    df_print: kable
+    number_sections: yes
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setupf1, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+
+library(tidyverse)
+library(devtools)
+library(data.table)
+library(cowplot)
+library(yaml)
+library(glue)
+library(here)
+here::i_am("01-figure1.Rmd")
+config <- read_yaml(here("metadata", "config.yaml"))
+load_all(config$schnapps)
+load_all(config$scgenomutils)
+```
+
+```{r readdata, include=FALSE}
+OV2295 <- readRDS(file.path(glue("{config$Rdatadir}2295.Rdata")))
+#clones <- fread(glue("/work/shah/william1/projects/ascn-process-data/results/dlp/summary/clustering_final.csv.gz"))[sample == "2295"]
+print(quantile(OV2295$CNVmetrics$coverage_depth, c(0.025, 0.05, 0.5, 0.95, 0.975)))
+metrics <- fread(config$metrics)
+```
+
+# Figure 1
+
+## Stats
+
+```{r}
+sampletags <- data.frame(sample = unique(metrics$sample)) %>%
+  left_join(., stack(config$datagroups) %>% rename(sample = values, datagroup = ind) %>%
+              filter(datagroup %in% c("htert", "tnbc", "hgsc", "her2_brca"))) %>%
+  na.omit()
+#sampletags$sig_label <- unlist(lapply(sampletags$sample, function(x) config$datasets[[x]]$label))
+
+sampletags$label <- unlist(lapply(sampletags$sample, function(x) str_replace(config$datasets[[x]]$label, "\\s[0-9].*","")))
+sampletags$BRCA1 <- unlist(lapply(sampletags$sample, function(x) config$datasets[[x]]$BRCA1))
+sampletags$BRCA2 <- unlist(lapply(sampletags$sample, function(x) config$datasets[[x]]$BRCA2))
+sampletags$TP53 <- unlist(lapply(sampletags$sample, function(x) config$datasets[[x]]$TP53))
+
+stats <-  metrics[, htert := ifelse(sample %in% config$datagroups$htert, "hTERT Cell line", "Tumour")] %>% 
+    filter(!sample %in% c("SA1101a", "SA1101b")) %>% 
+  .[, list(ncells = length(unique(cell_id)), cov = median(coverage_depth), cov_cilow = quantile(coverage_depth, 0.025), cov_cihigh = quantile(coverage_depth, 0.975), nsamples = length(unique(sample_id))), by = c("sample", "htert")] %>% 
+  left_join(sampletags)
+
+
+
+stats %>% 
+  mutate(Coverage = paste0(round(cov, 3), " (", round(cov_cilow,3), ",", round(cov_cihigh,3), ")")) %>% 
+  mutate(genotype = ifelse(htert != "Tumour", label, "")) %>% 
+  mutate(datagroup = str_to_title(datagroup)) %>% 
+  select(sample, htert, datagroup, nsamples, ncells, Coverage, genotype, TP53, BRCA1, BRCA2) %>% 
+  write.table(., file = here("data/statistics.tsv"))
+
+library(googlesheets4)
+gs <- gs4_get(config$supptables)
+
+stats %>% 
+  mutate(Coverage = paste0(round(cov, 3), " (", round(cov_cilow,3), ",", round(cov_cihigh,3), ")")) %>% 
+  mutate(genotype = ifelse(htert != "Tumour", label, "")) %>% 
+  mutate(datagroup = toupper(datagroup)) %>% 
+  mutate(Timeseries = "No") %>% 
+  select(sample, htert, datagroup, nsamples, ncells, Coverage, genotype, TP53, BRCA1, BRCA2) %>% 
+  rename(Sample = sample, datatype = htert, Histotype = datagroup, Samples = nsamples, Cells = ncells, Genotype = genotype) %>% 
+  sheet_write(., ss = gs, sheet = "Table S1 - statistics")
+```
+
+
+## Single cell example
+
+```{r}
+cells <- OV2295$CNVmetrics %>%
+  arrange(desc(coverage_breadth)) %>% 
+  filter(coverage_breadth < 0.1)
+
+celldat <- plotCNprofileBAF(OV2295$hscn$data %>% filter(state_phase != "B-LOH"), y_axis_trans = "squashy", maxCN = 20, 
+                           cellid = cells$cell_id[5], pointsize = 0.6, returnlist = TRUE)
+celldat$BAF
+
+BAFcolpal <- scCNphase_cols()[c(1,3,5)]
+legends <- cowplot::plot_grid(NULL, get_legend(celldat$CN + theme_cowplot(font_size = 12, 
+                                                            rel_small = 1) + guides(col = guide_legend("CN", nrow = 3, 
+                                                                override.aes = list(alpha=1, size = 2.5, shape = 15)))), 
+                      get_legend(celldat$BAF + 
+                                   theme_cowplot(font_size = 12) + guides(col = guide_legend("ASCN", nrow = 3, 
+                                                                override.aes = list(alpha=1, size = 2.5, shape = 15)))), NULL,
+                     ncol = 4, rel_widths = c(0.1, 1, 1,4))
+
+
+(gcell <- cowplot::plot_grid(
+    celldat$BAF + theme(legend.position = "none"),
+    celldat$CN  + theme(legend.position = "none") +
+      ggplot2::scale_y_continuous(breaks = c(0, 2,5,10,20), 
+                                  limits = c(0, 20),trans = "squashy"),
+    cowplot::plot_grid(legends, NULL, ncol = 1, rel_heights = c(1, 0.5)),
+                            align = "v", ncol = 1, rel_heights = c(1, 1, 0.22)))
+```
+
+## Unphased vs phased
+
+```{r}
+cn <- as.data.table(select(OV2295$hscn$data, cell_id, chr, start, end, state, copy))
+
+haps <- fread(glue("{config$rawdatadir}2295/SNP/2295.tsv.gz"))
+haps <- haps[cell_id == cells$cell_id[2]]
+dfhaps <- format_haplotypes_dlp(haps %>% rename(chr = chromosome), OV2295$hscn$data)
+
+myphased_haplotypes1 <- phase_haplotypes(dfhaps)
+myphased_haplotypes2 <- phase_haplotypes(dfhaps) %>%
+  mutate(phase = sample(c("allele1", "allele0"), replace = T, dim(dfhaps)[1]))
+
+test1 <- format_haplotypes(as.data.table(dfhaps), phased_haplotypes = myphased_haplotypes1)
+test2 <- format_haplotypes(as.data.table(dfhaps), phased_haplotypes = myphased_haplotypes2)
+
+CNbins1 <- as.data.table(OV2295$hscn$data)[cell_id == cells$cell_id[2]][test1, on = c("chr", "start", "end", "cell_id"), nomatch=0]
+
+message("Calculate BAF per bin...")
+CNBAF1 <- data.table::as.data.table(CNbins1) %>%
+    .[totalcounts > 0] %>%
+    .[, lapply(.SD, sum), by = .(chr, start, end, cell_id, state, copy), .SDcols = c("alleleA", "alleleB", "totalcounts")] %>%
+    .[, BAF := alleleB / totalcounts]
+
+CNbins2 <- as.data.table(OV2295$hscn$data)[cell_id == cells$cell_id[2]][test2, on = c("chr", "start", "end", "cell_id"), nomatch=0]
+
+message("Calculate BAF per bin...")
+CNBAF2 <- data.table::as.data.table(CNbins2) %>%
+    .[totalcounts > 0] %>%
+    .[, lapply(.SD, sum), by = .(chr, start, end, cell_id, state, copy), .SDcols = c("alleleA", "alleleB", "totalcounts")] %>%
+    .[, BAF := alleleB / totalcounts]
+
+x1 <- combineBAFCN(dfhaps, cn, phased_haplotypes = myphased_haplotypes1)
+x2 <- combineBAFCN(dfhaps, cn, phased_haplotypes = myphased_haplotypes2)
+pl <- plottinglist(x2)
+
+gBAF <- pl$CNbins %>%
+      #dplyr::mutate(state_min = paste0(state_min)) %>%
+      ggplot2::ggplot(ggplot2::aes(x = idx, y = BAF)) +
+     geom_point( size = 1, alpha = 0.9) +
+      ggplot2::theme(axis.title.y = ggplot2::element_blank(),
+                     axis.text.y = ggplot2::element_blank(),
+                     axis.ticks.y = ggplot2::element_blank(),
+                     legend.position = "none") +
+      ggplot2::scale_x_continuous(breaks = pl$chrbreaks, labels = pl$chrlabels, expand = c(0, 0), limits = c(pl$minidx, pl$maxidx)) + #,guide = ggplot2::guide_axis(check.overlap = TRUE)) +
+      ggplot2::scale_y_continuous(breaks = c(0.0, 0.25, 0.5, 0.75, 1.0), limits = c(0, 1.0)) +
+      ggplot2::xlab("Chromosome") +
+      ggplot2::ylab("BAF") +
+      #ggplot2::ggtitle(cellid) +
+      cowplot::theme_cowplot() +
+      cowplot::background_grid(major = "x") +
+      ggplot2::geom_hline(yintercept = 0.5, lty = 2, alpha = 0.5) +
+      ggplot2::theme(axis.title.x=ggplot2::element_blank(),
+            axis.text.x=ggplot2::element_blank(),
+            axis.ticks.x=ggplot2::element_blank()) +
+      ggplot2::theme(legend.title = ggplot2::element_blank(), legend.position = "bottom")
+gBAF
+```
+
+```{r}
+gunphased_phase <- plot_grid(gBAF, celldat$BAF + ggtitle("") + theme(legend.position = "none"), ncol = 1)
+save_plot(here("Figures/Supp/Fig1_S1_phased.png"), gunphased_phase)
+```
+
+## SNVs
+
+```{r}
+snv <- snv_states(select(OV2295$SNVCN, chr, start, ref, alt, cell_id, ref_counts, alt_counts) %>% 
+                    mutate(end = start), 
+                  OV2295$ascn$data) %>% 
+  na.omit() %>%
+  #left_join(., clones) %>%
+  left_join(select(OV2295$CNVmetrics, sample_id, cell_id))
+
+```
+
+```{r}
+blacklist <- fread("data/dlp_snv_blacklist.csv")
+
+snv_summary <- snv %>%
+  group_by(state_AS_phased, state, chr, start, ref, alt, LOH, Maj, Min, sample_id) %>%
+  summarise(ref_counts = sum(ref_counts), alt_counts = sum(alt_counts)) %>%
+  ungroup() %>%
+  mutate(totcounts = alt_counts + ref_counts) %>%
+  mutate(type = case_when(
+    Maj == Min ~ "Balanced",
+    Min == 0 ~ "LOH",
+    Min != Maj ~ "Unbalanced"
+  )) %>%
+  mutate(VAF = alt_counts / (totcounts)) %>%
+  group_by(chr, start, ref) %>%
+  mutate(n_sample_id = length(unique(sample_id))) %>%
+  ungroup() %>%
+  left_join(., OV2295$SNVannot) %>% 
+  filter(max_strelka_score > 20 & max_museq_score > 0.9) %>% 
+  filter(!start %in% blacklist$start) %>% 
+  filter(!is.na(mappability))
+```
+
+
+```{r}
+library(ggridges)
+
+dfdata <- data.frame(type = c("Balanced", "LOH", 
+                              "Unbalanced","Unbalanced","Unbalanced","Unbalanced"), 
+                     x = c(0.5, 1.0, 
+                           1/3, 2/3, 1/4, 3/4))
+
+dfdata <- data.frame(type = c("Balanced", "LOH"), 
+                     x = c(0.5, 1.0))
+
+dat_text <- data.frame(type = c("Unbalanced", "Unbalanced"), label = c("Early", "Late"), x = c(0.85, 0.15))
+
+x <- snv_summary %>%
+  filter(n_sample_id == 3) %>%
+  #filter(clone_id == "D") %>%
+  group_by(state_AS_phased, sample_id) %>%
+  mutate(n = n()) %>%
+  ungroup() %>%
+  filter(state < 10 & state > 0, totcounts > 19, n > 200) %>%
+  #filter(VAF > 0.1) %>%
+  mutate(LOH = ifelse(LOH == "LOH", "YES", LOH)) %>%
+  add_count(state_AS_phased) %>%
+  filter(nn > 50)
+
+(gVAF <- snv_summary %>%
+  filter(n_sample_id == 3) %>%
+  #filter(clone_id == "D") %>%
+  filter(is_dbsnp == 0, mappability > 0.99) %>%
+  group_by(state_AS_phased, sample_id) %>%
+  mutate(n = n()) %>%
+  ungroup() %>%
+  filter(state < 10 & state > 0, totcounts > 19, n > 100) %>%
+  #filter(VAF > 0.1) %>%
+  mutate(LOH = ifelse(LOH == "LOH", "YES", LOH)) %>%
+  add_count(state_AS_phased) %>%
+  filter(nn > 100) %>%
+  ggplot(aes(fill = type, col = type)) +
+  #geom_density_ridges(scale = 2, alpha = 0.3, stat = "binline", bins = 50) +
+  geom_density_ridges(aes(y = state_AS_phased, x = VAF), scale = 2, alpha = 0.3) +
+  theme_ridges(center_axis_labels = TRUE) +
+  geom_vline(data = dfdata, aes(xintercept = x), lty = 2, col = "grey40") +
+  scale_x_continuous(breaks = c(0.0,  0.5,  1.0)) +
+  scale_color_manual(values = c("grey40", "#025767", "#53AFC0")) +
+  scale_fill_manual(values = c("grey40", "#025767", "#53AFC0")) +
+  xlab("Variant allele frequency (somatic mutations)") +
+  ylab("Allele specific state") +
+  facet_wrap(~type, scales = "free_y") +
+  panel_border() +
+  theme(legend.position = "none") +
+  geom_text(data = dat_text, aes(label = label, x = x, y = 9.3), col = "black"))
+```
+
+## BAF violin
+
+```{r}
+gBAF <- plotBAFperstate(OV2295$hscn$data %>% filter(phase != "B", state > 0), maxstate = 10, minfrac = 0.0) +
+  scale_y_continuous(limits = c(0.0, 0.75), breaks = c(0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7)) +
+  theme(legend.position = "none") +
+  xlab("Allele specific state")
+
+```
+
+## Heatmaps
+
+```{r}
+library(grid)
+library(ComplexHeatmap)
+source(here("src/tree_utils.R"))
+
+chroms <- unique(OV2295$hscn$data$chr)
+chroms <- chroms[!chroms %in% c("14", "16", "18", "19", "21", "22")]
+mysample <- "2295"
+
+tree <- get_and_format_tree("2295")
+tree <- ape::compute.brlen(tree, 1)
+mycl <- data.frame(cell_id = tree$tip.label, clone_id = "0")
+
+cndat <- OV2295$ascn$data
+
+hm_state <- plotHeatmap(cndat, 
+                        chrlabels = chroms,
+                        spacer_cols = 10,
+                        tree = tree,
+                        plotcol = "state", 
+                        sample_label_idx = 1,
+                        #library_mapping = lab_mapping,
+                        show_clone_label = FALSE,
+                        reorderclusters = FALSE, 
+                        clusters = mycl,
+                        normalize_tree = FALSE,
+                        plottree = TRUE,
+                        plotfrequency = FALSE,
+                        )
+
+
+hm_copy <- plotHeatmap(cndat,
+                       chrlabels = chroms,
+                        spacer_cols = 10,
+                        tree = tree,
+                        plotcol = "copy", 
+                        sample_label_idx = 2,
+                        #library_mapping = lab_mapping,
+                        show_library_label = FALSE,
+                        show_clone_label = FALSE,
+                        reorderclusters = TRUE, 
+                        clusters = mycl,
+                        normalize_tree = FALSE,
+                        plottree = FALSE,
+                        plotfrequency = FALSE,
+                        )
+
+hm_BAF <- plotHeatmap(cndat,
+                        chrlabels = chroms,
+                        spacer_cols = 10,
+                        tree = tree,
+                        plotcol = "state_BAF", 
+                        sample_label_idx = 1,
+                        show_library_label = FALSE,
+                        #library_mapping = lab_mapping,
+                        show_clone_label = FALSE,
+                        reorderclusters = TRUE, 
+                        clusters = mycl,
+                        normalize_tree = FALSE,
+                        plottree = FALSE,
+                        plotfrequency = FALSE,
+                        )
+
+hm_BAF2 <- plotHeatmap( OV2295$hscn$data,
+                        chrlabels = chroms,
+                        spacer_cols = 10,
+                        tree = tree,
+                        plotcol = "state_BAF", 
+                        sample_label_idx = 1,
+                        show_library_label = FALSE,
+                        #library_mapping = lab_mapping,
+                        show_clone_label = FALSE,
+                        reorderclusters = TRUE, 
+                        clusters = mycl,
+                        normalize_tree = FALSE,
+                        plottree = FALSE,
+                        plotfrequency = FALSE,
+                        )
+
+hm_BAFraw <- plotHeatmap(cndat,
+                         chrlabels = chroms,
+                        spacer_cols = 10,
+                        tree = tree,
+                        plotcol = "BAF", 
+                        sample_label_idx = 2,
+                        show_library_label = FALSE,
+                        #library_mapping = lab_mapping,
+                        show_clone_label = FALSE,
+                        reorderclusters = TRUE, 
+                        clusters = mycl,
+                        normalize_tree = FALSE,
+                        plottree = FALSE,
+                        plotfrequency = FALSE,
+                        )
+
+w = 40
+h = 13/3
+hm <- grid::grid.grabExpr(ComplexHeatmap::draw(hm_state + hm_BAF,  
+                                              ht_gap = unit(0.6, "cm"),
+                                             #column_title = "Chr20", 
+                                             #column_title_gp = gpar(fontsize = 20),
+                                             heatmap_legend_side = "right", 
+                                             annotation_legend_side = "right",
+                                             show_heatmap_legend = TRUE), 
+                                                width = w, height = h)
+
+cowplot::plot_grid(hm)
+
+```
+
+## Main Figure
+
+```{r}
+library(cowplot)
+library(grid)
+library(ComplexHeatmap)
+top1 <- cowplot::plot_grid(gcell, labels = c("a"))
+top2 <- cowplot::plot_grid(gBAF, gVAF, labels = c("b", "c"))
+w = 40
+h = 13/3
+hm_cowp <- cowplot::plot_grid(NULL, hm, rel_widths = c(0.04, 1.0), labels = c("d", ""))
+
+gall <- cowplot::plot_grid(top1, top2, hm_cowp, ncol = 1)
+
+#save_plot("results/ascn_paper/Figure-BAF.png", gBAF, base_height = 5, base_width = 20)
+#save_plot("results/ascn_paper/Figure-cell.png", gcell, base_height = 5, base_width = 15)
+save_plot(here("Figures/Main/Fig1.png"), gall, base_height = 12, base_width = 15)
+
+gall 
+
+```
+
+## SNVs in 8q and 10p
+
+```{r}
+library(ggtree)
+et <- create_edge_table(tree)
+
+#nodes 1293
+
+desc_8q <- phangorn::Descendants(tree, 1293, "tips")
+cells_8q <- et %>% filter(child %in% desc_8q[[1]]) %>% 
+  filter(str_detect(chi.name, "SA")) %>% 
+  pull(chi.name)
+
+
+ggtree(tree) +
+  geom_cladelabel(node = 1293, label = "LOH") +
+  geom_hilight(node = 1293)
+
+OV2295$hscn$data %>% 
+  filter(cell_id %in% cells_8q) %>% 
+  filter(chr == "8") %>% 
+  group_by(chr, start, end) %>%
+  summarise(state = schnapps:::Mode(state), 
+              state_min = schnapps:::Mode(state_min), 
+              BAF = median(BAF), 
+              state_phase = schnapps:::Mode(state_phase), 
+              copy = median(copy)) %>%
+  ungroup()
+
+snvannot <- OV2295$SNVannot %>% 
+  group_by(chr, start, ref, alt) %>% 
+  summarise(max_strelka_score = mean(max_strelka_score), max_museq_score = mean(max_museq_score), mappability = mean(mappability, na.rm = T)) %>% 
+  ungroup()
+
+
+getplot <- function(cells_8q, cutoff = 	75000001, mychr = 8) {
+  x <- snv %>%
+    filter(!start %in% blacklist$start) %>% 
+    as.data.table() %>% 
+    .[, n_sample_id := length(unique(sample_id)), by = c("chr", "start", "ref", "alt")] %>% 
+    .[start > cutoff & chr == mychr] %>% 
+    .[,loh_8q := ifelse(cell_id %in% cells_8q, TRUE, FALSE)] %>% 
+    .[, totcounts := ref_counts + alt_counts] %>% 
+    .[, list(totcounts = sum(totcounts), alt_counts = sum(alt_counts)), by = c("chr", "start", "ref", "alt", "loh_8q", "n_sample_id")] %>%
+    .[, VAF := alt_counts / totcounts] %>%
+    left_join(snvannot, by = c("chr", "start", "ref", "alt")) %>% 
+    filter(max_strelka_score > 20 & max_museq_score > 0.9, n_sample_id > 1)  %>%   filter(!is.na(mappability))
+  
+  snvdat <- x %>%
+    mutate(arm = coord_to_arm(chr, start)) %>% 
+    filter(chr == "8" & arm == "q") %>% 
+    #filter(mappability > 0.99) %>%
+    pivot_wider(names_from = "loh_8q", values_from = c("VAF", "alt_counts", "totcounts"), 
+                values_fill = list(VAF = 0.0, total_counts = 0, alt_counts = 0)) %>%
+        pivot_longer(cols = c("VAF_TRUE", "VAF_FALSE"))
+  
+  forplot <- snvdat %>%
+    #filter(value > 0.05) %>% 
+    dplyr::select(chr, start, name, value) %>%
+    mutate(x = paste0(start)) %>%
+    add_count(x) %>% 
+    filter(n == 2) %>% 
+    group_by(start) %>%
+    mutate(mycol = name[which.max(value)]) %>%
+    ungroup( )
+  
+  b1 <- runif(nrow(forplot), -0.025, 0.025)
+  b2 <- runif(nrow(forplot), -0.01, 0.01)
+    
+  vaf_switch_lab <- c("Other", "8q LOH")
+    
+  vaf_switch <- forplot %>% 
+      ggplot(aes(x = as.numeric(as.factor(name)) + b1, y = value + b2)) +
+      #geom_point() +
+      #geom_boxplot(aes(x = as.factor(name), y = value)) +
+      geom_point() +
+      geom_path(aes(group = x, col = mycol), alpha = 0.3, size = 0.8) +
+      theme_cowplot() +
+      scale_color_manual(values = as.vector(scCNphase_colors[c("A-Hom", "B-Hom")])) +
+      scale_x_continuous(breaks = c(1, 2), labels = vaf_switch_lab) +
+      ylab("VAF") +
+      xlab("") +
+      theme_cowplot(font_size = 12, line_size = 0.9) +
+      theme(legend.position = "none") 
+    
+  return(vaf_switch)
+}
+
+```
+
+## RNA vs DNA
+
+```{r}
+rna <- fread("/work/shah/william1/projects/scRNAseq_AS/results/ASinference/perpatient_dp/2295.csv.gz")
+rnacells <- rna %>% 
+  group_by(cell_id) %>% 
+  summarise(x = sum(total)) %>% 
+  arrange(desc(x))
+hmrna <- plotHeatmapBAF(rna %>% 
+                          filter(cell_id %in% rnacells$cell_id[1:2000]),
+                        arms = unique(rna$chrarm))
+
+chrarm <- schnapps::per_chrarm_cn(OV2295$hscn$data, arms = unique(rna$chrarm))
+hmdna <- plotHeatmapBAF(OV2295$hscn$data, arms = unique(rna$chrarm))
+
+hm_dnag <- grid::grid.grabExpr(ComplexHeatmap::draw(hmdna,  
+                                              ht_gap = unit(0.6, "cm"),
+                                             #column_title = "Chr20", 
+                                             #column_title_gp = gpar(fontsize = 20),
+                                             heatmap_legend_side = "right", 
+                                             annotation_legend_side = "right",
+                                             show_heatmap_legend = TRUE), 
+                                                width = w, height = h)
+
+hm_rnag <- grid::grid.grabExpr(ComplexHeatmap::draw(hmrna,  
+                                              ht_gap = unit(0.6, "cm"),
+                                             #column_title = "Chr20", 
+                                             #column_title_gp = gpar(fontsize = 20),
+                                             heatmap_legend_side = "right", 
+                                             annotation_legend_side = "right",
+                                             show_heatmap_legend = TRUE), 
+                                                width = w, height = h)
+
+grnahmps <- plot_grid(NULL, hm_dnag, NULL, hm_rnag, ncol = 1, labels = c("a  DNA","", "b  RNA"), rel_heights = c(0.1, 1, 0.1, 1))
+
+```
+
+```{r}
+seur <- readRDS(glue("{config$rna}ASinference/perpatient_combined/2295-seurat.Rdata"))
+  
+cell_sample_rna <- seur@meta.data
+cell_sample_rna$cell_id <- row.names(cell_sample_rna)
+cell_sample_rna <- select(cell_sample_rna, cell_id, sample)
+
+rna <- rna %>%
+  left_join(cell_sample_rna)
+dna_baf <- chrarm
+dna_baf <- dna_baf %>%
+  left_join(select(OV2295$CNVmetrics, sample_id, cell_id)) %>%
+  rename(sample = sample_id)
+
+dfbaf_joint <- bind_rows(dna_baf %>% mutate(dtype = "DNA"),
+                         rna %>% mutate(dtype = "RNA"))
+
+dfbaf_join_summary <- dfbaf_joint %>%
+  filter(total > 9) %>%
+  group_by(chrarm, dtype, sample) %>%
+  summarise(total = mean(total), BAF = median(BAF)) %>%
+  pivot_wider(names_from = "dtype", values_from = c("BAF", "total"))
+
+corrplot <- dfbaf_join_summary %>%
+  filter(chrarm != "X", !is.na(sample)) %>%
+  #filter(total_RNA > 10) %>%
+  ggplot(aes(x = BAF_DNA, y = BAF_RNA)) +
+  geom_point(aes(col = sample)) +
+  xlab("Median BAF per chr \n (DNA)") + 
+  ylab("Median BAF per chr \n (RNA)") +
+  geom_abline(lty = 2) +
+  theme_cowplot() +
+  scale_color_manual(values = c("plum4", "firebrick3", "deepskyblue2")) +
+  theme(legend.title = element_blank(), legend.position = c(0.25, 0.8))
+  #+geom_smooth(method = "lm")
+
+
+gall <- plot_grid(grnahmps, plot_grid(NULL, corrplot, NULL, rel_heights = c(0.4,1,0.4), ncol = 1, labels = c("", "c")), ncol = 2, rel_widths = c(1, 0.5))
+save_plot(here("Figures/Supp/2295_baf_dna_rna.png"), gall, base_height = 6, base_width = 12)
+```
