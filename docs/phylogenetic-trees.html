@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution</title>
-  <meta name="description" content="Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution" />
+  <title>Section 3 Phylogenetic trees | Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution</title>
+  <meta name="description" content="Section 3 Phylogenetic trees | Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution" />
+  <meta property="og:title" content="Section 3 Phylogenetic trees | Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution" />
+  <meta name="twitter:title" content="Section 3 Phylogenetic trees | Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="figure-1.html"/>
 
-<link rel="next" href="figure-1.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -184,29 +184,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution</h1>
-<p class="author"><em>Marc J. Williams</em></p>
-<p class="date" style="margin-top: 1.5em;"><em>2021-05-11</em></p>
+<div id="phylogenetic-trees" class="section level1">
+<h1><span class="header-section-number">Section 3</span> Phylogenetic trees</h1>
+<div id="load-data-packages-1" class="section level2">
+<h2><span class="header-section-number">3.1</span> Load data + packages</h2>
+<p>We’ll first load some packages and the data from the OV2295 cell lines.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"><span class="kw">library</span>(devtools)</a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="kw">library</span>(data.table)</a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"><span class="kw">library</span>(cowplot)</a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="kw">library</span>(yaml)</a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"><span class="kw">library</span>(glue)</a>
+<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="kw">library</span>(here)</a>
+<a class="sourceLine" id="cb16-8" data-line-number="8"><span class="kw">library</span>(ape)</a>
+<a class="sourceLine" id="cb16-9" data-line-number="9">here<span class="op">::</span><span class="kw">i_am</span>(<span class="st">&quot;01-figure1.Rmd&quot;</span>)</a>
+<a class="sourceLine" id="cb16-10" data-line-number="10">config &lt;-<span class="st"> </span><span class="kw">read_yaml</span>(<span class="kw">here</span>(<span class="st">&quot;metadata&quot;</span>, <span class="st">&quot;config.yaml&quot;</span>))</a>
+<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="kw">load_all</span>(config<span class="op">$</span>schnapps)</a>
+<a class="sourceLine" id="cb16-12" data-line-number="12"><span class="kw">load_all</span>(config<span class="op">$</span>scgenomutils)</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">hscn &lt;-<span class="st"> </span><span class="kw">fread</span>(config<span class="op">$</span>hscn)</a></code></pre></div>
 </div>
-<div id="foreword" class="section level1">
-<h1><span class="header-section-number">Section 1</span> Foreword</h1>
-<p>This document contains code to fully reproduce the figures of our paper: “Paper title”. Each “chapter” is associated with a main figure in the paper and will produce that figure and any supplementary tables or figures.</p>
-<div id="data" class="section level2">
-<h2><span class="header-section-number">1.1</span> Data</h2>
-<p>The analysis contained here starts from a set of processed results which include:</p>
-<ul>
-<li>allele specific copy number per cell in 500Kb bins across the genome (output from <a href="https://shahcompbio.github.io/schnapps/">schnapps</a>)</li>
-<li>snv counts per cell</li>
-<li>phylogenetic trees</li>
-<li>allele imbalance in scRNA (inferred from <a href="https://shahcompbio.github.io/schnapps/">schnapps</a>)</li>
-<li>cell and sample metadata</li>
-</ul>
-<p>You can download these results from <a href="">here</a> and see the pipeline that generate these results <a href="">here</a>.</p>
+<div id="heatmaps-1" class="section level2 tabset tabset-fade tabset-pills">
+<h2><span class="header-section-number">3.2</span> Heatmaps</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="kw">source</span>(<span class="kw">here</span>(<span class="st">&quot;src/heatmaps.R&quot;</span>))</a>
+<a class="sourceLine" id="cb18-2" data-line-number="2"><span class="kw">source</span>(<span class="kw">here</span>(<span class="st">&quot;src/tree_utils.R&quot;</span>))</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3">alldatasets &lt;-<span class="st"> </span><span class="kw">unique</span>(hscn<span class="op">$</span>sample)</a>
+<a class="sourceLine" id="cb18-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="cf">for</span> (dataset <span class="cf">in</span> alldatasets[<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>]) {</a>
+<a class="sourceLine" id="cb18-6" data-line-number="6">    <span class="kw">cat</span>(<span class="kw">paste0</span>(<span class="st">&quot;## Sample &quot;</span>, dataset, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>))</a>
+<a class="sourceLine" id="cb18-7" data-line-number="7">    <span class="kw">print</span>(<span class="kw">createfigure</span>(dataset))</a>
+<a class="sourceLine" id="cb18-8" data-line-number="8">    <span class="kw">cat</span>(<span class="st">&quot; </span><span class="ch">\n</span><span class="st"> </span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb18-9" data-line-number="9">}</a></code></pre></div>
 </div>
-<div id="computing-requirements" class="section level2">
-<h2><span class="header-section-number">1.2</span> Computing requirements</h2>
-<p>Most of the heavy lifting has been done in the pre-processing so computing requirements are not too onerous. However, some of the data files are very large and so you will need a computer with a reasonably large amount of RAM. 50Gb or so should be fine.</p>
+<div id="sample-2295" class="section level2">
+<h2><span class="header-section-number">3.3</span> Sample 2295</h2>
+<p>[1] “2295”</p>
+</div>
+<div id="sample-sa039" class="section level2">
+<h2><span class="header-section-number">3.4</span> Sample SA039</h2>
+<p>[1] “SA039”
+<img src="schnapps_paper_files/figure-html/heatmaps-1.png" width="1440" /><img src="schnapps_paper_files/figure-html/heatmaps-2.png" width="1440" /></p>
 
 </div>
 </div>
@@ -215,8 +231,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
+<a href="figure-1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="figure-1.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
