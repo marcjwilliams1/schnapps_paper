@@ -52,6 +52,14 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">
@@ -134,13 +142,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Foreword</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#data"><i class="fa fa-check"></i><b>1.1</b> Data</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#computing-requirements"><i class="fa fa-check"></i><b>1.2</b> Computing requirements</a></li>
+</ul></li>
 <li class="chapter" data-level="2" data-path="figure-1.html"><a href="figure-1.html"><i class="fa fa-check"></i><b>2</b> Figure 1</a><ul>
 <li class="chapter" data-level="2.1" data-path="figure-1.html"><a href="figure-1.html#load-data-packages"><i class="fa fa-check"></i><b>2.1</b> Load data + packages</a></li>
-<li class="chapter" data-level="2.2" data-path="figure-1.html"><a href="figure-1.html#stats"><i class="fa fa-check"></i><b>2.2</b> Stats</a></li>
+<li class="chapter" data-level="2.2" data-path="figure-1.html"><a href="figure-1.html#summary-stats"><i class="fa fa-check"></i><b>2.2</b> Summary stats</a></li>
 <li class="chapter" data-level="2.3" data-path="figure-1.html"><a href="figure-1.html#single-cell-example"><i class="fa fa-check"></i><b>2.3</b> Single cell example</a></li>
 <li class="chapter" data-level="2.4" data-path="figure-1.html"><a href="figure-1.html#snvs"><i class="fa fa-check"></i><b>2.4</b> SNVs</a></li>
-<li class="chapter" data-level="2.5" data-path="figure-1.html"><a href="figure-1.html#baf-violin"><i class="fa fa-check"></i><b>2.5</b> BAF violin</a></li>
+<li class="chapter" data-level="2.5" data-path="figure-1.html"><a href="figure-1.html#baf-distributions"><i class="fa fa-check"></i><b>2.5</b> BAF distributions</a></li>
 <li class="chapter" data-level="2.6" data-path="figure-1.html"><a href="figure-1.html#heatmaps"><i class="fa fa-check"></i><b>2.6</b> Heatmaps</a></li>
 <li class="chapter" data-level="2.7" data-path="figure-1.html"><a href="figure-1.html#main-figure"><i class="fa fa-check"></i><b>2.7</b> Main Figure</a></li>
 <li class="chapter" data-level="2.8" data-path="figure-1.html"><a href="figure-1.html#rna-vs-dna"><i class="fa fa-check"></i><b>2.8</b> RNA vs DNA</a></li>
@@ -170,9 +181,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="author"><em>Marc J. Williams</em></p>
 <p class="date" style="margin-top: 1.5em;"><em>2021-05-11</em></p>
 </div>
-<div id="introduction" class="section level1">
-<h1><span class="header-section-number">Section 1</span> Introduction</h1>
+<div id="foreword" class="section level1">
+<h1><span class="header-section-number">Section 1</span> Foreword</h1>
+<p>This document contains code to fully reproduce the figures of our paper: “Paper title”. Each “chapter” is associated with a main figure in the paper and will produce that figure and any supplementary tables or figures.</p>
+<div id="data" class="section level2">
+<h2><span class="header-section-number">1.1</span> Data</h2>
+<p>The analysis contained here starts from a set of processed results which include:</p>
+<ul>
+<li>allele specific copy number per cell in 500Kb bins across the genome (output from <a href="https://shahcompbio.github.io/schnapps/">schnapps</a>)</li>
+<li>snv counts per cell</li>
+<li>phylogenetic trees</li>
+<li>allele imbalance in scRNA (inferred from <a href="https://shahcompbio.github.io/schnapps/">schnapps</a>)</li>
+<li>cell and sample metadata</li>
+</ul>
+<p>You can download these results from <a href="">here</a> and see the pipeline that generate these results <a href="">here</a>.</p>
+</div>
+<div id="computing-requirements" class="section level2">
+<h2><span class="header-section-number">1.2</span> Computing requirements</h2>
+<p>Most of the heavy lifting has been done in the pre-processing so computing requirements are not too onerous. However, some of the data files are very large and so you will need a computer with a reasonably large amount of RAM. 50Gb or so should be fine.</p>
 
+</div>
 </div>
             </section>
 
