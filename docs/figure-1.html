@@ -54,6 +54,68 @@
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -74,15 +136,14 @@
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
 <li class="chapter" data-level="2" data-path="figure-1.html"><a href="figure-1.html"><i class="fa fa-check"></i><b>2</b> Figure 1</a><ul>
-<li class="chapter" data-level="2.1" data-path="figure-1.html"><a href="figure-1.html#stats"><i class="fa fa-check"></i><b>2.1</b> Stats</a></li>
-<li class="chapter" data-level="2.2" data-path="figure-1.html"><a href="figure-1.html#single-cell-example"><i class="fa fa-check"></i><b>2.2</b> Single cell example</a></li>
-<li class="chapter" data-level="2.3" data-path="figure-1.html"><a href="figure-1.html#unphased-vs-phased"><i class="fa fa-check"></i><b>2.3</b> Unphased vs phased</a></li>
+<li class="chapter" data-level="2.1" data-path="figure-1.html"><a href="figure-1.html#load-data-packages"><i class="fa fa-check"></i><b>2.1</b> Load data + packages</a></li>
+<li class="chapter" data-level="2.2" data-path="figure-1.html"><a href="figure-1.html#stats"><i class="fa fa-check"></i><b>2.2</b> Stats</a></li>
+<li class="chapter" data-level="2.3" data-path="figure-1.html"><a href="figure-1.html#single-cell-example"><i class="fa fa-check"></i><b>2.3</b> Single cell example</a></li>
 <li class="chapter" data-level="2.4" data-path="figure-1.html"><a href="figure-1.html#snvs"><i class="fa fa-check"></i><b>2.4</b> SNVs</a></li>
 <li class="chapter" data-level="2.5" data-path="figure-1.html"><a href="figure-1.html#baf-violin"><i class="fa fa-check"></i><b>2.5</b> BAF violin</a></li>
 <li class="chapter" data-level="2.6" data-path="figure-1.html"><a href="figure-1.html#heatmaps"><i class="fa fa-check"></i><b>2.6</b> Heatmaps</a></li>
 <li class="chapter" data-level="2.7" data-path="figure-1.html"><a href="figure-1.html#main-figure"><i class="fa fa-check"></i><b>2.7</b> Main Figure</a></li>
-<li class="chapter" data-level="2.8" data-path="figure-1.html"><a href="figure-1.html#snvs-in-8q-and-10p"><i class="fa fa-check"></i><b>2.8</b> SNVs in 8q and 10p</a></li>
-<li class="chapter" data-level="2.9" data-path="figure-1.html"><a href="figure-1.html#rna-vs-dna"><i class="fa fa-check"></i><b>2.9</b> RNA vs DNA</a></li>
+<li class="chapter" data-level="2.8" data-path="figure-1.html"><a href="figure-1.html#rna-vs-dna"><i class="fa fa-check"></i><b>2.8</b> RNA vs DNA</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -106,53 +167,817 @@
             <section class="normal" id="section-">
 <div id="figure-1" class="section level1">
 <h1><span class="header-section-number">Section 2</span> Figure 1</h1>
+<div id="load-data-packages" class="section level2">
+<h2><span class="header-section-number">2.1</span> Load data + packages</h2>
+<p>We’ll first load some packages and the data from the OV2295 cell lines.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">library</span>(devtools)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">library</span>(data.table)</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="kw">library</span>(cowplot)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="kw">library</span>(yaml)</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw">library</span>(glue)</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="kw">library</span>(here)</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">here<span class="op">::</span><span class="kw">i_am</span>(<span class="st">&quot;01-figure1.Rmd&quot;</span>)</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">config &lt;-<span class="st"> </span><span class="kw">read_yaml</span>(<span class="kw">here</span>(<span class="st">&quot;metadata&quot;</span>, <span class="st">&quot;config.yaml&quot;</span>))</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10"><span class="kw">load_all</span>(config<span class="op">$</span>schnapps)</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="kw">load_all</span>(config<span class="op">$</span>scgenomutils)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">OV2295 &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">file.path</span>(<span class="kw">glue</span>(<span class="st">&quot;{config$Rdatadir}2295.Rdata&quot;</span>)))</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">metrics &lt;-<span class="st"> </span><span class="kw">fread</span>(config<span class="op">$</span>metrics)</a></code></pre></div>
+</div>
 <div id="stats" class="section level2">
-<h2><span class="header-section-number">2.1</span> Stats</h2>
+<h2><span class="header-section-number">2.2</span> Stats</h2>
+<p>Now we’ll look at some general stats, like coveraget per cell etc.</p>
+<p>Here’s the quantiles of coverage depth per cell in the OV2295 dataset.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">quantile</span>(OV2295<span class="op">$</span>CNVmetrics<span class="op">$</span>coverage_depth, <span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.05</span>, <span class="fl">0.5</span>, <span class="fl">0.95</span>, <span class="fl">0.975</span>))</a></code></pre></div>
+<pre><code>##       2.5%         5%        50%        95%      97.5% 
+## 0.04214450 0.06990785 0.16244150 0.30273730 0.31527105</code></pre>
+<p>From the metrics file we can</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">sampletags &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sample =</span> <span class="kw">unique</span>(metrics<span class="op">$</span>sample)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(., <span class="kw">stack</span>(config<span class="op">$</span>datagroups) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="st">    </span><span class="kw">rename</span>(<span class="dt">sample =</span> values, <span class="dt">datagroup =</span> ind) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(datagroup <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;htert&quot;</span>, </a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">    <span class="st">&quot;tnbc&quot;</span>, <span class="st">&quot;hgsc&quot;</span>, <span class="st">&quot;her2_brca&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">na.omit</span>()</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">sampletags<span class="op">$</span>label &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">lapply</span>(sampletags<span class="op">$</span>sample, <span class="cf">function</span>(x) <span class="kw">str_replace</span>(config<span class="op">$</span>datasets[[x]]<span class="op">$</span>label, </a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">    <span class="st">&quot;</span><span class="ch">\\</span><span class="st">s[0-9].*&quot;</span>, <span class="st">&quot;&quot;</span>)))</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">sampletags<span class="op">$</span>BRCA1 &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">lapply</span>(sampletags<span class="op">$</span>sample, <span class="cf">function</span>(x) config<span class="op">$</span>datasets[[x]]<span class="op">$</span>BRCA1))</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">sampletags<span class="op">$</span>BRCA2 &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">lapply</span>(sampletags<span class="op">$</span>sample, <span class="cf">function</span>(x) config<span class="op">$</span>datasets[[x]]<span class="op">$</span>BRCA2))</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">sampletags<span class="op">$</span>TP53 &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">lapply</span>(sampletags<span class="op">$</span>sample, <span class="cf">function</span>(x) config<span class="op">$</span>datasets[[x]]<span class="op">$</span>TP53))</a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">stats &lt;-<span class="st"> </span>metrics[, <span class="st">`</span><span class="dt">:=</span><span class="st">`</span>(htert, <span class="kw">ifelse</span>(sample <span class="op">%in%</span><span class="st"> </span>config<span class="op">$</span>datagroups<span class="op">$</span>htert, <span class="st">&quot;hTERT Cell line&quot;</span>, </a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">    <span class="st">&quot;Tumour&quot;</span>))] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span>sample <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;SA1101a&quot;</span>, <span class="st">&quot;SA1101b&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span>.[, <span class="kw">list</span>(<span class="dt">ncells =</span> <span class="kw">length</span>(<span class="kw">unique</span>(cell_id)), </a>
+<a class="sourceLine" id="cb5-13" data-line-number="13">    <span class="dt">cov =</span> <span class="kw">median</span>(coverage_depth), <span class="dt">cov_cilow =</span> <span class="kw">quantile</span>(coverage_depth, <span class="fl">0.025</span>), <span class="dt">cov_cihigh =</span> <span class="kw">quantile</span>(coverage_depth, </a>
+<a class="sourceLine" id="cb5-14" data-line-number="14">        <span class="fl">0.975</span>), <span class="dt">nsamples =</span> <span class="kw">length</span>(<span class="kw">unique</span>(sample_id))), by =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;sample&quot;</span>, <span class="st">&quot;htert&quot;</span>)] <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="st">    </span><span class="kw">left_join</span>(sampletags)</a>
+<a class="sourceLine" id="cb5-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb5-17" data-line-number="17">knitr<span class="op">::</span><span class="kw">kable</span>(stats)</a></code></pre></div>
+<table style="width:100%;">
+<colgroup>
+<col width="5%" />
+<col width="11%" />
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="8%" />
+<col width="6%" />
+<col width="7%" />
+<col width="20%" />
+<col width="6%" />
+<col width="5%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">sample</th>
+<th align="left">htert</th>
+<th align="right">ncells</th>
+<th align="right">cov</th>
+<th align="right">cov_cilow</th>
+<th align="right">cov_cihigh</th>
+<th align="right">nsamples</th>
+<th align="left">datagroup</th>
+<th align="left">label</th>
+<th align="left">BRCA1</th>
+<th align="left">BRCA2</th>
+<th align="left">TP53</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2295</td>
+<td align="left">Tumour</td>
+<td align="right">1031</td>
+<td align="right">0.1773930</td>
+<td align="right">0.0602885</td>
+<td align="right">0.3189845</td>
+<td align="right">3</td>
+<td align="left">hgsc</td>
+<td align="left">HGSC Cell Line</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA039</td>
+<td align="left">hTERT Cell line</td>
+<td align="right">1783</td>
+<td align="right">0.0483640</td>
+<td align="right">0.0167971</td>
+<td align="right">0.1187053</td>
+<td align="right">1</td>
+<td align="left">htert</td>
+<td align="left">WT</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="odd">
+<td align="left">SA906a</td>
+<td align="left">hTERT Cell line</td>
+<td align="right">2627</td>
+<td align="right">0.0356010</td>
+<td align="right">0.0056566</td>
+<td align="right">0.0767704</td>
+<td align="right">1</td>
+<td align="left">htert</td>
+<td align="left">TP53-/-</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA906b</td>
+<td align="left">hTERT Cell line</td>
+<td align="right">4396</td>
+<td align="right">0.0320535</td>
+<td align="right">0.0095255</td>
+<td align="right">0.0706241</td>
+<td align="right">1</td>
+<td align="left">htert</td>
+<td align="left">TP53-/-</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA1188</td>
+<td align="left">hTERT Cell line</td>
+<td align="right">1206</td>
+<td align="right">0.0400485</td>
+<td align="right">0.0115776</td>
+<td align="right">0.1020980</td>
+<td align="right">1</td>
+<td align="left">htert</td>
+<td align="left">BRCA2+/- TP53-/-</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA1055</td>
+<td align="left">hTERT Cell line</td>
+<td align="right">381</td>
+<td align="right">0.0713240</td>
+<td align="right">0.0365780</td>
+<td align="right">0.1011020</td>
+<td align="right">1</td>
+<td align="left">htert</td>
+<td align="left">BRCA2-/- TP53-/-</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA1056</td>
+<td align="left">hTERT Cell line</td>
+<td align="right">344</td>
+<td align="right">0.0463070</td>
+<td align="right">0.0079656</td>
+<td align="right">0.0728373</td>
+<td align="right">1</td>
+<td align="left">htert</td>
+<td align="left">BRCA2-/- TP53-/-</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA1054</td>
+<td align="left">hTERT Cell line</td>
+<td align="right">360</td>
+<td align="right">0.0640140</td>
+<td align="right">0.0367508</td>
+<td align="right">0.0914934</td>
+<td align="right">1</td>
+<td align="left">htert</td>
+<td align="left">BRCA1-/- TP53-/-</td>
+<td align="left">Somatic</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA501</td>
+<td align="left">Tumour</td>
+<td align="right">2265</td>
+<td align="right">0.0454120</td>
+<td align="right">0.0092172</td>
+<td align="right">0.1944410</td>
+<td align="right">7</td>
+<td align="left">tnbc</td>
+<td align="left">HRD-Dup</td>
+<td align="left">Germline</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA530</td>
+<td align="left">Tumour</td>
+<td align="right">294</td>
+<td align="right">0.0536250</td>
+<td align="right">0.0286400</td>
+<td align="right">0.0941010</td>
+<td align="right">1</td>
+<td align="left">tnbc</td>
+<td align="left">FBI</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA532</td>
+<td align="left">Tumour</td>
+<td align="right">2080</td>
+<td align="right">0.0405005</td>
+<td align="right">0.0136756</td>
+<td align="right">0.1918656</td>
+<td align="right">8</td>
+<td align="left">her2_brca</td>
+<td align="left"></td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA535</td>
+<td align="left">Tumour</td>
+<td align="right">1690</td>
+<td align="right">0.0539370</td>
+<td align="right">0.0161717</td>
+<td align="right">0.1028884</td>
+<td align="right">5</td>
+<td align="left">tnbc</td>
+<td align="left">HRD-Dup</td>
+<td align="left">Somatic</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA604</td>
+<td align="left">Tumour</td>
+<td align="right">1986</td>
+<td align="right">0.0469510</td>
+<td align="right">0.0219107</td>
+<td align="right">0.1123130</td>
+<td align="right">6</td>
+<td align="left">tnbc</td>
+<td align="left">FBI</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA609</td>
+<td align="left">Tumour</td>
+<td align="right">4214</td>
+<td align="right">0.0316245</td>
+<td align="right">0.0112894</td>
+<td align="right">0.1041397</td>
+<td align="right">10</td>
+<td align="left">tnbc</td>
+<td align="left">FBI (trt for prev. disease)</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA1035</td>
+<td align="left">Tumour</td>
+<td align="right">2439</td>
+<td align="right">0.0327620</td>
+<td align="right">0.0136206</td>
+<td align="right">0.1131067</td>
+<td align="right">6</td>
+<td align="left">tnbc</td>
+<td align="left">APOBEC</td>
+<td align="left">Germline</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA1047</td>
+<td align="left">Tumour</td>
+<td align="right">335</td>
+<td align="right">0.0946800</td>
+<td align="right">0.0347132</td>
+<td align="right">0.1725915</td>
+<td align="right">1</td>
+<td align="left">hgsc</td>
+<td align="left">TD</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA1049</td>
+<td align="left">Tumour</td>
+<td align="right">1149</td>
+<td align="right">0.0838010</td>
+<td align="right">0.0429708</td>
+<td align="right">0.1910808</td>
+<td align="right">2</td>
+<td align="left">hgsc</td>
+<td align="left">FBI</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA1050</td>
+<td align="left">Tumour</td>
+<td align="right">488</td>
+<td align="right">0.0929435</td>
+<td align="right">0.0353335</td>
+<td align="right">0.1916958</td>
+<td align="right">3</td>
+<td align="left">hgsc</td>
+<td align="left">HRD-Dup</td>
+<td align="left">Somatic</td>
+<td align="left">FALSE</td>
+<td align="left">Germline</td>
+</tr>
+<tr class="odd">
+<td align="left">SA1051</td>
+<td align="left">Tumour</td>
+<td align="right">843</td>
+<td align="right">0.0811540</td>
+<td align="right">0.0261629</td>
+<td align="right">0.1710035</td>
+<td align="right">2</td>
+<td align="left">hgsc</td>
+<td align="left">HRD-Dup</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA1052</td>
+<td align="left">Tumour</td>
+<td align="right">366</td>
+<td align="right">0.0978930</td>
+<td align="right">0.0249373</td>
+<td align="right">0.1545596</td>
+<td align="right">2</td>
+<td align="left">hgsc</td>
+<td align="left">HRD-Dup</td>
+<td align="left">Germline</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA1053</td>
+<td align="left">Tumour</td>
+<td align="right">697</td>
+<td align="right">0.0547340</td>
+<td align="right">0.0213614</td>
+<td align="right">0.1241570</td>
+<td align="right">3</td>
+<td align="left">hgsc</td>
+<td align="left">HRD-Dup</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA1091</td>
+<td align="left">Tumour</td>
+<td align="right">472</td>
+<td align="right">0.0630495</td>
+<td align="right">0.0321782</td>
+<td align="right">0.1123712</td>
+<td align="right">1</td>
+<td align="left">hgsc</td>
+<td align="left">L-Del</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA1093</td>
+<td align="left">Tumour</td>
+<td align="right">325</td>
+<td align="right">0.0713920</td>
+<td align="right">0.0308796</td>
+<td align="right">0.1131110</td>
+<td align="right">1</td>
+<td align="left">hgsc</td>
+<td align="left">TD</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA1096</td>
+<td align="left">Tumour</td>
+<td align="right">246</td>
+<td align="right">0.0585295</td>
+<td align="right">0.0349121</td>
+<td align="right">0.0942208</td>
+<td align="right">1</td>
+<td align="left">hgsc</td>
+<td align="left">FBI</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA1142</td>
+<td align="left">Tumour</td>
+<td align="right">1981</td>
+<td align="right">0.0299960</td>
+<td align="right">0.0119560</td>
+<td align="right">0.0704315</td>
+<td align="right">2</td>
+<td align="left">tnbc</td>
+<td align="left">L-Del</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+</tr>
+<tr class="even">
+<td align="left">SA1162</td>
+<td align="left">Tumour</td>
+<td align="right">96</td>
+<td align="right">0.0732770</td>
+<td align="right">0.0150470</td>
+<td align="right">0.2044646</td>
+<td align="right">2</td>
+<td align="left">hgsc</td>
+<td align="left">FBI</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA1181</td>
+<td align="left">Tumour</td>
+<td align="right">309</td>
+<td align="right">0.0443250</td>
+<td align="right">0.0189489</td>
+<td align="right">0.0923189</td>
+<td align="right">1</td>
+<td align="left">hgsc</td>
+<td align="left">HRD-Dup</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">SA1182</td>
+<td align="left">Tumour</td>
+<td align="right">181</td>
+<td align="right">0.1295050</td>
+<td align="right">0.0605150</td>
+<td align="right">0.2166730</td>
+<td align="right">1</td>
+<td align="left">hgsc</td>
+<td align="left">FBI</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">SA1184</td>
+<td align="left">Tumour</td>
+<td align="right">380</td>
+<td align="right">0.0435360</td>
+<td align="right">0.0185266</td>
+<td align="right">0.1042234</td>
+<td align="right">1</td>
+<td align="left">hgsc</td>
+<td align="left">HRD-Dup</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="even">
+<td align="left">DG1134</td>
+<td align="left">Tumour</td>
+<td align="right">63</td>
+<td align="right">0.0524290</td>
+<td align="right">0.0310586</td>
+<td align="right">0.0632035</td>
+<td align="right">1</td>
+<td align="left">hgsc</td>
+<td align="left">FBI</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+<tr class="odd">
+<td align="left">DG1197</td>
+<td align="left">Tumour</td>
+<td align="right">49</td>
+<td align="right">0.0430680</td>
+<td align="right">0.0295400</td>
+<td align="right">0.0621844</td>
+<td align="right">1</td>
+<td align="left">hgsc</td>
+<td align="left">FBI</td>
+<td align="left">Somatic</td>
+<td align="left">FALSE</td>
+<td align="left">Somatic</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="single-cell-example" class="section level2">
-<h2><span class="header-section-number">2.2</span> Single cell example</h2>
-<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-2-1.png" width="672" /><img src="schnapps_paper_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
-</div>
-<div id="unphased-vs-phased" class="section level2">
-<h2><span class="header-section-number">2.3</span> Unphased vs phased</h2>
-<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<h2><span class="header-section-number">2.3</span> Single cell example</h2>
+<p>Here is an example allele specific copy number profile from a single cell.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">cells &lt;-<span class="st"> </span>OV2295<span class="op">$</span>CNVmetrics <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(coverage_breadth)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(coverage_breadth <span class="op">&lt;</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">    </span><span class="fl">0.1</span>)</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">celldat &lt;-<span class="st"> </span><span class="kw">plotCNprofileBAF</span>(OV2295<span class="op">$</span>ascn<span class="op">$</span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(state_phase <span class="op">!=</span><span class="st"> &quot;B-LOH&quot;</span>), </a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">    <span class="dt">y_axis_trans =</span> <span class="st">&quot;squashy&quot;</span>, <span class="dt">maxCN =</span> <span class="dv">20</span>, <span class="dt">cellid =</span> cells<span class="op">$</span>cell_id[<span class="dv">5</span>], <span class="dt">pointsize =</span> <span class="fl">0.6</span>, </a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">    <span class="dt">returnlist =</span> <span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">BAFcolpal &lt;-<span class="st"> </span><span class="kw">scCNphase_cols</span>()[<span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)]</a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">legends &lt;-<span class="st"> </span>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(<span class="ot">NULL</span>, <span class="kw">get_legend</span>(celldat<span class="op">$</span>CN <span class="op">+</span><span class="st"> </span><span class="kw">theme_cowplot</span>(<span class="dt">font_size =</span> <span class="dv">12</span>, </a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">    <span class="dt">rel_small =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="kw">guides</span>(<span class="dt">col =</span> <span class="kw">guide_legend</span>(<span class="st">&quot;CN&quot;</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">override.aes =</span> <span class="kw">list</span>(<span class="dt">alpha =</span> <span class="dv">1</span>, </a>
+<a class="sourceLine" id="cb6-11" data-line-number="11">    <span class="dt">size =</span> <span class="fl">2.5</span>, <span class="dt">shape =</span> <span class="dv">15</span>)))), <span class="kw">get_legend</span>(celldat<span class="op">$</span>BAF <span class="op">+</span><span class="st"> </span><span class="kw">theme_cowplot</span>(<span class="dt">font_size =</span> <span class="dv">12</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="st">    </span><span class="kw">guides</span>(<span class="dt">col =</span> <span class="kw">guide_legend</span>(<span class="st">&quot;ASCN&quot;</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">override.aes =</span> <span class="kw">list</span>(<span class="dt">alpha =</span> <span class="dv">1</span>, <span class="dt">size =</span> <span class="fl">2.5</span>, </a>
+<a class="sourceLine" id="cb6-13" data-line-number="13">        <span class="dt">shape =</span> <span class="dv">15</span>)))), <span class="ot">NULL</span>, <span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">rel_widths =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>))</a>
+<a class="sourceLine" id="cb6-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb6-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb6-16" data-line-number="16">(gcell &lt;-<span class="st"> </span>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(celldat<span class="op">$</span>BAF <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>), celldat<span class="op">$</span>CN <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="st">    </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span><span class="st"> </span>ggplot2<span class="op">::</span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>, </a>
+<a class="sourceLine" id="cb6-18" data-line-number="18">    <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">20</span>), <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">24</span>), <span class="dt">trans =</span> <span class="st">&quot;squashy&quot;</span>), cowplot<span class="op">::</span><span class="kw">plot_grid</span>(legends, </a>
+<a class="sourceLine" id="cb6-19" data-line-number="19">    <span class="ot">NULL</span>, <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>)), <span class="dt">align =</span> <span class="st">&quot;v&quot;</span>, <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="dv">1</span>, </a>
+<a class="sourceLine" id="cb6-20" data-line-number="20">    <span class="dv">1</span>, <span class="fl">0.22</span>)))</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-4-1.png" width="1440" /></p>
 </div>
 <div id="snvs" class="section level2">
 <h2><span class="header-section-number">2.4</span> SNVs</h2>
-<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>To confirm that the allele specific inference is accurate we looked at single nucleotide variant allele frequencies per allele specific copy number state. Here, I’ll read in the SNV data and map the SNVs to allele specific states.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">snv &lt;-<span class="st"> </span><span class="kw">snv_states</span>(<span class="kw">select</span>(OV2295<span class="op">$</span>SNVCN, chr, start, ref, alt, cell_id, ref_counts, </a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">    alt_counts) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">end =</span> start), OV2295<span class="op">$</span>ascn<span class="op">$</span>data) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">na.omit</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(<span class="kw">select</span>(OV2295<span class="op">$</span>CNVmetrics, </a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">    sample_id, cell_id))</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">blacklist &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&quot;data/dlp_snv_blacklist.csv&quot;</span>)</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">snv_summary &lt;-<span class="st"> </span>snv <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(state_AS_phased, state, chr, start, ref, alt, LOH, </a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">    Maj, Min, sample_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">ref_counts =</span> <span class="kw">sum</span>(ref_counts), <span class="dt">alt_counts =</span> <span class="kw">sum</span>(alt_counts)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="st">    </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">totcounts =</span> alt_counts <span class="op">+</span><span class="st"> </span>ref_counts) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">type =</span> <span class="kw">case_when</span>(Maj <span class="op">==</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="st">    </span>Min <span class="op">~</span><span class="st"> &quot;Balanced&quot;</span>, Min <span class="op">==</span><span class="st"> </span><span class="dv">0</span> <span class="op">~</span><span class="st"> &quot;LOH&quot;</span>, Min <span class="op">!=</span><span class="st"> </span>Maj <span class="op">~</span><span class="st"> &quot;Unbalanced&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">VAF =</span> alt_counts<span class="op">/</span>(totcounts)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="st">    </span><span class="kw">group_by</span>(chr, start, ref) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">n_sample_id =</span> <span class="kw">length</span>(<span class="kw">unique</span>(sample_id))) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="st">    </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(., OV2295<span class="op">$</span>SNVannot) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(max_strelka_score <span class="op">&gt;</span><span class="st"> </span><span class="dv">20</span> <span class="op">&amp;</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="st">    </span>max_museq_score <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span>start <span class="op">%in%</span><span class="st"> </span>blacklist<span class="op">$</span>start) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(<span class="op">!</span><span class="kw">is.na</span>(mappability))</a></code></pre></div>
+<p>Now we can plot the distributions.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">library</span>(ggridges)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">dfdata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;Balanced&quot;</span>, <span class="st">&quot;LOH&quot;</span>, </a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">                              <span class="st">&quot;Unbalanced&quot;</span>,<span class="st">&quot;Unbalanced&quot;</span>,<span class="st">&quot;Unbalanced&quot;</span>,<span class="st">&quot;Unbalanced&quot;</span>), </a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">                     <span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="fl">1.0</span>, </a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">                           <span class="dv">1</span><span class="op">/</span><span class="dv">3</span>, <span class="dv">2</span><span class="op">/</span><span class="dv">3</span>, <span class="dv">1</span><span class="op">/</span><span class="dv">4</span>, <span class="dv">3</span><span class="op">/</span><span class="dv">4</span>))</a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">dfdata &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;Balanced&quot;</span>, <span class="st">&quot;LOH&quot;</span>), </a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">                     <span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="fl">1.0</span>))</a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11">dat_text &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">type =</span> <span class="kw">c</span>(<span class="st">&quot;Unbalanced&quot;</span>, <span class="st">&quot;Unbalanced&quot;</span>), <span class="dt">label =</span> <span class="kw">c</span>(<span class="st">&quot;Early&quot;</span>, <span class="st">&quot;Late&quot;</span>), <span class="dt">x =</span> <span class="kw">c</span>(<span class="fl">0.85</span>, <span class="fl">0.15</span>))</a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13">x &lt;-<span class="st"> </span>snv_summary <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-14" data-line-number="14"><span class="st">  </span><span class="kw">filter</span>(n_sample_id <span class="op">==</span><span class="st"> </span><span class="dv">3</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-15" data-line-number="15"><span class="st">  </span><span class="co">#filter(clone_id == &quot;D&quot;) %&gt;%</span></a>
+<a class="sourceLine" id="cb8-16" data-line-number="16"><span class="st">  </span><span class="kw">group_by</span>(state_AS_phased, sample_id) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-17" data-line-number="17"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-18" data-line-number="18"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-19" data-line-number="19"><span class="st">  </span><span class="kw">filter</span>(state <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span> <span class="op">&amp;</span><span class="st"> </span>state <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, totcounts <span class="op">&gt;</span><span class="st"> </span><span class="dv">19</span>, n <span class="op">&gt;</span><span class="st"> </span><span class="dv">200</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-20" data-line-number="20"><span class="st">  </span><span class="co">#filter(VAF &gt; 0.1) %&gt;%</span></a>
+<a class="sourceLine" id="cb8-21" data-line-number="21"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">LOH =</span> <span class="kw">ifelse</span>(LOH <span class="op">==</span><span class="st"> &quot;LOH&quot;</span>, <span class="st">&quot;YES&quot;</span>, LOH)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-22" data-line-number="22"><span class="st">  </span><span class="kw">add_count</span>(state_AS_phased) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-23" data-line-number="23"><span class="st">  </span><span class="kw">filter</span>(nn <span class="op">&gt;</span><span class="st"> </span><span class="dv">50</span>)</a>
+<a class="sourceLine" id="cb8-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb8-25" data-line-number="25">(gVAF &lt;-<span class="st"> </span>snv_summary <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-26" data-line-number="26"><span class="st">  </span><span class="kw">filter</span>(n_sample_id <span class="op">==</span><span class="st"> </span><span class="dv">3</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-27" data-line-number="27"><span class="st">  </span><span class="co">#filter(clone_id == &quot;D&quot;) %&gt;%</span></a>
+<a class="sourceLine" id="cb8-28" data-line-number="28"><span class="st">  </span><span class="kw">filter</span>(is_dbsnp <span class="op">==</span><span class="st"> </span><span class="dv">0</span>, mappability <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.99</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-29" data-line-number="29"><span class="st">  </span><span class="kw">group_by</span>(state_AS_phased, sample_id) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-30" data-line-number="30"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-31" data-line-number="31"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-32" data-line-number="32"><span class="st">  </span><span class="kw">filter</span>(state <span class="op">&lt;</span><span class="st"> </span><span class="dv">10</span> <span class="op">&amp;</span><span class="st"> </span>state <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>, totcounts <span class="op">&gt;</span><span class="st"> </span><span class="dv">19</span>, n <span class="op">&gt;</span><span class="st"> </span><span class="dv">100</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-33" data-line-number="33"><span class="st">  </span><span class="co">#filter(VAF &gt; 0.1) %&gt;%</span></a>
+<a class="sourceLine" id="cb8-34" data-line-number="34"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">LOH =</span> <span class="kw">ifelse</span>(LOH <span class="op">==</span><span class="st"> &quot;LOH&quot;</span>, <span class="st">&quot;YES&quot;</span>, LOH)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-35" data-line-number="35"><span class="st">  </span><span class="kw">add_count</span>(state_AS_phased) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-36" data-line-number="36"><span class="st">  </span><span class="kw">filter</span>(nn <span class="op">&gt;</span><span class="st"> </span><span class="dv">100</span>) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb8-37" data-line-number="37"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">fill =</span> type, <span class="dt">col =</span> type)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-38" data-line-number="38"><span class="st">  </span><span class="co">#geom_density_ridges(scale = 2, alpha = 0.3, stat = &quot;binline&quot;, bins = 50) +</span></a>
+<a class="sourceLine" id="cb8-39" data-line-number="39"><span class="st">  </span><span class="kw">geom_density_ridges</span>(<span class="kw">aes</span>(<span class="dt">y =</span> state_AS_phased, <span class="dt">x =</span> VAF), <span class="dt">scale =</span> <span class="dv">2</span>, <span class="dt">alpha =</span> <span class="fl">0.3</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-40" data-line-number="40"><span class="st">  </span><span class="kw">theme_ridges</span>(<span class="dt">center_axis_labels =</span> <span class="ot">TRUE</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-41" data-line-number="41"><span class="st">  </span><span class="kw">geom_vline</span>(<span class="dt">data =</span> dfdata, <span class="kw">aes</span>(<span class="dt">xintercept =</span> x), <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;grey40&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-42" data-line-number="42"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="fl">0.0</span>,  <span class="fl">0.5</span>,  <span class="fl">1.0</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-43" data-line-number="43"><span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;grey40&quot;</span>, <span class="st">&quot;#025767&quot;</span>, <span class="st">&quot;#53AFC0&quot;</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-44" data-line-number="44"><span class="st">  </span><span class="kw">scale_fill_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;grey40&quot;</span>, <span class="st">&quot;#025767&quot;</span>, <span class="st">&quot;#53AFC0&quot;</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-45" data-line-number="45"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Variant allele frequency (somatic mutations)&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-46" data-line-number="46"><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Allele specific state&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-47" data-line-number="47"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>type, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-48" data-line-number="48"><span class="st">  </span><span class="kw">panel_border</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-49" data-line-number="49"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb8-50" data-line-number="50"><span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> dat_text, <span class="kw">aes</span>(<span class="dt">label =</span> label, <span class="dt">x =</span> x, <span class="dt">y =</span> <span class="fl">9.3</span>), <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>))</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 </div>
 <div id="baf-violin" class="section level2">
 <h2><span class="header-section-number">2.5</span> BAF violin</h2>
+<p>Another sanity check is to plot the BAF distribution per state.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">gBAF &lt;-<span class="st"> </span><span class="kw">plotBAFperstate</span>(OV2295<span class="op">$</span>hscn<span class="op">$</span>data <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(phase <span class="op">!=</span><span class="st"> &quot;B&quot;</span>, state <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>), <span class="dt">maxstate =</span> <span class="dv">10</span>, </a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">    <span class="dt">minfrac =</span> <span class="dv">0</span>) <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.75</span>), <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>, </a>
+<a class="sourceLine" id="cb9-3" data-line-number="3">    <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>, <span class="fl">0.7</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Allele specific state&quot;</span>)</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">gBAF</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 </div>
 <div id="heatmaps" class="section level2">
 <h2><span class="header-section-number">2.6</span> Heatmaps</h2>
+<p>Now I’ll plot the heatmaps.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">library</span>(grid)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="kw">library</span>(ComplexHeatmap)</a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="kw">source</span>(<span class="kw">here</span>(<span class="st">&quot;src/tree_utils.R&quot;</span>))</a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">chroms &lt;-<span class="st"> </span><span class="kw">unique</span>(OV2295<span class="op">$</span>hscn<span class="op">$</span>data<span class="op">$</span>chr)</a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">chroms &lt;-<span class="st"> </span>chroms[<span class="op">!</span>chroms <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;14&quot;</span>, <span class="st">&quot;16&quot;</span>, <span class="st">&quot;18&quot;</span>, <span class="st">&quot;19&quot;</span>, <span class="st">&quot;21&quot;</span>, <span class="st">&quot;22&quot;</span>)]</a>
+<a class="sourceLine" id="cb10-7" data-line-number="7">mysample &lt;-<span class="st"> &quot;2295&quot;</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9">tree &lt;-<span class="st"> </span><span class="kw">get_and_format_tree</span>(<span class="st">&quot;2295&quot;</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;2295&quot;</code></pre>
-<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">tree &lt;-<span class="st"> </span>ape<span class="op">::</span><span class="kw">compute.brlen</span>(tree, <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">mycl &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">cell_id =</span> tree<span class="op">$</span>tip.label, <span class="dt">clone_id =</span> <span class="st">&quot;0&quot;</span>)</a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4">cndat &lt;-<span class="st"> </span>OV2295<span class="op">$</span>ascn<span class="op">$</span>data</a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6">hm_state &lt;-<span class="st"> </span><span class="kw">plotHeatmap</span>(cndat, </a>
+<a class="sourceLine" id="cb12-7" data-line-number="7">                        <span class="dt">chrlabels =</span> chroms,</a>
+<a class="sourceLine" id="cb12-8" data-line-number="8">                        <span class="dt">spacer_cols =</span> <span class="dv">10</span>,</a>
+<a class="sourceLine" id="cb12-9" data-line-number="9">                        <span class="dt">tree =</span> tree,</a>
+<a class="sourceLine" id="cb12-10" data-line-number="10">                        <span class="dt">plotcol =</span> <span class="st">&quot;state&quot;</span>, </a>
+<a class="sourceLine" id="cb12-11" data-line-number="11">                        <span class="dt">sample_label_idx =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb12-12" data-line-number="12">                        <span class="co">#library_mapping = lab_mapping,</span></a>
+<a class="sourceLine" id="cb12-13" data-line-number="13">                        <span class="dt">show_clone_label =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-14" data-line-number="14">                        <span class="dt">reorderclusters =</span> <span class="ot">FALSE</span>, </a>
+<a class="sourceLine" id="cb12-15" data-line-number="15">                        <span class="dt">clusters =</span> mycl,</a>
+<a class="sourceLine" id="cb12-16" data-line-number="16">                        <span class="dt">normalize_tree =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-17" data-line-number="17">                        <span class="dt">plottree =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb12-18" data-line-number="18">                        <span class="dt">plotfrequency =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-19" data-line-number="19">                        )</a>
+<a class="sourceLine" id="cb12-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb12-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb12-22" data-line-number="22">hm_copy &lt;-<span class="st"> </span><span class="kw">plotHeatmap</span>(cndat,</a>
+<a class="sourceLine" id="cb12-23" data-line-number="23">                       <span class="dt">chrlabels =</span> chroms,</a>
+<a class="sourceLine" id="cb12-24" data-line-number="24">                        <span class="dt">spacer_cols =</span> <span class="dv">10</span>,</a>
+<a class="sourceLine" id="cb12-25" data-line-number="25">                        <span class="dt">tree =</span> tree,</a>
+<a class="sourceLine" id="cb12-26" data-line-number="26">                        <span class="dt">plotcol =</span> <span class="st">&quot;copy&quot;</span>, </a>
+<a class="sourceLine" id="cb12-27" data-line-number="27">                        <span class="dt">sample_label_idx =</span> <span class="dv">2</span>,</a>
+<a class="sourceLine" id="cb12-28" data-line-number="28">                        <span class="co">#library_mapping = lab_mapping,</span></a>
+<a class="sourceLine" id="cb12-29" data-line-number="29">                        <span class="dt">show_library_label =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-30" data-line-number="30">                        <span class="dt">show_clone_label =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-31" data-line-number="31">                        <span class="dt">reorderclusters =</span> <span class="ot">TRUE</span>, </a>
+<a class="sourceLine" id="cb12-32" data-line-number="32">                        <span class="dt">clusters =</span> mycl,</a>
+<a class="sourceLine" id="cb12-33" data-line-number="33">                        <span class="dt">normalize_tree =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-34" data-line-number="34">                        <span class="dt">plottree =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-35" data-line-number="35">                        <span class="dt">plotfrequency =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-36" data-line-number="36">                        )</a>
+<a class="sourceLine" id="cb12-37" data-line-number="37"></a>
+<a class="sourceLine" id="cb12-38" data-line-number="38">hm_BAF &lt;-<span class="st"> </span><span class="kw">plotHeatmap</span>(cndat,</a>
+<a class="sourceLine" id="cb12-39" data-line-number="39">                        <span class="dt">chrlabels =</span> chroms,</a>
+<a class="sourceLine" id="cb12-40" data-line-number="40">                        <span class="dt">spacer_cols =</span> <span class="dv">10</span>,</a>
+<a class="sourceLine" id="cb12-41" data-line-number="41">                        <span class="dt">tree =</span> tree,</a>
+<a class="sourceLine" id="cb12-42" data-line-number="42">                        <span class="dt">plotcol =</span> <span class="st">&quot;state_BAF&quot;</span>, </a>
+<a class="sourceLine" id="cb12-43" data-line-number="43">                        <span class="dt">sample_label_idx =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb12-44" data-line-number="44">                        <span class="dt">show_library_label =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-45" data-line-number="45">                        <span class="co">#library_mapping = lab_mapping,</span></a>
+<a class="sourceLine" id="cb12-46" data-line-number="46">                        <span class="dt">show_clone_label =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-47" data-line-number="47">                        <span class="dt">reorderclusters =</span> <span class="ot">TRUE</span>, </a>
+<a class="sourceLine" id="cb12-48" data-line-number="48">                        <span class="dt">clusters =</span> mycl,</a>
+<a class="sourceLine" id="cb12-49" data-line-number="49">                        <span class="dt">normalize_tree =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-50" data-line-number="50">                        <span class="dt">plottree =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-51" data-line-number="51">                        <span class="dt">plotfrequency =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-52" data-line-number="52">                        )</a>
+<a class="sourceLine" id="cb12-53" data-line-number="53"></a>
+<a class="sourceLine" id="cb12-54" data-line-number="54">hm_BAF2 &lt;-<span class="st"> </span><span class="kw">plotHeatmap</span>( OV2295<span class="op">$</span>hscn<span class="op">$</span>data,</a>
+<a class="sourceLine" id="cb12-55" data-line-number="55">                        <span class="dt">chrlabels =</span> chroms,</a>
+<a class="sourceLine" id="cb12-56" data-line-number="56">                        <span class="dt">spacer_cols =</span> <span class="dv">10</span>,</a>
+<a class="sourceLine" id="cb12-57" data-line-number="57">                        <span class="dt">tree =</span> tree,</a>
+<a class="sourceLine" id="cb12-58" data-line-number="58">                        <span class="dt">plotcol =</span> <span class="st">&quot;state_BAF&quot;</span>, </a>
+<a class="sourceLine" id="cb12-59" data-line-number="59">                        <span class="dt">sample_label_idx =</span> <span class="dv">1</span>,</a>
+<a class="sourceLine" id="cb12-60" data-line-number="60">                        <span class="dt">show_library_label =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-61" data-line-number="61">                        <span class="co">#library_mapping = lab_mapping,</span></a>
+<a class="sourceLine" id="cb12-62" data-line-number="62">                        <span class="dt">show_clone_label =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-63" data-line-number="63">                        <span class="dt">reorderclusters =</span> <span class="ot">TRUE</span>, </a>
+<a class="sourceLine" id="cb12-64" data-line-number="64">                        <span class="dt">clusters =</span> mycl,</a>
+<a class="sourceLine" id="cb12-65" data-line-number="65">                        <span class="dt">normalize_tree =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-66" data-line-number="66">                        <span class="dt">plottree =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-67" data-line-number="67">                        <span class="dt">plotfrequency =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-68" data-line-number="68">                        )</a>
+<a class="sourceLine" id="cb12-69" data-line-number="69"></a>
+<a class="sourceLine" id="cb12-70" data-line-number="70">hm_BAFraw &lt;-<span class="st"> </span><span class="kw">plotHeatmap</span>(cndat,</a>
+<a class="sourceLine" id="cb12-71" data-line-number="71">                         <span class="dt">chrlabels =</span> chroms,</a>
+<a class="sourceLine" id="cb12-72" data-line-number="72">                        <span class="dt">spacer_cols =</span> <span class="dv">10</span>,</a>
+<a class="sourceLine" id="cb12-73" data-line-number="73">                        <span class="dt">tree =</span> tree,</a>
+<a class="sourceLine" id="cb12-74" data-line-number="74">                        <span class="dt">plotcol =</span> <span class="st">&quot;BAF&quot;</span>, </a>
+<a class="sourceLine" id="cb12-75" data-line-number="75">                        <span class="dt">sample_label_idx =</span> <span class="dv">2</span>,</a>
+<a class="sourceLine" id="cb12-76" data-line-number="76">                        <span class="dt">show_library_label =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-77" data-line-number="77">                        <span class="co">#library_mapping = lab_mapping,</span></a>
+<a class="sourceLine" id="cb12-78" data-line-number="78">                        <span class="dt">show_clone_label =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-79" data-line-number="79">                        <span class="dt">reorderclusters =</span> <span class="ot">TRUE</span>, </a>
+<a class="sourceLine" id="cb12-80" data-line-number="80">                        <span class="dt">clusters =</span> mycl,</a>
+<a class="sourceLine" id="cb12-81" data-line-number="81">                        <span class="dt">normalize_tree =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-82" data-line-number="82">                        <span class="dt">plottree =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-83" data-line-number="83">                        <span class="dt">plotfrequency =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb12-84" data-line-number="84">                        )</a>
+<a class="sourceLine" id="cb12-85" data-line-number="85"></a>
+<a class="sourceLine" id="cb12-86" data-line-number="86">w =<span class="st"> </span><span class="dv">40</span></a>
+<a class="sourceLine" id="cb12-87" data-line-number="87">h =<span class="st"> </span><span class="dv">13</span><span class="op">/</span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb12-88" data-line-number="88">hm &lt;-<span class="st"> </span>grid<span class="op">::</span><span class="kw">grid.grabExpr</span>(ComplexHeatmap<span class="op">::</span><span class="kw">draw</span>(hm_state <span class="op">+</span><span class="st"> </span>hm_BAF,  </a>
+<a class="sourceLine" id="cb12-89" data-line-number="89">                                              <span class="dt">ht_gap =</span> <span class="kw">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;cm&quot;</span>),</a>
+<a class="sourceLine" id="cb12-90" data-line-number="90">                                             <span class="co">#column_title = &quot;Chr20&quot;, </span></a>
+<a class="sourceLine" id="cb12-91" data-line-number="91">                                             <span class="co">#column_title_gp = gpar(fontsize = 20),</span></a>
+<a class="sourceLine" id="cb12-92" data-line-number="92">                                             <span class="dt">heatmap_legend_side =</span> <span class="st">&quot;right&quot;</span>, </a>
+<a class="sourceLine" id="cb12-93" data-line-number="93">                                             <span class="dt">annotation_legend_side =</span> <span class="st">&quot;right&quot;</span>,</a>
+<a class="sourceLine" id="cb12-94" data-line-number="94">                                             <span class="dt">show_heatmap_legend =</span> <span class="ot">TRUE</span>), </a>
+<a class="sourceLine" id="cb12-95" data-line-number="95">                                                <span class="dt">width =</span> w, <span class="dt">height =</span> h)</a>
+<a class="sourceLine" id="cb12-96" data-line-number="96"></a>
+<a class="sourceLine" id="cb12-97" data-line-number="97">cowplot<span class="op">::</span><span class="kw">plot_grid</span>(hm)</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-8-1.png" width="1440" /></p>
 </div>
 <div id="main-figure" class="section level2">
 <h2><span class="header-section-number">2.7</span> Main Figure</h2>
-<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-</div>
-<div id="snvs-in-8q-and-10p" class="section level2">
-<h2><span class="header-section-number">2.8</span> SNVs in 8q and 10p</h2>
-<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<pre><code>## # A tibble: 224 x 8
-##    chr     start     end state state_min   BAF state_phase  copy
-##    &lt;chr&gt;   &lt;int&gt;   &lt;int&gt; &lt;int&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;
-##  1 8     2000001 2500000     2         1 0.481 Balanced     2.21
-##  2 8     2500001 3000000     2         1 0.484 Balanced     1.93
-##  3 8     3000001 3500000     2         1 0.494 Balanced     1.96
-##  4 8     3500001 4000000     2         1 0.362 Balanced     1.60
-##  5 8     4000001 4500000     2         1 0.488 Balanced     1.96
-##  6 8     4500001 5000000     2         1 0.495 Balanced     1.94
-##  7 8     5000001 5500000     2         1 0.489 Balanced     1.96
-##  8 8     5500001 6000000     2         1 0.5   Balanced     1.99
-##  9 8     6000001 6500000     2         1 0.506 Balanced     2.01
-## 10 8     8000001 8500000     2         1 0.5   Balanced     1.92
-## # … with 214 more rows</code></pre>
+<p>Here I’ll contruct the final figure used in the paper.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">library</span>(cowplot)</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">library</span>(grid)</a>
+<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="kw">library</span>(ComplexHeatmap)</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">top1 &lt;-<span class="st"> </span>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(gcell, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>))</a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">top2 &lt;-<span class="st"> </span>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(gBAF, gVAF, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>))</a>
+<a class="sourceLine" id="cb13-6" data-line-number="6">w =<span class="st"> </span><span class="dv">40</span></a>
+<a class="sourceLine" id="cb13-7" data-line-number="7">h =<span class="st"> </span><span class="dv">13</span><span class="op">/</span><span class="dv">3</span></a>
+<a class="sourceLine" id="cb13-8" data-line-number="8">hm_cowp &lt;-<span class="st"> </span>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(<span class="ot">NULL</span>, hm, <span class="dt">rel_widths =</span> <span class="kw">c</span>(<span class="fl">0.04</span>, <span class="dv">1</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;d&quot;</span>, </a>
+<a class="sourceLine" id="cb13-9" data-line-number="9">    <span class="st">&quot;&quot;</span>))</a>
+<a class="sourceLine" id="cb13-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb13-11" data-line-number="11">gall &lt;-<span class="st"> </span>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(top1, top2, hm_cowp, <span class="dt">ncol =</span> <span class="dv">1</span>)</a>
+<a class="sourceLine" id="cb13-12" data-line-number="12">gall</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-9-1.png" width="1440" /></p>
 </div>
 <div id="rna-vs-dna" class="section level2">
-<h2><span class="header-section-number">2.9</span> RNA vs DNA</h2>
+<h2><span class="header-section-number">2.8</span> RNA vs DNA</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1">rna &lt;-<span class="st"> </span><span class="kw">fread</span>(<span class="st">&quot;/work/shah/william1/projects/scRNAseq_AS/results/ASinference/perpatient_dp/2295.csv.gz&quot;</span>)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">rnacells &lt;-<span class="st"> </span>rna <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"><span class="st">  </span><span class="kw">group_by</span>(cell_id) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5"><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">x =</span> <span class="kw">sum</span>(total)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-6" data-line-number="6"><span class="st">  </span><span class="kw">arrange</span>(<span class="kw">desc</span>(x))</a>
+<a class="sourceLine" id="cb14-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb14-8" data-line-number="8">hmrna &lt;-<span class="st"> </span><span class="kw">plotHeatmapBAF</span>(rna <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb14-9" data-line-number="9"><span class="st">                          </span><span class="kw">filter</span>(cell_id <span class="op">%in%</span><span class="st"> </span>rnacells<span class="op">$</span>cell_id[<span class="dv">1</span><span class="op">:</span><span class="dv">2000</span>]),</a>
+<a class="sourceLine" id="cb14-10" data-line-number="10">                        <span class="dt">arms =</span> <span class="kw">unique</span>(rna<span class="op">$</span>chrarm))</a>
+<a class="sourceLine" id="cb14-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb14-12" data-line-number="12">chrarm &lt;-<span class="st"> </span>schnapps<span class="op">::</span><span class="kw">per_chrarm_cn</span>(OV2295<span class="op">$</span>hscn<span class="op">$</span>data, <span class="dt">arms =</span> <span class="kw">unique</span>(rna<span class="op">$</span>chrarm))</a>
+<a class="sourceLine" id="cb14-13" data-line-number="13">hmdna &lt;-<span class="st"> </span><span class="kw">plotHeatmapBAF</span>(OV2295<span class="op">$</span>hscn<span class="op">$</span>data, <span class="dt">arms =</span> <span class="kw">unique</span>(rna<span class="op">$</span>chrarm))</a>
+<a class="sourceLine" id="cb14-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb14-15" data-line-number="15">hm_dnag &lt;-<span class="st"> </span>grid<span class="op">::</span><span class="kw">grid.grabExpr</span>(ComplexHeatmap<span class="op">::</span><span class="kw">draw</span>(hmdna,  </a>
+<a class="sourceLine" id="cb14-16" data-line-number="16">                                              <span class="dt">ht_gap =</span> <span class="kw">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;cm&quot;</span>),</a>
+<a class="sourceLine" id="cb14-17" data-line-number="17">                                             <span class="co">#column_title = &quot;Chr20&quot;, </span></a>
+<a class="sourceLine" id="cb14-18" data-line-number="18">                                             <span class="co">#column_title_gp = gpar(fontsize = 20),</span></a>
+<a class="sourceLine" id="cb14-19" data-line-number="19">                                             <span class="dt">heatmap_legend_side =</span> <span class="st">&quot;right&quot;</span>, </a>
+<a class="sourceLine" id="cb14-20" data-line-number="20">                                             <span class="dt">annotation_legend_side =</span> <span class="st">&quot;right&quot;</span>,</a>
+<a class="sourceLine" id="cb14-21" data-line-number="21">                                             <span class="dt">show_heatmap_legend =</span> <span class="ot">TRUE</span>), </a>
+<a class="sourceLine" id="cb14-22" data-line-number="22">                                                <span class="dt">width =</span> w, <span class="dt">height =</span> h)</a>
+<a class="sourceLine" id="cb14-23" data-line-number="23"></a>
+<a class="sourceLine" id="cb14-24" data-line-number="24">hm_rnag &lt;-<span class="st"> </span>grid<span class="op">::</span><span class="kw">grid.grabExpr</span>(ComplexHeatmap<span class="op">::</span><span class="kw">draw</span>(hmrna,  </a>
+<a class="sourceLine" id="cb14-25" data-line-number="25">                                              <span class="dt">ht_gap =</span> <span class="kw">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;cm&quot;</span>),</a>
+<a class="sourceLine" id="cb14-26" data-line-number="26">                                             <span class="co">#column_title = &quot;Chr20&quot;, </span></a>
+<a class="sourceLine" id="cb14-27" data-line-number="27">                                             <span class="co">#column_title_gp = gpar(fontsize = 20),</span></a>
+<a class="sourceLine" id="cb14-28" data-line-number="28">                                             <span class="dt">heatmap_legend_side =</span> <span class="st">&quot;right&quot;</span>, </a>
+<a class="sourceLine" id="cb14-29" data-line-number="29">                                             <span class="dt">annotation_legend_side =</span> <span class="st">&quot;right&quot;</span>,</a>
+<a class="sourceLine" id="cb14-30" data-line-number="30">                                             <span class="dt">show_heatmap_legend =</span> <span class="ot">TRUE</span>), </a>
+<a class="sourceLine" id="cb14-31" data-line-number="31">                                                <span class="dt">width =</span> w, <span class="dt">height =</span> h)</a>
+<a class="sourceLine" id="cb14-32" data-line-number="32"></a>
+<a class="sourceLine" id="cb14-33" data-line-number="33">grnahmps &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(<span class="ot">NULL</span>, hm_dnag, <span class="ot">NULL</span>, hm_rnag, <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;a  DNA&quot;</span>,<span class="st">&quot;&quot;</span>, <span class="st">&quot;b  RNA&quot;</span>), <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="fl">0.1</span>, <span class="dv">1</span>, <span class="fl">0.1</span>, <span class="dv">1</span>))</a>
+<a class="sourceLine" id="cb14-34" data-line-number="34"></a>
+<a class="sourceLine" id="cb14-35" data-line-number="35">grnahmps</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-11-1.png" width="1440" /></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">seur &lt;-<span class="st"> </span><span class="kw">readRDS</span>(<span class="kw">glue</span>(<span class="st">&quot;{config$rna}ASinference/perpatient_combined/2295-seurat.Rdata&quot;</span>))</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">cell_sample_rna &lt;-<span class="st"> </span>seur<span class="op">@</span>meta.data</a>
+<a class="sourceLine" id="cb15-4" data-line-number="4">cell_sample_rna<span class="op">$</span>cell_id &lt;-<span class="st"> </span><span class="kw">row.names</span>(cell_sample_rna)</a>
+<a class="sourceLine" id="cb15-5" data-line-number="5">cell_sample_rna &lt;-<span class="st"> </span><span class="kw">select</span>(cell_sample_rna, cell_id, sample)</a>
+<a class="sourceLine" id="cb15-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb15-7" data-line-number="7">rna &lt;-<span class="st"> </span>rna <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(cell_sample_rna)</a>
+<a class="sourceLine" id="cb15-8" data-line-number="8">dna_baf &lt;-<span class="st"> </span>chrarm</a>
+<a class="sourceLine" id="cb15-9" data-line-number="9">dna_baf &lt;-<span class="st"> </span>dna_baf <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(<span class="kw">select</span>(OV2295<span class="op">$</span>CNVmetrics, sample_id, cell_id)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-10" data-line-number="10"><span class="st">    </span><span class="kw">rename</span>(<span class="dt">sample =</span> sample_id)</a>
+<a class="sourceLine" id="cb15-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb15-12" data-line-number="12">dfbaf_joint &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(dna_baf <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">dtype =</span> <span class="st">&quot;DNA&quot;</span>), rna <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">dtype =</span> <span class="st">&quot;RNA&quot;</span>))</a>
+<a class="sourceLine" id="cb15-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb15-14" data-line-number="14">dfbaf_join_summary &lt;-<span class="st"> </span>dfbaf_joint <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(total <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(chrarm, dtype, </a>
+<a class="sourceLine" id="cb15-15" data-line-number="15">    sample) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">mean</span>(total), <span class="dt">BAF =</span> <span class="kw">median</span>(BAF)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;dtype&quot;</span>, </a>
+<a class="sourceLine" id="cb15-16" data-line-number="16">    <span class="dt">values_from =</span> <span class="kw">c</span>(<span class="st">&quot;BAF&quot;</span>, <span class="st">&quot;total&quot;</span>))</a>
+<a class="sourceLine" id="cb15-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb15-18" data-line-number="18">corrplot &lt;-<span class="st"> </span>dfbaf_join_summary <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(chrarm <span class="op">!=</span><span class="st"> &quot;X&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(sample)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># filter(total_RNA &gt; 10) %&gt;%</span></a>
+<a class="sourceLine" id="cb15-19" data-line-number="19"><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> BAF_DNA, <span class="dt">y =</span> BAF_RNA)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">col =</span> sample)) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Median BAF per chr </span><span class="ch">\n</span><span class="st"> (DNA)&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-20" data-line-number="20"><span class="st">    </span><span class="kw">ylab</span>(<span class="st">&quot;Median BAF per chr </span><span class="ch">\n</span><span class="st"> (RNA)&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_cowplot</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb15-21" data-line-number="21"><span class="st">    </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;plum4&quot;</span>, <span class="st">&quot;firebrick3&quot;</span>, <span class="st">&quot;deepskyblue2&quot;</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>(), </a>
+<a class="sourceLine" id="cb15-22" data-line-number="22">    <span class="dt">legend.position =</span> <span class="kw">c</span>(<span class="fl">0.25</span>, <span class="fl">0.8</span>))</a>
+<a class="sourceLine" id="cb15-23" data-line-number="23"><span class="co">#+geom_smooth(method = &#39;lm&#39;)</span></a>
+<a class="sourceLine" id="cb15-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb15-25" data-line-number="25"></a>
+<a class="sourceLine" id="cb15-26" data-line-number="26">gall &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(grnahmps, <span class="kw">plot_grid</span>(<span class="ot">NULL</span>, corrplot, <span class="ot">NULL</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="fl">0.4</span>, </a>
+<a class="sourceLine" id="cb15-27" data-line-number="27">    <span class="dv">1</span>, <span class="fl">0.4</span>), <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;c&quot;</span>)), <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">rel_widths =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>))</a>
+<a class="sourceLine" id="cb15-28" data-line-number="28">gall</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 
 </div>
 </div>

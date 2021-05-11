@@ -1,11 +1,10 @@
 introduction
 figure-1
+load-data-packages
 stats
 single-cell-example
-unphased-vs-phased
 snvs
 baf-violin
 heatmaps
 main-figure
-snvs-in-8q-and-10p
 rna-vs-dna
