@@ -24,7 +24,7 @@
 <meta name="author" content="Marc J. Williams" />
 
 
-<meta name="date" content="2021-05-18" />
+<meta name="date" content="2021-05-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -252,11 +252,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="heatmaps-1" class="section level2 tabset tabset-fade tabset-pills">
 <h2><span class="header-section-number">4.2</span> Heatmaps</h2>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="cf">for</span> (dataset <span class="cf">in</span> alldatasets) {</a>
-<a class="sourceLine" id="cb56-2" data-line-number="2">    <span class="kw">cat</span>(<span class="kw">paste0</span>(<span class="st">&quot;### Sample &quot;</span>, dataset, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>))</a>
-<a class="sourceLine" id="cb56-3" data-line-number="3">    <span class="kw">print</span>(<span class="kw">createfigure</span>(dataset))</a>
-<a class="sourceLine" id="cb56-4" data-line-number="4">    <span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st"> </span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb56-5" data-line-number="5">}</a></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb56-1" data-line-number="1"><span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st"> </span><span class="ch">\n</span><span class="st">&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb57-1" data-line-number="1"><span class="cf">for</span> (dataset <span class="cf">in</span> alldatasets) {</a>
+<a class="sourceLine" id="cb57-2" data-line-number="2">    <span class="kw">cat</span>(<span class="kw">paste0</span>(<span class="st">&quot;### Sample &quot;</span>, dataset, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>))</a>
+<a class="sourceLine" id="cb57-3" data-line-number="3">    <span class="kw">print</span>(<span class="kw">createfigure</span>(dataset))</a>
+<a class="sourceLine" id="cb57-4" data-line-number="4">    <span class="kw">cat</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st"> </span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb57-5" data-line-number="5">}</a></code></pre></div>
 <div id="sample-2295" class="section level3">
 <h3><span class="header-section-number">4.2.1</span> Sample 2295</h3>
 </div>
