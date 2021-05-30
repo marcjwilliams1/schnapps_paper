@@ -24,7 +24,7 @@
 <meta name="author" content="Marc J. Williams" />
 
 
-<meta name="date" content="2021-05-25" />
+<meta name="date" content="2021-05-29" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -170,11 +170,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.2" data-path="figure-2.html"><a href="figure-2.html#subclonal-frequencies"><i class="fa fa-check"></i><b>4.3.2</b> Subclonal frequencies</a></li>
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="figure-2.html"><a href="figure-2.html#correlation-analysis"><i class="fa fa-check"></i><b>4.4</b> Correlation analysis</a></li>
-<li class="chapter" data-level="4.5" data-path="figure-2.html"><a href="figure-2.html#frequency-per-ccf"><i class="fa fa-check"></i><b>4.5</b> Frequency per CCF</a></li>
-<li class="chapter" data-level="4.6" data-path="figure-2.html"><a href="figure-2.html#tp53-brca-snvs"><i class="fa fa-check"></i><b>4.6</b> TP53 + BRCA snvs</a></li>
-<li class="chapter" data-level="4.7" data-path="figure-2.html"><a href="figure-2.html#fraction-of-genome-gained"><i class="fa fa-check"></i><b>4.7</b> Fraction of genome gained</a></li>
-<li class="chapter" data-level="4.8" data-path="figure-2.html"><a href="figure-2.html#chromosome-event-rates"><i class="fa fa-check"></i><b>4.8</b> Chromosome event rates</a></li>
-<li class="chapter" data-level="4.9" data-path="figure-2.html"><a href="figure-2.html#composite-figure"><i class="fa fa-check"></i><b>4.9</b> Composite figure</a></li>
+<li class="chapter" data-level="4.5" data-path="figure-2.html"><a href="figure-2.html#ratios"><i class="fa fa-check"></i><b>4.5</b> Ratios</a></li>
+<li class="chapter" data-level="4.6" data-path="figure-2.html"><a href="figure-2.html#frequency-per-ccf"><i class="fa fa-check"></i><b>4.6</b> Frequency per CCF</a></li>
+<li class="chapter" data-level="4.7" data-path="figure-2.html"><a href="figure-2.html#tp53-brca-snvs"><i class="fa fa-check"></i><b>4.7</b> TP53 + BRCA snvs</a></li>
+<li class="chapter" data-level="4.8" data-path="figure-2.html"><a href="figure-2.html#fraction-of-genome-gained"><i class="fa fa-check"></i><b>4.8</b> Fraction of genome gained</a></li>
+<li class="chapter" data-level="4.9" data-path="figure-2.html"><a href="figure-2.html#chromosome-event-rates"><i class="fa fa-check"></i><b>4.9</b> Chromosome event rates</a></li>
+<li class="chapter" data-level="4.10" data-path="figure-2.html"><a href="figure-2.html#composite-figure"><i class="fa fa-check"></i><b>4.10</b> Composite figure</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="figure-3.html"><a href="figure-3.html"><i class="fa fa-check"></i><b>5</b> Figure 3</a><ul>
 <li class="chapter" data-level="5.1" data-path="figure-3.html"><a href="figure-3.html#load-data-packages-3"><i class="fa fa-check"></i><b>5.1</b> Load data + packages</a></li>
@@ -205,6 +206,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7" data-path="phylogenetic-trees.html"><a href="phylogenetic-trees.html"><i class="fa fa-check"></i><b>7</b> Phylogenetic trees</a><ul>
 <li class="chapter" data-level="7.1" data-path="phylogenetic-trees.html"><a href="phylogenetic-trees.html#load-data-packages-5"><i class="fa fa-check"></i><b>7.1</b> Load data + packages</a></li>
 <li class="chapter" data-level="7.2" data-path="phylogenetic-trees.html"><a href="phylogenetic-trees.html#heatmaps-1"><i class="fa fa-check"></i><b>7.2</b> Heatmaps</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="supplementary-figures.html"><a href="supplementary-figures.html"><i class="fa fa-check"></i><b>8</b> Supplementary Figures</a><ul>
+<li class="chapter" data-level="8.1" data-path="supplementary-figures.html"><a href="supplementary-figures.html#load-data"><i class="fa fa-check"></i><b>8.1</b> Load data</a></li>
+<li class="chapter" data-level="8.2" data-path="supplementary-figures.html"><a href="supplementary-figures.html#wgs-vs-dlp"><i class="fa fa-check"></i><b>8.2</b> WGS vs DLP</a></li>
+<li class="chapter" data-level="8.3" data-path="supplementary-figures.html"><a href="supplementary-figures.html#all-wgs-vs-dlp-plots"><i class="fa fa-check"></i><b>8.3</b> All WGS vs DLP plots</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -568,25 +574,27 @@ Figure 3.5: Figure 1
 <a class="sourceLine" id="cb16-7" data-line-number="7">rna &lt;-<span class="st"> </span>rna <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(cell_sample_rna)</a>
 <a class="sourceLine" id="cb16-8" data-line-number="8">dna_baf &lt;-<span class="st"> </span>chrarm</a>
 <a class="sourceLine" id="cb16-9" data-line-number="9">dna_baf &lt;-<span class="st"> </span>dna_baf <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(<span class="kw">select</span>(OV2295<span class="op">$</span>CNVmetrics, sample_id, cell_id)) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb16-10" data-line-number="10"><span class="st">    </span><span class="kw">rename</span>(<span class="dt">sample =</span> sample_id)</a>
-<a class="sourceLine" id="cb16-11" data-line-number="11"></a>
-<a class="sourceLine" id="cb16-12" data-line-number="12">dfbaf_joint &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(dna_baf <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">dtype =</span> <span class="st">&quot;DNA&quot;</span>), rna <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">dtype =</span> <span class="st">&quot;RNA&quot;</span>))</a>
-<a class="sourceLine" id="cb16-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb16-14" data-line-number="14">dfbaf_join_summary &lt;-<span class="st"> </span>dfbaf_joint <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(total <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(chrarm, dtype, </a>
-<a class="sourceLine" id="cb16-15" data-line-number="15">    sample) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">mean</span>(total), <span class="dt">BAF =</span> <span class="kw">median</span>(BAF)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;dtype&quot;</span>, </a>
-<a class="sourceLine" id="cb16-16" data-line-number="16">    <span class="dt">values_from =</span> <span class="kw">c</span>(<span class="st">&quot;BAF&quot;</span>, <span class="st">&quot;total&quot;</span>))</a>
-<a class="sourceLine" id="cb16-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb16-18" data-line-number="18">corrplot &lt;-<span class="st"> </span>dfbaf_join_summary <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(chrarm <span class="op">!=</span><span class="st"> &quot;X&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(sample)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># filter(total_RNA &gt; 10) %&gt;%</span></a>
-<a class="sourceLine" id="cb16-19" data-line-number="19"><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> BAF_DNA, <span class="dt">y =</span> BAF_RNA)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">col =</span> sample)) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Median BAF per chr </span><span class="ch">\n</span><span class="st"> (DNA)&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb16-20" data-line-number="20"><span class="st">    </span><span class="kw">ylab</span>(<span class="st">&quot;Median BAF per chr </span><span class="ch">\n</span><span class="st"> (RNA)&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_cowplot</span>() <span class="op">+</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb16-21" data-line-number="21"><span class="st">    </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;plum4&quot;</span>, <span class="st">&quot;firebrick3&quot;</span>, <span class="st">&quot;deepskyblue2&quot;</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>(), </a>
-<a class="sourceLine" id="cb16-22" data-line-number="22">    <span class="dt">legend.position =</span> <span class="kw">c</span>(<span class="fl">0.25</span>, <span class="fl">0.8</span>))</a>
-<a class="sourceLine" id="cb16-23" data-line-number="23"><span class="co">#+geom_smooth(method = &#39;lm&#39;)</span></a>
-<a class="sourceLine" id="cb16-24" data-line-number="24"></a>
-<a class="sourceLine" id="cb16-25" data-line-number="25"></a>
-<a class="sourceLine" id="cb16-26" data-line-number="26">gall &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(grnahmps, <span class="kw">plot_grid</span>(<span class="ot">NULL</span>, corrplot, <span class="ot">NULL</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="fl">0.4</span>, </a>
-<a class="sourceLine" id="cb16-27" data-line-number="27">    <span class="dv">1</span>, <span class="fl">0.4</span>), <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;c&quot;</span>)), <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">rel_widths =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>))</a>
-<a class="sourceLine" id="cb16-28" data-line-number="28">gall</a></code></pre></div>
+<a class="sourceLine" id="cb16-10" data-line-number="10"><span class="st">    </span><span class="kw">rename</span>(<span class="dt">sample =</span> sample_id, <span class="dt">total =</span> totalcounts) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">patient =</span> <span class="st">&quot;2295&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-11" data-line-number="11"><span class="st">    </span><span class="kw">select</span>(chrarm, sample, BAF, total)</a>
+<a class="sourceLine" id="cb16-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb16-13" data-line-number="13">dfbaf_joint &lt;-<span class="st"> </span><span class="kw">bind_rows</span>(dna_baf <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">dtype =</span> <span class="st">&quot;DNA&quot;</span>), rna <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(chrarm, </a>
+<a class="sourceLine" id="cb16-14" data-line-number="14">    sample, BAF, total) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">dtype =</span> <span class="st">&quot;RNA&quot;</span>))</a>
+<a class="sourceLine" id="cb16-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb16-16" data-line-number="16">dfbaf_join_summary &lt;-<span class="st"> </span>dfbaf_joint <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(total <span class="op">&gt;</span><span class="st"> </span><span class="dv">9</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(chrarm, dtype, </a>
+<a class="sourceLine" id="cb16-17" data-line-number="17">    sample) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">total =</span> <span class="kw">mean</span>(total), <span class="dt">BAF =</span> <span class="kw">median</span>(BAF)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">pivot_wider</span>(<span class="dt">names_from =</span> <span class="st">&quot;dtype&quot;</span>, </a>
+<a class="sourceLine" id="cb16-18" data-line-number="18">    <span class="dt">values_from =</span> <span class="kw">c</span>(<span class="st">&quot;BAF&quot;</span>, <span class="st">&quot;total&quot;</span>))</a>
+<a class="sourceLine" id="cb16-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb16-20" data-line-number="20">corrplot &lt;-<span class="st"> </span>dfbaf_join_summary <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(chrarm <span class="op">!=</span><span class="st"> &quot;X&quot;</span>, <span class="op">!</span><span class="kw">is.na</span>(sample)) <span class="op">%&gt;%</span><span class="st"> </span><span class="co"># filter(total_RNA &gt; 10) %&gt;%</span></a>
+<a class="sourceLine" id="cb16-21" data-line-number="21"><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> BAF_DNA, <span class="dt">y =</span> BAF_RNA)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">col =</span> sample)) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;Median BAF per chr </span><span class="ch">\n</span><span class="st"> (DNA)&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-22" data-line-number="22"><span class="st">    </span><span class="kw">ylab</span>(<span class="st">&quot;Median BAF per chr </span><span class="ch">\n</span><span class="st"> (RNA)&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">geom_abline</span>(<span class="dt">lty =</span> <span class="dv">2</span>) <span class="op">+</span><span class="st"> </span><span class="kw">theme_cowplot</span>() <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb16-23" data-line-number="23"><span class="st">    </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;plum4&quot;</span>, <span class="st">&quot;firebrick3&quot;</span>, <span class="st">&quot;deepskyblue2&quot;</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>(), </a>
+<a class="sourceLine" id="cb16-24" data-line-number="24">    <span class="dt">legend.position =</span> <span class="kw">c</span>(<span class="fl">0.25</span>, <span class="fl">0.8</span>))</a>
+<a class="sourceLine" id="cb16-25" data-line-number="25"><span class="co">#+geom_smooth(method = &#39;lm&#39;)</span></a>
+<a class="sourceLine" id="cb16-26" data-line-number="26"></a>
+<a class="sourceLine" id="cb16-27" data-line-number="27"></a>
+<a class="sourceLine" id="cb16-28" data-line-number="28">gall &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(grnahmps, <span class="kw">plot_grid</span>(<span class="ot">NULL</span>, corrplot, <span class="ot">NULL</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="fl">0.4</span>, </a>
+<a class="sourceLine" id="cb16-29" data-line-number="29">    <span class="dv">1</span>, <span class="fl">0.4</span>), <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;c&quot;</span>)), <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">rel_widths =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="fl">0.5</span>))</a>
+<a class="sourceLine" id="cb16-30" data-line-number="30">gall</a></code></pre></div>
 <div class="figure"><span id="fig:unnamed-chunk-15"></span>
 <img src="schnapps_paper_files/figure-html/unnamed-chunk-15-1.png" alt="Comparison of allele imbalance in RNA vs DNA" width="1440" />
 <p class="caption">
