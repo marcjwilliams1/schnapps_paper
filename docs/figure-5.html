@@ -24,7 +24,7 @@
 <meta name="author" content="Marc J. Williams" />
 
 
-<meta name="date" content="2021-05-30" />
+<meta name="date" content="2021-05-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -399,7 +399,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb121-1" data-line-number="1">SA535chr8<span class="op">$</span>merged</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-99-1.png" width="1440" /></p>
 <div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb122-1" data-line-number="1">(sa535plot &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(SA535chr8<span class="op">$</span>hm, <span class="kw">plot_grid</span>(SA535chr8<span class="op">$</span>plotlistnoaxis<span class="op">$</span><span class="st">`</span><span class="dt">Cluster W</span><span class="st">`</span>, </a>
-<a class="sourceLine" id="cb122-2" data-line-number="2">    SA535chr8<span class="op">$</span>plotlistnoaxis<span class="op">$</span><span class="st">`</span><span class="dt">Cluster C</span><span class="st">`</span>, SA535chr8<span class="op">$</span>plotlist<span class="op">$</span><span class="st">`</span><span class="dt">Cluster E</span><span class="st">`</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="dv">1</span>, </a>
+<a class="sourceLine" id="cb122-2" data-line-number="2">    SA535chr8<span class="op">$</span>plotlistnoaxis<span class="op">$</span><span class="st">`</span><span class="dt">Cluster C</span><span class="st">`</span>, SA535chr8<span class="op">$</span>plotlist<span class="op">$</span><span class="st">`</span><span class="dt">Cluster D</span><span class="st">`</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="dv">1</span>, </a>
 <a class="sourceLine" id="cb122-3" data-line-number="3">        <span class="dv">1</span>, <span class="fl">1.3</span>), <span class="dt">ncol =</span> <span class="dv">1</span>)))</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-100-1.png" width="960" /></p>
 <p>To illustrate the striking variability, here I’ll pull out some single cells where the amplification is completely absent, moderately amplified and extremely amplified.</p>
@@ -456,8 +456,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb124-21" data-line-number="21">    <span class="dt">mystate =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">3</span>), <span class="dt">plottitle =</span> mytitle, <span class="dt">maxCN =</span> <span class="dv">6</span>, <span class="dt">y_axis_trans =</span> <span class="st">&quot;identity&quot;</span>, </a>
 <a class="sourceLine" id="cb124-22" data-line-number="22">    <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="dt">mybreaks =</span> <span class="ot">NULL</span>, <span class="dt">countcutoff =</span> <span class="dv">4</span>, <span class="dt">allcells =</span> <span class="ot">TRUE</span>, <span class="dt">clustfield =</span> <span class="st">&quot;copy&quot;</span>, </a>
 <a class="sourceLine" id="cb124-23" data-line-number="23">    <span class="dt">show_clone_label =</span> T, <span class="dt">minPts =</span> <span class="dv">100</span>, <span class="dt">includeSVs =</span> <span class="ot">FALSE</span>, <span class="dt">genes =</span> <span class="st">&quot;CCNE1&quot;</span>, <span class="dt">rephase =</span> F))</a></code></pre></div>
-<pre><code>## [1] &quot;Cluster 0&quot; &quot;Cluster E&quot; &quot;Cluster C&quot; &quot;Cluster G&quot; &quot;Cluster B&quot; &quot;Cluster D&quot;
-## [7] &quot;Cluster F&quot; &quot;Cluster A&quot;
+<pre><code>## [1] &quot;Cluster 0&quot; &quot;Cluster E&quot; &quot;Cluster C&quot; &quot;Cluster G&quot; &quot;Cluster A&quot; &quot;Cluster D&quot;
+## [7] &quot;Cluster B&quot; &quot;Cluster F&quot;
 ## [1] &quot;Cluster 0&quot;
 ## [1] &quot;Cluster 0&quot;
 ## [1] 94
@@ -478,32 +478,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [1] 94
 ## [1] &quot;Cluster G&quot;
 ## [1] 94
-## [1] &quot;Cluster B&quot;
-## [1] &quot;Cluster B&quot;
+## [1] &quot;Cluster A&quot;
+## [1] &quot;Cluster A&quot;
 ## [1] 94
-## [1] &quot;Cluster B&quot;
+## [1] &quot;Cluster A&quot;
 ## [1] 94
 ## [1] &quot;Cluster D&quot;
 ## [1] &quot;Cluster D&quot;
 ## [1] 94
 ## [1] &quot;Cluster D&quot;
 ## [1] 94
+## [1] &quot;Cluster B&quot;
+## [1] &quot;Cluster B&quot;
+## [1] 94
+## [1] &quot;Cluster B&quot;
+## [1] 94
 ## [1] &quot;Cluster F&quot;
 ## [1] &quot;Cluster F&quot;
 ## [1] 94
 ## [1] &quot;Cluster F&quot;
-## [1] 94
-## [1] &quot;Cluster A&quot;
-## [1] &quot;Cluster A&quot;
-## [1] 94
-## [1] &quot;Cluster A&quot;
 ## [1] 94
 ## NULL
 ## [1] 94</code></pre>
 <div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb126-1" data-line-number="1">SA1035chr19<span class="op">$</span>merged</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-103-1.png" width="1440" /></p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1">(sa1035plot &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(SA1035chr19<span class="op">$</span>hm, <span class="kw">plot_grid</span>(SA1035chr19<span class="op">$</span>plotlistnoaxis<span class="op">$</span><span class="st">`</span><span class="dt">Cluster A</span><span class="st">`</span>, </a>
-<a class="sourceLine" id="cb127-2" data-line-number="2">    SA1035chr19<span class="op">$</span>plotlistnoaxis<span class="op">$</span><span class="st">`</span><span class="dt">Cluster C</span><span class="st">`</span>, SA1035chr19<span class="op">$</span>plotlist<span class="op">$</span><span class="st">`</span><span class="dt">Cluster B</span><span class="st">`</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="dv">1</span>, </a>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb127-1" data-line-number="1">(sa1035plot &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(SA1035chr19<span class="op">$</span>hm, <span class="kw">plot_grid</span>(SA1035chr19<span class="op">$</span>plotlistnoaxis<span class="op">$</span><span class="st">`</span><span class="dt">Cluster E</span><span class="st">`</span>, </a>
+<a class="sourceLine" id="cb127-2" data-line-number="2">    SA1035chr19<span class="op">$</span>plotlistnoaxis<span class="op">$</span><span class="st">`</span><span class="dt">Cluster C</span><span class="st">`</span>, SA1035chr19<span class="op">$</span>plotlist<span class="op">$</span><span class="st">`</span><span class="dt">Cluster A</span><span class="st">`</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="dv">1</span>, </a>
 <a class="sourceLine" id="cb127-3" data-line-number="3">        <span class="dv">1</span>, <span class="fl">1.3</span>), <span class="dt">ncol =</span> <span class="dv">1</span>), <span class="dt">ncol =</span> <span class="dv">2</span>))</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-104-1.png" width="960" /></p>
 </div>
@@ -723,21 +723,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb137-5" data-line-number="5">    <span class="dt">plottitle =</span> <span class="st">&quot;SA1093 chr 4&quot;</span>, <span class="dt">maxCN =</span> <span class="dv">24</span>, <span class="dt">y_axis_trans =</span> <span class="st">&quot;squashy&quot;</span>, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, </a>
 <a class="sourceLine" id="cb137-6" data-line-number="6">        <span class="dv">2</span>), <span class="dt">allcells =</span> <span class="ot">TRUE</span>, <span class="dt">clustfield =</span> <span class="st">&quot;copy&quot;</span>, <span class="dt">show_clone_label =</span> T, <span class="dt">minPts =</span> <span class="dv">5</span>, </a>
 <a class="sourceLine" id="cb137-7" data-line-number="7">    <span class="dt">includeSVs =</span> <span class="ot">FALSE</span>, <span class="dt">genes =</span> <span class="st">&quot;FGFR3&quot;</span>, <span class="dt">adj =</span> <span class="fl">-0.15</span>))</a></code></pre></div>
-<pre><code>## [1] &quot;Cluster D&quot; &quot;Cluster A&quot; &quot;Cluster B&quot; &quot;Cluster C&quot;
+<pre><code>## [1] &quot;Cluster D&quot; &quot;Cluster B&quot; &quot;Cluster A&quot; &quot;Cluster C&quot;
 ## [1] &quot;Cluster D&quot;
 ## [1] &quot;Cluster D&quot;
 ## [1] 279
 ## [1] &quot;Cluster D&quot;
-## [1] 279
-## [1] &quot;Cluster A&quot;
-## [1] &quot;Cluster A&quot;
-## [1] 279
-## [1] &quot;Cluster A&quot;
 ## [1] 279
 ## [1] &quot;Cluster B&quot;
 ## [1] &quot;Cluster B&quot;
+## [1] 279
+## [1] &quot;Cluster B&quot;
+## [1] 279
+## [1] &quot;Cluster A&quot;
+## [1] &quot;Cluster A&quot;
 ## [1] 280
-## [1] &quot;Cluster B&quot;
+## [1] &quot;Cluster A&quot;
 ## [1] 280
 ## [1] &quot;Cluster C&quot;
 ## [1] &quot;Cluster C&quot;
@@ -856,34 +856,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb149-6" data-line-number="6">    <span class="dt">maxCN =</span> <span class="dv">24</span>, <span class="dt">y_axis_trans =</span> <span class="st">&quot;squashy&quot;</span>, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="dt">countcutoff =</span> <span class="dv">4</span>, <span class="dt">allcells =</span> <span class="ot">TRUE</span>, </a>
 <a class="sourceLine" id="cb149-7" data-line-number="7">    <span class="dt">clustfield =</span> <span class="st">&quot;copy&quot;</span>, <span class="dt">show_clone_label =</span> T, <span class="dt">minPts =</span> <span class="dv">30</span>, <span class="dt">includeSVs =</span> <span class="ot">FALSE</span>, <span class="dt">rephase =</span> <span class="ot">TRUE</span>, </a>
 <a class="sourceLine" id="cb149-8" data-line-number="8">    <span class="dt">genes =</span> <span class="st">&quot;MYC&quot;</span>))</a></code></pre></div>
-<pre><code>## [1] &quot;Cluster E&quot; &quot;Cluster B&quot; &quot;Cluster D&quot; &quot;Cluster A&quot; &quot;Cluster C&quot;
+<pre><code>## [1] &quot;Cluster E&quot; &quot;Cluster C&quot; &quot;Cluster D&quot; &quot;Cluster A&quot; &quot;Cluster B&quot;
 ## [1] &quot;Cluster E&quot;
 ## [1] &quot;Cluster E&quot;
-## [1] 214
+## [1] 224
 ## [1] &quot;Cluster E&quot;
-## [1] 214
-## [1] &quot;Cluster B&quot;
-## [1] &quot;Cluster B&quot;
-## [1] 214
-## [1] &quot;Cluster B&quot;
-## [1] 214
-## [1] &quot;Cluster D&quot;
-## [1] &quot;Cluster D&quot;
-## [1] 214
-## [1] &quot;Cluster D&quot;
-## [1] 214
-## [1] &quot;Cluster A&quot;
-## [1] &quot;Cluster A&quot;
-## [1] 214
-## [1] &quot;Cluster A&quot;
-## [1] 214
+## [1] 224
 ## [1] &quot;Cluster C&quot;
 ## [1] &quot;Cluster C&quot;
-## [1] 214
+## [1] 224
 ## [1] &quot;Cluster C&quot;
-## [1] 214
+## [1] 224
+## [1] &quot;Cluster D&quot;
+## [1] &quot;Cluster D&quot;
+## [1] 224
+## [1] &quot;Cluster D&quot;
+## [1] 224
+## [1] &quot;Cluster A&quot;
+## [1] &quot;Cluster A&quot;
+## [1] 224
+## [1] &quot;Cluster A&quot;
+## [1] 224
+## [1] &quot;Cluster B&quot;
+## [1] &quot;Cluster B&quot;
+## [1] 224
+## [1] &quot;Cluster B&quot;
+## [1] 224
 ## NULL
-## [1] 214</code></pre>
+## [1] 224</code></pre>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1">SA1184chr8<span class="op">$</span>merged</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-117-1.png" width="960" /></p>
 <div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb152-1" data-line-number="1">(SA1184chr8plot &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(SA1184chr8<span class="op">$</span>hm, <span class="kw">plot_grid</span>(SA1184chr8<span class="op">$</span>plotlistnoaxis<span class="op">$</span><span class="st">`</span><span class="dt">Cluster B</span><span class="st">`</span>, </a>
@@ -947,39 +947,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb159-6" data-line-number="6">        <span class="dv">3</span>), <span class="dt">plottitle =</span> <span class="st">&quot;SA1049 chr 20&quot;</span>, <span class="dt">maxCN =</span> <span class="dv">24</span>, <span class="dt">y_axis_trans =</span> <span class="st">&quot;squashy&quot;</span>, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, </a>
 <a class="sourceLine" id="cb159-7" data-line-number="7">        <span class="dv">2</span>), <span class="dt">allcells =</span> <span class="ot">TRUE</span>, <span class="dt">clustfield =</span> <span class="st">&quot;copy&quot;</span>, <span class="dt">show_clone_label =</span> T, <span class="dt">minPts =</span> <span class="dv">30</span>, </a>
 <a class="sourceLine" id="cb159-8" data-line-number="8">    <span class="dt">includeSVs =</span> <span class="ot">FALSE</span>, <span class="dt">rephase =</span> <span class="ot">TRUE</span>, <span class="dt">genes =</span> <span class="st">&quot;CCNE1&quot;</span>))</a></code></pre></div>
-<pre><code>## [1] &quot;Cluster E&quot; &quot;Cluster C&quot; &quot;Cluster 0&quot; &quot;Cluster D&quot; &quot;Cluster B&quot; &quot;Cluster A&quot;
-## [1] &quot;Cluster E&quot;
-## [1] &quot;Cluster E&quot;
-## [1] 102
-## [1] &quot;Cluster E&quot;
-## [1] 102
+<pre><code>## [1] &quot;Cluster C&quot; &quot;Cluster B&quot; &quot;Cluster A&quot;
 ## [1] &quot;Cluster C&quot;
 ## [1] &quot;Cluster C&quot;
-## [1] 102
+## [1] 103
 ## [1] &quot;Cluster C&quot;
-## [1] 102
-## [1] &quot;Cluster 0&quot;
-## [1] &quot;Cluster 0&quot;
-## [1] 102
-## [1] &quot;Cluster 0&quot;
-## [1] 102
-## [1] &quot;Cluster D&quot;
-## [1] &quot;Cluster D&quot;
-## [1] 102
-## [1] &quot;Cluster D&quot;
-## [1] 102
+## [1] 103
 ## [1] &quot;Cluster B&quot;
 ## [1] &quot;Cluster B&quot;
-## [1] 102
+## [1] 103
 ## [1] &quot;Cluster B&quot;
-## [1] 102
+## [1] 103
 ## [1] &quot;Cluster A&quot;
 ## [1] &quot;Cluster A&quot;
-## [1] 102
+## [1] 103
 ## [1] &quot;Cluster A&quot;
-## [1] 102
+## [1] 103
 ## NULL
-## [1] 102</code></pre>
+## [1] 103</code></pre>
 <div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb161-1" data-line-number="1">SA1049chr20<span class="op">$</span>merged</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-123-1.png" width="960" /></p>
 <div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb162-1" data-line-number="1">(sa1049chr20plot &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(SA1049chr20<span class="op">$</span>hm, <span class="kw">plot_grid</span>(SA1049chr20<span class="op">$</span>plotlistnoaxis<span class="op">$</span><span class="st">`</span><span class="dt">Cluster A</span><span class="st">`</span>, </a>
@@ -1031,34 +1016,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb167-6" data-line-number="6">        <span class="dv">3</span>), <span class="dt">plottitle =</span> <span class="st">&quot;SA1052 chr 12&quot;</span>, <span class="dt">maxCN =</span> <span class="dv">24</span>, <span class="dt">y_axis_trans =</span> <span class="st">&quot;squashy&quot;</span>, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, </a>
 <a class="sourceLine" id="cb167-7" data-line-number="7">        <span class="dv">2</span>), <span class="dt">countcutoff =</span> <span class="dv">4</span>, <span class="dt">allcells =</span> <span class="ot">TRUE</span>, <span class="dt">clustfield =</span> <span class="st">&quot;copy&quot;</span>, <span class="dt">show_clone_label =</span> T, </a>
 <a class="sourceLine" id="cb167-8" data-line-number="8">    <span class="dt">minPts =</span> <span class="dv">25</span>, <span class="dt">includeSVs =</span> <span class="ot">FALSE</span>, <span class="dt">genes =</span> <span class="st">&quot;HSP90AB1&quot;</span>))</a></code></pre></div>
-<pre><code>## [1] &quot;Cluster E&quot; &quot;Cluster C&quot; &quot;Cluster D&quot; &quot;Cluster B&quot; &quot;Cluster A&quot;
+<pre><code>## [1] &quot;Cluster E&quot; &quot;Cluster A&quot; &quot;Cluster D&quot; &quot;Cluster C&quot; &quot;Cluster B&quot;
 ## [1] &quot;Cluster E&quot;
 ## [1] &quot;Cluster E&quot;
-## [1] 207
+## [1] 206
 ## [1] &quot;Cluster E&quot;
-## [1] 207
-## [1] &quot;Cluster C&quot;
-## [1] &quot;Cluster C&quot;
-## [1] 207
-## [1] &quot;Cluster C&quot;
-## [1] 207
-## [1] &quot;Cluster D&quot;
-## [1] &quot;Cluster D&quot;
-## [1] 207
-## [1] &quot;Cluster D&quot;
-## [1] 207
-## [1] &quot;Cluster B&quot;
-## [1] &quot;Cluster B&quot;
-## [1] 207
-## [1] &quot;Cluster B&quot;
-## [1] 207
+## [1] 206
 ## [1] &quot;Cluster A&quot;
 ## [1] &quot;Cluster A&quot;
-## [1] 207
+## [1] 206
 ## [1] &quot;Cluster A&quot;
-## [1] 207
+## [1] 206
+## [1] &quot;Cluster D&quot;
+## [1] &quot;Cluster D&quot;
+## [1] 206
+## [1] &quot;Cluster D&quot;
+## [1] 206
+## [1] &quot;Cluster C&quot;
+## [1] &quot;Cluster C&quot;
+## [1] 206
+## [1] &quot;Cluster C&quot;
+## [1] 206
+## [1] &quot;Cluster B&quot;
+## [1] &quot;Cluster B&quot;
+## [1] 206
+## [1] &quot;Cluster B&quot;
+## [1] 206
 ## NULL
-## [1] 207</code></pre>
+## [1] 206</code></pre>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1">SA1052chr12<span class="op">$</span>merged</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-127-1.png" width="960" /></p>
 <div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb170-1" data-line-number="1">(sa1052plot &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(SA1052chr12<span class="op">$</span>hm, <span class="kw">plot_grid</span>(SA1052chr12<span class="op">$</span>plotlistnoaxis<span class="op">$</span><span class="st">`</span><span class="dt">Cluster C</span><span class="st">`</span>, </a>
@@ -1077,107 +1062,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb171-7" data-line-number="7">        <span class="st">&quot; chr &quot;</span>, mychr), <span class="dt">maxCN =</span> <span class="dv">24</span>, <span class="dt">y_axis_trans =</span> <span class="st">&quot;squashy&quot;</span>, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), </a>
 <a class="sourceLine" id="cb171-8" data-line-number="8">    <span class="dt">allcells =</span> <span class="ot">TRUE</span>, <span class="dt">clustfield =</span> <span class="st">&quot;copy&quot;</span>, <span class="dt">show_clone_label =</span> T, <span class="dt">minPts =</span> <span class="dv">10</span>, <span class="dt">includeSVs =</span> <span class="ot">FALSE</span>, </a>
 <a class="sourceLine" id="cb171-9" data-line-number="9">    <span class="dt">genes =</span> mygenes))</a></code></pre></div>
-<pre><code>##  [1] &quot;Cluster R&quot; &quot;Cluster H&quot; &quot;Cluster M&quot; &quot;Cluster E&quot; &quot;Cluster F&quot; &quot;Cluster G&quot;
-##  [7] &quot;Cluster D&quot; &quot;Cluster 0&quot; &quot;Cluster N&quot; &quot;Cluster P&quot; &quot;Cluster O&quot; &quot;Cluster C&quot;
-## [13] &quot;Cluster L&quot; &quot;Cluster Q&quot; &quot;Cluster I&quot; &quot;Cluster B&quot; &quot;Cluster J&quot; &quot;Cluster A&quot;
-## [19] &quot;Cluster K&quot;
+<pre><code>##  [1] &quot;Cluster R&quot; &quot;Cluster J&quot; &quot;Cluster L&quot; &quot;Cluster 0&quot; &quot;Cluster B&quot; &quot;Cluster A&quot;
+##  [7] &quot;Cluster F&quot; &quot;Cluster P&quot; &quot;Cluster C&quot; &quot;Cluster N&quot; &quot;Cluster O&quot; &quot;Cluster K&quot;
+## [13] &quot;Cluster Q&quot; &quot;Cluster H&quot; &quot;Cluster D&quot; &quot;Cluster I&quot; &quot;Cluster M&quot; &quot;Cluster E&quot;
+## [19] &quot;Cluster G&quot;
 ## [1] &quot;Cluster R&quot;
 ## [1] &quot;Cluster R&quot;
-## [1] 262
+## [1] 264
 ## [1] &quot;Cluster R&quot;
-## [1] 262
-## [1] &quot;Cluster H&quot;
-## [1] &quot;Cluster H&quot;
-## [1] 262
-## [1] &quot;Cluster H&quot;
-## [1] 262
-## [1] &quot;Cluster M&quot;
-## [1] &quot;Cluster M&quot;
-## [1] 262
-## [1] &quot;Cluster M&quot;
-## [1] 262
-## [1] &quot;Cluster E&quot;
-## [1] &quot;Cluster E&quot;
-## [1] 262
-## [1] &quot;Cluster E&quot;
-## [1] 262
-## [1] &quot;Cluster F&quot;
-## [1] &quot;Cluster F&quot;
-## [1] 262
-## [1] &quot;Cluster F&quot;
-## [1] 262
-## [1] &quot;Cluster G&quot;
-## [1] &quot;Cluster G&quot;
-## [1] 262
-## [1] &quot;Cluster G&quot;
-## [1] 262
-## [1] &quot;Cluster D&quot;
-## [1] &quot;Cluster D&quot;
-## [1] 262
-## [1] &quot;Cluster D&quot;
-## [1] 262
-## [1] &quot;Cluster 0&quot;
-## [1] &quot;Cluster 0&quot;
-## [1] 262
-## [1] &quot;Cluster 0&quot;
-## [1] 262
-## [1] &quot;Cluster N&quot;
-## [1] &quot;Cluster N&quot;
-## [1] 262
-## [1] &quot;Cluster N&quot;
-## [1] 262
-## [1] &quot;Cluster P&quot;
-## [1] &quot;Cluster P&quot;
-## [1] 262
-## [1] &quot;Cluster P&quot;
-## [1] 262
-## [1] &quot;Cluster O&quot;
-## [1] &quot;Cluster O&quot;
-## [1] 262
-## [1] &quot;Cluster O&quot;
-## [1] 262
-## [1] &quot;Cluster C&quot;
-## [1] &quot;Cluster C&quot;
-## [1] 262
-## [1] &quot;Cluster C&quot;
-## [1] 262
-## [1] &quot;Cluster L&quot;
-## [1] &quot;Cluster L&quot;
-## [1] 262
-## [1] &quot;Cluster L&quot;
-## [1] 262
-## [1] &quot;Cluster Q&quot;
-## [1] &quot;Cluster Q&quot;
-## [1] 262
-## [1] &quot;Cluster Q&quot;
-## [1] 262
-## [1] &quot;Cluster I&quot;
-## [1] &quot;Cluster I&quot;
-## [1] 262
-## [1] &quot;Cluster I&quot;
-## [1] 262
-## [1] &quot;Cluster B&quot;
-## [1] &quot;Cluster B&quot;
-## [1] 262
-## [1] &quot;Cluster B&quot;
-## [1] 262
+## [1] 264
 ## [1] &quot;Cluster J&quot;
 ## [1] &quot;Cluster J&quot;
-## [1] 262
+## [1] 264
 ## [1] &quot;Cluster J&quot;
-## [1] 262
+## [1] 264
+## [1] &quot;Cluster L&quot;
+## [1] &quot;Cluster L&quot;
+## [1] 264
+## [1] &quot;Cluster L&quot;
+## [1] 264
+## [1] &quot;Cluster 0&quot;
+## [1] &quot;Cluster 0&quot;
+## [1] 264
+## [1] &quot;Cluster 0&quot;
+## [1] 264
+## [1] &quot;Cluster B&quot;
+## [1] &quot;Cluster B&quot;
+## [1] 264
+## [1] &quot;Cluster B&quot;
+## [1] 264
 ## [1] &quot;Cluster A&quot;
 ## [1] &quot;Cluster A&quot;
-## [1] 262
+## [1] 264
 ## [1] &quot;Cluster A&quot;
-## [1] 262
+## [1] 264
+## [1] &quot;Cluster F&quot;
+## [1] &quot;Cluster F&quot;
+## [1] 264
+## [1] &quot;Cluster F&quot;
+## [1] 264
+## [1] &quot;Cluster P&quot;
+## [1] &quot;Cluster P&quot;
+## [1] 264
+## [1] &quot;Cluster P&quot;
+## [1] 264
+## [1] &quot;Cluster C&quot;
+## [1] &quot;Cluster C&quot;
+## [1] 264
+## [1] &quot;Cluster C&quot;
+## [1] 264
+## [1] &quot;Cluster N&quot;
+## [1] &quot;Cluster N&quot;
+## [1] 264
+## [1] &quot;Cluster N&quot;
+## [1] 264
+## [1] &quot;Cluster O&quot;
+## [1] &quot;Cluster O&quot;
+## [1] 264
+## [1] &quot;Cluster O&quot;
+## [1] 264
 ## [1] &quot;Cluster K&quot;
 ## [1] &quot;Cluster K&quot;
-## [1] 262
+## [1] 264
 ## [1] &quot;Cluster K&quot;
-## [1] 262
+## [1] 264
+## [1] &quot;Cluster Q&quot;
+## [1] &quot;Cluster Q&quot;
+## [1] 264
+## [1] &quot;Cluster Q&quot;
+## [1] 264
+## [1] &quot;Cluster H&quot;
+## [1] &quot;Cluster H&quot;
+## [1] 264
+## [1] &quot;Cluster H&quot;
+## [1] 264
+## [1] &quot;Cluster D&quot;
+## [1] &quot;Cluster D&quot;
+## [1] 264
+## [1] &quot;Cluster D&quot;
+## [1] 264
+## [1] &quot;Cluster I&quot;
+## [1] &quot;Cluster I&quot;
+## [1] 264
+## [1] &quot;Cluster I&quot;
+## [1] 264
+## [1] &quot;Cluster M&quot;
+## [1] &quot;Cluster M&quot;
+## [1] 264
+## [1] &quot;Cluster M&quot;
+## [1] 264
+## [1] &quot;Cluster E&quot;
+## [1] &quot;Cluster E&quot;
+## [1] 264
+## [1] &quot;Cluster E&quot;
+## [1] 264
+## [1] &quot;Cluster G&quot;
+## [1] &quot;Cluster G&quot;
+## [1] 264
+## [1] &quot;Cluster G&quot;
+## [1] 264
 ## NULL
-## [1] 262</code></pre>
+## [1] 264</code></pre>
 <div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1"><span class="kw">get</span>(<span class="kw">paste0</span>(mysample, <span class="st">&quot;chr&quot;</span>, mychr))<span class="op">$</span>merged</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-129-1.png" width="960" /></p>
 <div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" data-line-number="1">(sa501chr6plot &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(<span class="kw">get</span>(<span class="kw">paste0</span>(mysample, <span class="st">&quot;chr&quot;</span>, mychr))<span class="op">$</span>hm, <span class="kw">plot_grid</span>(<span class="kw">get</span>(<span class="kw">paste0</span>(mysample, </a>

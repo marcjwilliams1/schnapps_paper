@@ -24,7 +24,7 @@
 <meta name="author" content="Marc J. Williams" />
 
 
-<meta name="date" content="2021-05-30" />
+<meta name="date" content="2021-05-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -297,14 +297,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb75-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb75-3" data-line-number="3"><span class="co"># get chr 3</span></a>
 <a class="sourceLine" id="cb75-4" data-line-number="4">hscn_sa1888 &lt;-<span class="st"> </span>hscn[sample <span class="op">==</span><span class="st"> &quot;SA1188&quot;</span> <span class="op">&amp;</span><span class="st"> </span>chr <span class="op">==</span><span class="st"> </span><span class="dv">3</span> <span class="op">&amp;</span><span class="st"> </span>start <span class="op">&gt;</span><span class="st"> </span><span class="fl">9.1e+07</span>]</a>
-<a class="sourceLine" id="cb75-5" data-line-number="5">state4 &lt;-<span class="st"> </span>hscn_sa1888[, <span class="kw">list</span>(<span class="dt">x =</span> <span class="kw">sum</span>(state <span class="op">==</span><span class="st"> </span><span class="dv">4</span>)), by =<span class="st"> &quot;cell_id&quot;</span>] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(x))</a>
-<a class="sourceLine" id="cb75-6" data-line-number="6">hscn_sa1888 &lt;-<span class="st"> </span>hscn_sa1888[cell_id <span class="op">%in%</span><span class="st"> </span>(state4[x <span class="op">==</span><span class="st"> </span><span class="dv">0</span>] <span class="op">%&gt;%</span><span class="st"> </span>.<span class="op">$</span>cell_id)]</a>
-<a class="sourceLine" id="cb75-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb75-8" data-line-number="8">cl &lt;-<span class="st"> </span><span class="kw">umap_clustering</span>(hscn_sa1888, <span class="dt">field =</span> <span class="st">&quot;copy&quot;</span>, <span class="dt">umapmetric =</span> <span class="st">&quot;correlation&quot;</span>, <span class="dt">minPts =</span> <span class="dv">30</span>, </a>
-<a class="sourceLine" id="cb75-9" data-line-number="9">    <span class="dt">min_dist =</span> <span class="fl">0.1</span>, <span class="dt">seed =</span> <span class="dv">123</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb75-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb75-6" data-line-number="6">hscn_sa1188 &lt;-<span class="st"> </span><span class="kw">rephasebins</span>(hscn[sample <span class="op">==</span><span class="st"> &quot;SA1188&quot;</span> <span class="op">&amp;</span><span class="st"> </span>chr <span class="op">==</span><span class="st"> </span><span class="dv">3</span>], <span class="dt">method =</span> <span class="st">&quot;LOH&quot;</span>)</a>
+<a class="sourceLine" id="cb75-7" data-line-number="7">hscn_sa1888 &lt;-<span class="st"> </span>hscn_sa1188<span class="op">$</span>newhscn <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.table</span>()</a>
+<a class="sourceLine" id="cb75-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb75-9" data-line-number="9">state4 &lt;-<span class="st"> </span>hscn_sa1888[, <span class="kw">list</span>(<span class="dt">x =</span> <span class="kw">sum</span>(state <span class="op">==</span><span class="st"> </span><span class="dv">4</span>)), by =<span class="st"> &quot;cell_id&quot;</span>] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(x))</a>
+<a class="sourceLine" id="cb75-10" data-line-number="10">hscn_sa1888 &lt;-<span class="st"> </span>hscn_sa1888[cell_id <span class="op">%in%</span><span class="st"> </span>(state4[x <span class="op">==</span><span class="st"> </span><span class="dv">0</span>] <span class="op">%&gt;%</span><span class="st"> </span>.<span class="op">$</span>cell_id)]</a>
+<a class="sourceLine" id="cb75-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb75-12" data-line-number="12">cl &lt;-<span class="st"> </span><span class="kw">umap_clustering</span>(hscn_sa1888, <span class="dt">field =</span> <span class="st">&quot;copy&quot;</span>, <span class="dt">umapmetric =</span> <span class="st">&quot;correlation&quot;</span>, <span class="dt">minPts =</span> <span class="dv">30</span>, </a>
+<a class="sourceLine" id="cb75-13" data-line-number="13">    <span class="dt">min_dist =</span> <span class="fl">0.1</span>, <span class="dt">seed =</span> <span class="dv">123</span>)</a></code></pre></div>
 <p>Now I’ll generate a heatmap of this chromosome.</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1">sa1188chr3 &lt;-<span class="st"> </span><span class="kw">makeheatmap</span>(hscn_sa1888, <span class="dt">plottitle =</span> <span class="st">&quot;SA1188 chr 3q&quot;</span>, <span class="dt">showlegend =</span> F, </a>
-<a class="sourceLine" id="cb76-2" data-line-number="2">    <span class="dt">show_clone_label =</span> T, <span class="dt">cl =</span> cl)</a>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb76-1" data-line-number="1">sa1188chr3 &lt;-<span class="st"> </span><span class="kw">makeheatmap</span>(hscn_sa1888, <span class="dt">plottitle =</span> <span class="st">&quot;SA1188 chr 3&quot;</span>, <span class="dt">fillgenome =</span> T, </a>
+<a class="sourceLine" id="cb76-2" data-line-number="2">    <span class="dt">chrlabels =</span> T, <span class="dt">showlegend =</span> F, <span class="dt">show_clone_label =</span> T, <span class="dt">cl =</span> cl, <span class="dt">column_title =</span> <span class="st">&quot;Chromosome 3&quot;</span>)</a>
 <a class="sourceLine" id="cb76-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb76-4" data-line-number="4"><span class="kw">plot_grid</span>(sa1188chr3)</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-75-1.png" width="1440" /></p>
@@ -334,39 +338,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb81-1" data-line-number="1">xpos &lt;-<span class="st"> </span><span class="fl">0.3</span></a>
 <a class="sourceLine" id="cb81-2" data-line-number="2">ypos &lt;-<span class="st"> </span><span class="fl">0.27</span></a>
 <a class="sourceLine" id="cb81-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb81-4" data-line-number="4">dcell2 &lt;-<span class="st"> </span><span class="kw">getplothomolog</span>(hscn_sa1888_clones, bpsclones, <span class="dt">clone =</span> <span class="st">&quot;Cluster C&quot;</span>, <span class="dt">curvature =</span> curve, </a>
+<a class="sourceLine" id="cb81-4" data-line-number="4">dcell2 &lt;-<span class="st"> </span><span class="kw">getplothomolog</span>(hscn_sa1888_clones, bpsclones, <span class="dt">clone =</span> <span class="st">&quot;Cluster B&quot;</span>, <span class="dt">curvature =</span> curve, </a>
 <a class="sourceLine" id="cb81-5" data-line-number="5">    <span class="dt">adj =</span> <span class="dv">0</span>, <span class="dt">addlabel =</span> <span class="ot">TRUE</span>, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="dt">ylimlab =</span> <span class="kw">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">4</span>), <span class="dt">xlimlab =</span> <span class="kw">c</span>(<span class="ot">NA</span>, </a>
 <a class="sourceLine" id="cb81-6" data-line-number="6">        <span class="dv">250</span>))</a></code></pre></div>
-<pre><code>## [1] &quot;Cluster C&quot;
-## [1] 51845</code></pre>
+<pre><code>## [1] &quot;Cluster B&quot;
+## [1] 47480</code></pre>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb83-1" data-line-number="1">(dcell2_im &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">draw_plot</span>(dcell2) <span class="op">+</span><span class="st"> </span><span class="kw">draw_image</span>(<span class="kw">here</span>(<span class="st">&quot;diagrams/bfb_loss_small.png&quot;</span>), </a>
 <a class="sourceLine" id="cb83-2" data-line-number="2">    <span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">height =</span> <span class="fl">0.2</span>, <span class="dt">x =</span> xpos, <span class="dt">y =</span> ypos))</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-78-1.png" width="672" /></p>
 <div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb84-1" data-line-number="1">dcell1 &lt;-<span class="st"> </span><span class="kw">getplothomolog</span>(hscn_sa1888_clones, bpsclones, <span class="dt">clone =</span> <span class="st">&quot;Cluster F&quot;</span>, <span class="dt">adj =</span> <span class="dv">0</span>, </a>
 <a class="sourceLine" id="cb84-2" data-line-number="2">    <span class="dt">addlabel =</span> <span class="ot">FALSE</span>, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>), <span class="dt">ylimlab =</span> <span class="kw">c</span>(<span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">4</span>), <span class="dt">xlimlab =</span> <span class="kw">c</span>(<span class="ot">NA</span>, <span class="dv">250</span>))</a></code></pre></div>
 <pre><code>## [1] &quot;Cluster F&quot;
-## [1] 51845</code></pre>
+## [1] 47480</code></pre>
 <div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb86-1" data-line-number="1">(dcell1_im &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">draw_plot</span>(dcell1) <span class="op">+</span><span class="st"> </span><span class="kw">draw_image</span>(<span class="kw">here</span>(<span class="st">&quot;diagrams/bfb_gain1.png&quot;</span>), </a>
 <a class="sourceLine" id="cb86-2" data-line-number="2">    <span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">height =</span> <span class="fl">0.2</span>, <span class="dt">x =</span> xpos, <span class="dt">y =</span> ypos <span class="op">+</span><span class="st"> </span><span class="fl">0.2</span>))</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-79-1.png" width="672" /></p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">dcell2a1 &lt;-<span class="st"> </span><span class="kw">getplothomolog</span>(hscn_sa1888_clones, bpsclones, <span class="dt">clone =</span> <span class="st">&quot;Cluster J&quot;</span>, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, </a>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb87-1" data-line-number="1">dcell2a1 &lt;-<span class="st"> </span><span class="kw">getplothomolog</span>(hscn_sa1888_clones, bpsclones, <span class="dt">clone =</span> <span class="st">&quot;Cluster I&quot;</span>, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, </a>
 <a class="sourceLine" id="cb87-2" data-line-number="2">    <span class="dv">2</span>))</a></code></pre></div>
-<pre><code>## [1] &quot;Cluster J&quot;
-## [1] 51845</code></pre>
+<pre><code>## [1] &quot;Cluster I&quot;
+## [1] 47480</code></pre>
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb89-1" data-line-number="1">(dcell2a1_im &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">draw_plot</span>(dcell2a1) <span class="op">+</span><span class="st"> </span><span class="kw">draw_image</span>(<span class="kw">here</span>(<span class="st">&quot;diagrams/bfb_gain2.png&quot;</span>), </a>
 <a class="sourceLine" id="cb89-2" data-line-number="2">    <span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">height =</span> <span class="fl">0.2</span>, <span class="dt">x =</span> xpos, <span class="dt">y =</span> ypos <span class="op">+</span><span class="st"> </span><span class="fl">0.2</span>))</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-80-1.png" width="672" /></p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1">dcell2a2 &lt;-<span class="st"> </span><span class="kw">getplothomolog</span>(hscn_sa1888_clones, bpsclones, <span class="dt">clone =</span> <span class="st">&quot;Cluster A&quot;</span>, <span class="dt">curvature =</span> curve, </a>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb90-1" data-line-number="1">dcell2a2 &lt;-<span class="st"> </span><span class="kw">getplothomolog</span>(hscn_sa1888_clones, bpsclones, <span class="dt">clone =</span> <span class="st">&quot;Cluster H&quot;</span>, <span class="dt">curvature =</span> curve, </a>
 <a class="sourceLine" id="cb90-2" data-line-number="2">    <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>))</a></code></pre></div>
-<pre><code>## [1] &quot;Cluster A&quot;
-## [1] 51845</code></pre>
+<pre><code>## [1] &quot;Cluster H&quot;
+## [1] 47480</code></pre>
 <div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb92-1" data-line-number="1">(dcell2a2_im &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">draw_plot</span>(dcell2a2) <span class="op">+</span><span class="st"> </span><span class="kw">draw_image</span>(<span class="kw">here</span>(<span class="st">&quot;diagrams/bfb_gain2.png&quot;</span>), </a>
 <a class="sourceLine" id="cb92-2" data-line-number="2">    <span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">height =</span> <span class="fl">0.2</span>, <span class="dt">x =</span> xpos, <span class="dt">y =</span> ypos <span class="op">+</span><span class="st"> </span><span class="fl">0.2</span>))</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-81-1.png" width="672" /></p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">dcellextraloss &lt;-<span class="st"> </span><span class="kw">getplothomolog</span>(hscn_sa1888_clones, bpsclones, <span class="dt">clone =</span> <span class="st">&quot;Cluster D&quot;</span>, </a>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb93-1" data-line-number="1">dcellextraloss &lt;-<span class="st"> </span><span class="kw">getplothomolog</span>(hscn_sa1888_clones, bpsclones, <span class="dt">clone =</span> <span class="st">&quot;Cluster E&quot;</span>, </a>
 <a class="sourceLine" id="cb93-2" data-line-number="2">    <span class="dt">curvature =</span> curve, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>))</a></code></pre></div>
-<pre><code>## [1] &quot;Cluster D&quot;
-## [1] 51845</code></pre>
+<pre><code>## [1] &quot;Cluster E&quot;
+## [1] 47480</code></pre>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb95-1" data-line-number="1">(dcellextraloss_im &lt;-<span class="st"> </span><span class="kw">ggdraw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">draw_plot</span>(dcellextraloss) <span class="op">+</span><span class="st"> </span><span class="kw">draw_image</span>(<span class="kw">here</span>(<span class="st">&quot;diagrams/bfb_loss_large.png&quot;</span>), </a>
 <a class="sourceLine" id="cb95-2" data-line-number="2">    <span class="dt">width =</span> <span class="fl">0.2</span>, <span class="dt">height =</span> <span class="fl">0.2</span>, <span class="dt">x =</span> xpos, <span class="dt">y =</span> ypos <span class="op">+</span><span class="st"> </span><span class="fl">0.2</span>))</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-82-1.png" width="672" /></p>
@@ -392,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb99-12" data-line-number="12">leg &lt;-<span class="st"> </span><span class="kw">getplothomolog</span>(hscn_sa1888_clones, bpsclones, <span class="dt">curvature =</span> curve, <span class="dt">retleg =</span> T, </a>
 <a class="sourceLine" id="cb99-13" data-line-number="13">    <span class="dt">ncol_legend =</span> <span class="dv">1</span>, <span class="dt">svlims =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">2</span>))</a></code></pre></div>
 <pre><code>## NULL
-## [1] 51845</code></pre>
+## [1] 47480</code></pre>
 </div>
 <div id="main-figure-1" class="section level2">
 <h2><span class="header-section-number">6.3</span> Main figure</h2>
@@ -403,8 +407,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb101-5" data-line-number="5">    dcellhigh_im, <span class="ot">NULL</span>, leg, <span class="dt">ncol =</span> <span class="dv">8</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>, <span class="st">&quot;e&quot;</span>, <span class="st">&quot;f&quot;</span>, <span class="st">&quot;g&quot;</span>, <span class="st">&quot;h&quot;</span>), </a>
 <a class="sourceLine" id="cb101-6" data-line-number="6">    <span class="dt">rel_widths =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">0.1</span>, <span class="fl">0.8</span>))</a>
 <a class="sourceLine" id="cb101-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb101-8" data-line-number="8">gall &lt;-<span class="st"> </span>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(top, middle, <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>), <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="fl">1.7</span>, </a>
-<a class="sourceLine" id="cb101-9" data-line-number="9">    <span class="fl">1.25</span>))</a>
+<a class="sourceLine" id="cb101-8" data-line-number="8">gall &lt;-<span class="st"> </span>cowplot<span class="op">::</span><span class="kw">plot_grid</span>(top, <span class="ot">NULL</span>, middle, <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>), <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="fl">1.7</span>, </a>
+<a class="sourceLine" id="cb101-9" data-line-number="9">    <span class="fl">0.1</span>, <span class="fl">1.25</span>))</a>
 <a class="sourceLine" id="cb101-10" data-line-number="10"></a>
 <a class="sourceLine" id="cb101-11" data-line-number="11">gall</a></code></pre></div>
 <div class="figure"><span id="fig:unnamed-chunk-85"></span>
@@ -426,15 +430,16 @@ Figure 6.1: Figure 4
 <a class="sourceLine" id="cb102-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb102-8" data-line-number="8">chroms &lt;-<span class="st"> </span><span class="kw">unique</span>(hscn<span class="op">$</span>chr)</a>
 <a class="sourceLine" id="cb102-9" data-line-number="9">chroms &lt;-<span class="st"> </span>chroms[<span class="op">!</span>chroms <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;14&quot;</span>, <span class="st">&quot;16&quot;</span>, <span class="st">&quot;18&quot;</span>, <span class="st">&quot;19&quot;</span>, <span class="st">&quot;21&quot;</span>, <span class="st">&quot;22&quot;</span>)]</a>
-<a class="sourceLine" id="cb102-10" data-line-number="10"></a>
-<a class="sourceLine" id="cb102-11" data-line-number="11">hm &lt;-<span class="st"> </span><span class="kw">plotHeatmap</span>(hscn[sample <span class="op">==</span><span class="st"> &quot;SA1188&quot;</span>], <span class="dt">tree =</span> tree, <span class="dt">clusters =</span> cl<span class="op">$</span>clustering, </a>
-<a class="sourceLine" id="cb102-12" data-line-number="12">    <span class="dt">show_library_label =</span> F, <span class="dt">chrlabels =</span> chroms)</a>
-<a class="sourceLine" id="cb102-13" data-line-number="13"></a>
-<a class="sourceLine" id="cb102-14" data-line-number="14">hmchr &lt;-<span class="st"> </span>grid<span class="op">::</span><span class="kw">grid.grabExpr</span>(ComplexHeatmap<span class="op">::</span><span class="kw">draw</span>(hm, <span class="dt">ht_gap =</span> <span class="kw">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;cm&quot;</span>), <span class="dt">column_title =</span> <span class="st">&quot;&quot;</span>, </a>
-<a class="sourceLine" id="cb102-15" data-line-number="15">    <span class="dt">column_title_gp =</span> <span class="kw">gpar</span>(<span class="dt">fontsize =</span> <span class="dv">12</span>), <span class="dt">heatmap_legend_side =</span> <span class="st">&quot;bottom&quot;</span>, <span class="dt">annotation_legend_side =</span> <span class="st">&quot;bottom&quot;</span>, </a>
-<a class="sourceLine" id="cb102-16" data-line-number="16">    <span class="dt">show_heatmap_legend =</span> <span class="ot">TRUE</span>), <span class="dt">width =</span> <span class="dv">40</span>, <span class="dt">height =</span> <span class="dv">13</span><span class="op">/</span><span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb102-17" data-line-number="17"></a>
-<a class="sourceLine" id="cb102-18" data-line-number="18"><span class="kw">plot_grid</span>(hmchr)</a></code></pre></div>
+<a class="sourceLine" id="cb102-10" data-line-number="10">chroms &lt;-<span class="st"> </span>chroms[<span class="op">!</span><span class="kw">is.na</span>(chroms)]</a>
+<a class="sourceLine" id="cb102-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb102-12" data-line-number="12">hm &lt;-<span class="st"> </span><span class="kw">plotHeatmap</span>(hscn[cell_id <span class="op">%in%</span><span class="st"> </span>cl<span class="op">$</span>clustering<span class="op">$</span>cell_id], <span class="dt">tree =</span> <span class="kw">ladderize</span>(tree), </a>
+<a class="sourceLine" id="cb102-13" data-line-number="13">    <span class="dt">clusters =</span> cl<span class="op">$</span>clustering, <span class="dt">show_library_label =</span> F, <span class="dt">chrlabels =</span> chroms)</a>
+<a class="sourceLine" id="cb102-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb102-15" data-line-number="15">hmchr &lt;-<span class="st"> </span>grid<span class="op">::</span><span class="kw">grid.grabExpr</span>(ComplexHeatmap<span class="op">::</span><span class="kw">draw</span>(hm, <span class="dt">ht_gap =</span> <span class="kw">unit</span>(<span class="fl">0.6</span>, <span class="st">&quot;cm&quot;</span>), <span class="dt">column_title =</span> <span class="st">&quot;&quot;</span>, </a>
+<a class="sourceLine" id="cb102-16" data-line-number="16">    <span class="dt">column_title_gp =</span> <span class="kw">gpar</span>(<span class="dt">fontsize =</span> <span class="dv">12</span>), <span class="dt">heatmap_legend_side =</span> <span class="st">&quot;bottom&quot;</span>, <span class="dt">annotation_legend_side =</span> <span class="st">&quot;bottom&quot;</span>, </a>
+<a class="sourceLine" id="cb102-17" data-line-number="17">    <span class="dt">show_heatmap_legend =</span> <span class="ot">TRUE</span>), <span class="dt">width =</span> <span class="dv">40</span>, <span class="dt">height =</span> <span class="dv">13</span><span class="op">/</span><span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb102-18" data-line-number="18"></a>
+<a class="sourceLine" id="cb102-19" data-line-number="19"><span class="kw">plot_grid</span>(hmchr)</a></code></pre></div>
 <p><img src="schnapps_paper_files/figure-html/unnamed-chunk-87-1.png" width="672" /></p>
 </div>
 <div id="other-htert-examples" class="section level2">
