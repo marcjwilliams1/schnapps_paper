@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 8 Figure 6 | Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution</title>
+  <meta name="description" content="Section 8 Figure 6 | Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 8 Figure 6 | Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 8 Figure 6 | Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution" />
+  
+  
+  
+
+<meta name="author" content="Marc J. Williams" />
+
+
+<meta name="date" content="2021-06-02" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="figure-5.html"/>
+<link rel="next" href="supplementary-figures.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.16/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/dt-ext-fixedcolumns-1.10.20/css/fixedColumns.dataTables.min.css" rel="stylesheet" />
+<script src="libs/dt-ext-fixedcolumns-1.10.20/js/dataTables.fixedColumns.min.js"></script>
+<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Foreword</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#data"><i class="fa fa-check"></i><b>1.1</b> Data</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#computing-requirements"><i class="fa fa-check"></i><b>1.2</b> Computing requirements</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="cohort-summary.html"><a href="cohort-summary.html"><i class="fa fa-check"></i><b>2</b> Cohort summary</a><ul>
+<li class="chapter" data-level="2.1" data-path="cohort-summary.html"><a href="cohort-summary.html#load-data-packages"><i class="fa fa-check"></i><b>2.1</b> Load data + packages</a></li>
+<li class="chapter" data-level="2.2" data-path="cohort-summary.html"><a href="cohort-summary.html#summary-stats"><i class="fa fa-check"></i><b>2.2</b> Summary stats</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="figure-1.html"><a href="figure-1.html"><i class="fa fa-check"></i><b>3</b> Figure 1</a><ul>
+<li class="chapter" data-level="3.1" data-path="figure-1.html"><a href="figure-1.html#load-data-packages-1"><i class="fa fa-check"></i><b>3.1</b> Load data + packages</a></li>
+<li class="chapter" data-level="3.2" data-path="figure-1.html"><a href="figure-1.html#summary-stats-1"><i class="fa fa-check"></i><b>3.2</b> Summary stats</a></li>
+<li class="chapter" data-level="3.3" data-path="figure-1.html"><a href="figure-1.html#single-cell-example"><i class="fa fa-check"></i><b>3.3</b> Single cell example</a></li>
+<li class="chapter" data-level="3.4" data-path="figure-1.html"><a href="figure-1.html#snvs"><i class="fa fa-check"></i><b>3.4</b> SNVs</a></li>
+<li class="chapter" data-level="3.5" data-path="figure-1.html"><a href="figure-1.html#baf-distributions"><i class="fa fa-check"></i><b>3.5</b> BAF distributions</a></li>
+<li class="chapter" data-level="3.6" data-path="figure-1.html"><a href="figure-1.html#heatmaps"><i class="fa fa-check"></i><b>3.6</b> Heatmaps</a></li>
+<li class="chapter" data-level="3.7" data-path="figure-1.html"><a href="figure-1.html#main-figure"><i class="fa fa-check"></i><b>3.7</b> Main Figure</a></li>
+<li class="chapter" data-level="3.8" data-path="figure-1.html"><a href="figure-1.html#rna-vs-dna"><i class="fa fa-check"></i><b>3.8</b> RNA vs DNA</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="figure-2.html"><a href="figure-2.html"><i class="fa fa-check"></i><b>4</b> Figure 2</a><ul>
+<li class="chapter" data-level="4.1" data-path="figure-2.html"><a href="figure-2.html#load-data-packages-2"><i class="fa fa-check"></i><b>4.1</b> Load data + packages</a></li>
+<li class="chapter" data-level="4.2" data-path="figure-2.html"><a href="figure-2.html#pcawg-data"><i class="fa fa-check"></i><b>4.2</b> PCAWG data</a></li>
+<li class="chapter" data-level="4.3" data-path="figure-2.html"><a href="figure-2.html#frequency-plots"><i class="fa fa-check"></i><b>4.3</b> Frequency plots</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="figure-2.html"><a href="figure-2.html#clonal-frequencies"><i class="fa fa-check"></i><b>4.3.1</b> Clonal frequencies</a></li>
+<li class="chapter" data-level="4.3.2" data-path="figure-2.html"><a href="figure-2.html#subclonal-frequencies"><i class="fa fa-check"></i><b>4.3.2</b> Subclonal frequencies</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="figure-2.html"><a href="figure-2.html#correlation-analysis"><i class="fa fa-check"></i><b>4.4</b> Correlation analysis</a></li>
+<li class="chapter" data-level="4.5" data-path="figure-2.html"><a href="figure-2.html#ratios"><i class="fa fa-check"></i><b>4.5</b> Ratios</a></li>
+<li class="chapter" data-level="4.6" data-path="figure-2.html"><a href="figure-2.html#frequency-per-ccf"><i class="fa fa-check"></i><b>4.6</b> Frequency per CCF</a></li>
+<li class="chapter" data-level="4.7" data-path="figure-2.html"><a href="figure-2.html#tp53-brca-snvs"><i class="fa fa-check"></i><b>4.7</b> TP53 + BRCA snvs</a></li>
+<li class="chapter" data-level="4.8" data-path="figure-2.html"><a href="figure-2.html#fraction-of-genome-gained"><i class="fa fa-check"></i><b>4.8</b> Fraction of genome gained</a></li>
+<li class="chapter" data-level="4.9" data-path="figure-2.html"><a href="figure-2.html#chromosome-event-rates"><i class="fa fa-check"></i><b>4.9</b> Chromosome event rates</a></li>
+<li class="chapter" data-level="4.10" data-path="figure-2.html"><a href="figure-2.html#composite-figure"><i class="fa fa-check"></i><b>4.10</b> Composite figure</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="figure-3.html"><a href="figure-3.html"><i class="fa fa-check"></i><b>5</b> Figure 3</a><ul>
+<li class="chapter" data-level="5.1" data-path="figure-3.html"><a href="figure-3.html#load-data-packages-3"><i class="fa fa-check"></i><b>5.1</b> Load data + packages</a></li>
+<li class="chapter" data-level="5.2" data-path="figure-3.html"><a href="figure-3.html#example-parallel-events"><i class="fa fa-check"></i><b>5.2</b> Example parallel events</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="figure-3.html"><a href="figure-3.html#gains"><i class="fa fa-check"></i><b>5.2.1</b> Gains</a></li>
+<li class="chapter" data-level="5.2.2" data-path="figure-3.html"><a href="figure-3.html#loss"><i class="fa fa-check"></i><b>5.2.2</b> Loss</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="figure-3.html"><a href="figure-3.html#validation-using-snvs"><i class="fa fa-check"></i><b>5.3</b> Validation using SNVs</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="figure-3.html"><a href="figure-3.html#htert-recurrent-gainslosses"><i class="fa fa-check"></i><b>5.3.1</b> hTERT recurrent gains/losses</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="figure-3.html"><a href="figure-3.html#number-of-parallel-events"><i class="fa fa-check"></i><b>5.4</b> Number of parallel events</a></li>
+<li class="chapter" data-level="5.5" data-path="figure-3.html"><a href="figure-3.html#heatmaps-per-chromosome"><i class="fa fa-check"></i><b>5.5</b> Heatmaps per chromosome</a></li>
+<li class="chapter" data-level="5.6" data-path="figure-3.html"><a href="figure-3.html#effect-on-the-transcriptome"><i class="fa fa-check"></i><b>5.6</b> Effect on the transcriptome</a></li>
+<li class="chapter" data-level="5.7" data-path="figure-3.html"><a href="figure-3.html#composite-figure-1"><i class="fa fa-check"></i><b>5.7</b> Composite figure</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="figure-4.html"><a href="figure-4.html"><i class="fa fa-check"></i><b>6</b> Figure 4</a><ul>
+<li class="chapter" data-level="6.1" data-path="figure-4.html"><a href="figure-4.html#load-data-packages-4"><i class="fa fa-check"></i><b>6.1</b> Load data + packages</a></li>
+<li class="chapter" data-level="6.2" data-path="figure-4.html"><a href="figure-4.html#heatmap"><i class="fa fa-check"></i><b>6.2</b> Heatmap</a></li>
+<li class="chapter" data-level="6.3" data-path="figure-4.html"><a href="figure-4.html#main-figure-1"><i class="fa fa-check"></i><b>6.3</b> Main figure</a></li>
+<li class="chapter" data-level="6.4" data-path="figure-4.html"><a href="figure-4.html#phylogenetically-ordered-heatmap"><i class="fa fa-check"></i><b>6.4</b> Phylogenetically ordered heatmap</a></li>
+<li class="chapter" data-level="6.5" data-path="figure-4.html"><a href="figure-4.html#other-htert-examples"><i class="fa fa-check"></i><b>6.5</b> Other htert examples</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="figure-4.html"><a href="figure-4.html#myc-sa906a"><i class="fa fa-check"></i><b>6.5.1</b> MYC SA906a</a></li>
+<li class="chapter" data-level="6.5.2" data-path="figure-4.html"><a href="figure-4.html#sa906b-chr20"><i class="fa fa-check"></i><b>6.5.2</b> SA906b chr20</a></li>
+<li class="chapter" data-level="6.5.3" data-path="figure-4.html"><a href="figure-4.html#legends"><i class="fa fa-check"></i><b>6.5.3</b> Legends</a></li>
+<li class="chapter" data-level="6.5.4" data-path="figure-4.html"><a href="figure-4.html#merged-figure"><i class="fa fa-check"></i><b>6.5.4</b> Merged figure</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="figure-5.html"><a href="figure-5.html"><i class="fa fa-check"></i><b>7</b> Figure 5</a><ul>
+<li class="chapter" data-level="7.1" data-path="figure-5.html"><a href="figure-5.html#load-data-packages-5"><i class="fa fa-check"></i><b>7.1</b> Load data + packages</a></li>
+<li class="chapter" data-level="7.2" data-path="figure-5.html"><a href="figure-5.html#sa1162-ccne1"><i class="fa fa-check"></i><b>7.2</b> SA1162 CCNE1</a></li>
+<li class="chapter" data-level="7.3" data-path="figure-5.html"><a href="figure-5.html#sa535-fgfr1"><i class="fa fa-check"></i><b>7.3</b> SA535 FGFR1</a></li>
+<li class="chapter" data-level="7.4" data-path="figure-5.html"><a href="figure-5.html#sa1035-ccne1"><i class="fa fa-check"></i><b>7.4</b> SA1035 CCNE1</a></li>
+<li class="chapter" data-level="7.5" data-path="figure-5.html"><a href="figure-5.html#time-series-analysis"><i class="fa fa-check"></i><b>7.5</b> Time series analysis</a></li>
+<li class="chapter" data-level="7.6" data-path="figure-5.html"><a href="figure-5.html#summary-gene-copy-number"><i class="fa fa-check"></i><b>7.6</b> Summary gene copy number</a></li>
+<li class="chapter" data-level="7.7" data-path="figure-5.html"><a href="figure-5.html#legends-1"><i class="fa fa-check"></i><b>7.7</b> Legends</a></li>
+<li class="chapter" data-level="7.8" data-path="figure-5.html"><a href="figure-5.html#final-figure"><i class="fa fa-check"></i><b>7.8</b> Final figure</a></li>
+<li class="chapter" data-level="7.9" data-path="figure-5.html"><a href="figure-5.html#other-bfbc-examples"><i class="fa fa-check"></i><b>7.9</b> Other BFBC examples</a><ul>
+<li class="chapter" data-level="7.9.1" data-path="figure-5.html"><a href="figure-5.html#sa1093-fgfr3"><i class="fa fa-check"></i><b>7.9.1</b> SA1093 FGFR3</a></li>
+<li class="chapter" data-level="7.9.2" data-path="figure-5.html"><a href="figure-5.html#sa1181-chr3"><i class="fa fa-check"></i><b>7.9.2</b> SA1181 chr3</a></li>
+<li class="chapter" data-level="7.9.3" data-path="figure-5.html"><a href="figure-5.html#sa604-chr19"><i class="fa fa-check"></i><b>7.9.3</b> SA604 chr19</a></li>
+</ul></li>
+<li class="chapter" data-level="7.10" data-path="figure-5.html"><a href="figure-5.html#sa1184-chr8"><i class="fa fa-check"></i><b>7.10</b> SA1184 chr8</a><ul>
+<li class="chapter" data-level="7.10.1" data-path="figure-5.html"><a href="figure-5.html#merged-figure-1"><i class="fa fa-check"></i><b>7.10.1</b> Merged figure</a></li>
+</ul></li>
+<li class="chapter" data-level="7.11" data-path="figure-5.html"><a href="figure-5.html#non-oncogeneic-amplifications"><i class="fa fa-check"></i><b>7.11</b> Non oncogeneic amplifications</a><ul>
+<li class="chapter" data-level="7.11.1" data-path="figure-5.html"><a href="figure-5.html#sa530-chr-15"><i class="fa fa-check"></i><b>7.11.1</b> SA530 chr 15</a></li>
+<li class="chapter" data-level="7.11.2" data-path="figure-5.html"><a href="figure-5.html#sa1049-chr20"><i class="fa fa-check"></i><b>7.11.2</b> SA1049 chr20</a></li>
+<li class="chapter" data-level="7.11.3" data-path="figure-5.html"><a href="figure-5.html#sa1052-chr15"><i class="fa fa-check"></i><b>7.11.3</b> SA1052 chr15</a></li>
+<li class="chapter" data-level="7.11.4" data-path="figure-5.html"><a href="figure-5.html#sa1052-chr12"><i class="fa fa-check"></i><b>7.11.4</b> SA1052 chr12</a></li>
+<li class="chapter" data-level="7.11.5" data-path="figure-5.html"><a href="figure-5.html#sa501-chr6"><i class="fa fa-check"></i><b>7.11.5</b> SA501 chr6</a></li>
+<li class="chapter" data-level="7.11.6" data-path="figure-5.html"><a href="figure-5.html#supp-figure-2-nooncogenes"><i class="fa fa-check"></i><b>7.11.6</b> Supp figure 2 nooncogenes</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="figure-6.html"><a href="figure-6.html"><i class="fa fa-check"></i><b>8</b> Figure 6</a><ul>
+<li class="chapter" data-level="8.1" data-path="figure-6.html"><a href="figure-6.html#load-data-packages-6"><i class="fa fa-check"></i><b>8.1</b> Load data + packages</a></li>
+<li class="chapter" data-level="8.2" data-path="figure-6.html"><a href="figure-6.html#sa1049"><i class="fa fa-check"></i><b>8.2</b> SA1049</a></li>
+<li class="chapter" data-level="8.3" data-path="figure-6.html"><a href="figure-6.html#sa604"><i class="fa fa-check"></i><b>8.3</b> SA604</a></li>
+<li class="chapter" data-level="8.4" data-path="figure-6.html"><a href="figure-6.html#sa604-time-series"><i class="fa fa-check"></i><b>8.4</b> SA604 time series</a></li>
+<li class="chapter" data-level="8.5" data-path="figure-6.html"><a href="figure-6.html#main-figure-2"><i class="fa fa-check"></i><b>8.5</b> Main figure</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="supplementary-figures.html"><a href="supplementary-figures.html"><i class="fa fa-check"></i><b>9</b> Supplementary Figures</a><ul>
+<li class="chapter" data-level="9.1" data-path="supplementary-figures.html"><a href="supplementary-figures.html#load-data"><i class="fa fa-check"></i><b>9.1</b> Load data</a></li>
+<li class="chapter" data-level="9.2" data-path="supplementary-figures.html"><a href="supplementary-figures.html#wgs-vs-dlp"><i class="fa fa-check"></i><b>9.2</b> WGS vs DLP</a></li>
+<li class="chapter" data-level="9.3" data-path="supplementary-figures.html"><a href="supplementary-figures.html#all-wgs-vs-dlp-plots"><i class="fa fa-check"></i><b>9.3</b> All WGS vs DLP plots</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="phylogenetic-trees.html"><a href="phylogenetic-trees.html"><i class="fa fa-check"></i><b>10</b> Phylogenetic trees</a><ul>
+<li class="chapter" data-level="10.1" data-path="phylogenetic-trees.html"><a href="phylogenetic-trees.html#load-data-packages-7"><i class="fa fa-check"></i><b>10.1</b> Load data + packages</a></li>
+<li class="chapter" data-level="10.2" data-path="phylogenetic-trees.html"><a href="phylogenetic-trees.html#heatmaps-1"><i class="fa fa-check"></i><b>10.2</b> Heatmaps</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evolutionary tracking of allele-specific cancer haplotypes at single-cell resolution</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="figure-6" class="section level1">
+<h1><span class="header-section-number">Section 8</span> Figure 6</h1>
+<div id="load-data-packages-6" class="section level2">
+<h2><span class="header-section-number">8.1</span> Load data + packages</h2>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1"><span class="kw">library</span>(tidyverse)</a>
+<a class="sourceLine" id="cb176-2" data-line-number="2"><span class="kw">library</span>(devtools)</a>
+<a class="sourceLine" id="cb176-3" data-line-number="3"><span class="kw">library</span>(data.table)</a>
+<a class="sourceLine" id="cb176-4" data-line-number="4"><span class="kw">library</span>(cowplot)</a>
+<a class="sourceLine" id="cb176-5" data-line-number="5"><span class="kw">library</span>(yaml)</a>
+<a class="sourceLine" id="cb176-6" data-line-number="6"><span class="kw">library</span>(glue)</a>
+<a class="sourceLine" id="cb176-7" data-line-number="7"><span class="kw">library</span>(here)</a>
+<a class="sourceLine" id="cb176-8" data-line-number="8"><span class="kw">library</span>(yaml)</a>
+<a class="sourceLine" id="cb176-9" data-line-number="9">here<span class="op">::</span><span class="kw">i_am</span>(<span class="st">&quot;06-figure6.Rmd&quot;</span>)</a>
+<a class="sourceLine" id="cb176-10" data-line-number="10">config &lt;-<span class="st"> </span><span class="kw">read_yaml</span>(<span class="kw">here</span>(<span class="st">&quot;metadata&quot;</span>, <span class="st">&quot;config.yaml&quot;</span>))</a>
+<a class="sourceLine" id="cb176-11" data-line-number="11"><span class="kw">load_all</span>(config<span class="op">$</span>schnapps)</a>
+<a class="sourceLine" id="cb176-12" data-line-number="12"><span class="kw">theme_set</span>(<span class="kw">theme_cowplot</span>())</a>
+<a class="sourceLine" id="cb176-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb176-14" data-line-number="14">hscn &lt;-<span class="st"> </span><span class="kw">fread</span>(config<span class="op">$</span>hscn)</a>
+<a class="sourceLine" id="cb176-15" data-line-number="15">hscn &lt;-<span class="st"> </span>hscn[<span class="op">!</span><span class="kw">is.na</span>(sample)]</a>
+<a class="sourceLine" id="cb176-16" data-line-number="16">ploidy &lt;-<span class="st"> </span><span class="kw">fread</span>(config<span class="op">$</span>ploidy)</a>
+<a class="sourceLine" id="cb176-17" data-line-number="17">hscn &lt;-<span class="st"> </span>hscn[ploidy, on =<span class="st"> &quot;cell_id&quot;</span>]</a>
+<a class="sourceLine" id="cb176-18" data-line-number="18">hscn &lt;-<span class="st"> </span>hscn[<span class="op">!</span><span class="kw">is.na</span>(cell_id)]</a>
+<a class="sourceLine" id="cb176-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb176-20" data-line-number="20">sampletags &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">sample =</span> <span class="kw">unique</span>(hscn<span class="op">$</span>sample)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(., <span class="kw">stack</span>(config<span class="op">$</span>datagroups) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb176-21" data-line-number="21"><span class="st">    </span><span class="kw">rename</span>(<span class="dt">sample =</span> values, <span class="dt">datagroup =</span> ind) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(datagroup <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;htert&quot;</span>, </a>
+<a class="sourceLine" id="cb176-22" data-line-number="22">    <span class="st">&quot;tnbc&quot;</span>, <span class="st">&quot;hgsc&quot;</span>, <span class="st">&quot;her2_brca&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">na.omit</span>()</a>
+<a class="sourceLine" id="cb176-23" data-line-number="23">sampletags<span class="op">$</span>sig_label &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">lapply</span>(sampletags<span class="op">$</span>sample, <span class="cf">function</span>(x) config<span class="op">$</span>datasets[[x]]<span class="op">$</span>label))</a>
+<a class="sourceLine" id="cb176-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb176-25" data-line-number="25">metrics &lt;-<span class="st"> </span><span class="kw">fread</span>(config<span class="op">$</span>metrics) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(cell_id, coverage_breadth, state_mode, </a>
+<a class="sourceLine" id="cb176-26" data-line-number="26">    sample) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">arrange</span>(<span class="kw">desc</span>(coverage_breadth))</a>
+<a class="sourceLine" id="cb176-27" data-line-number="27">bps &lt;-<span class="st"> </span><span class="kw">fread</span>(config<span class="op">$</span>breakpoints)</a></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" data-line-number="1"><span class="kw">library</span>(ComplexHeatmap)</a>
+<a class="sourceLine" id="cb177-2" data-line-number="2"><span class="kw">library</span>(grid)</a>
+<a class="sourceLine" id="cb177-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb177-4" data-line-number="4">rearrangement_plots &lt;-<span class="st"> </span><span class="cf">function</span>(hscn, mysample, chroms, bps, <span class="dt">cl =</span> <span class="ot">NULL</span>, <span class="dt">w =</span> <span class="dv">40</span>, <span class="dt">h =</span> <span class="dv">13</span><span class="op">/</span><span class="dv">3</span>, </a>
+<a class="sourceLine" id="cb177-5" data-line-number="5">    <span class="dt">show_legend =</span> <span class="ot">FALSE</span>, <span class="dt">genes =</span> <span class="ot">NULL</span>, <span class="dt">minPts =</span> <span class="dv">30</span>, <span class="dt">homolog =</span> <span class="ot">FALSE</span>, <span class="dt">annotateregions =</span> <span class="ot">NULL</span>) {</a>
+<a class="sourceLine" id="cb177-6" data-line-number="6">    </a>
+<a class="sourceLine" id="cb177-7" data-line-number="7">    <span class="cf">if</span> (<span class="kw">is.null</span>(cl)) {</a>
+<a class="sourceLine" id="cb177-8" data-line-number="8">        cl &lt;-<span class="st"> </span><span class="kw">umap_clustering</span>(hscn[sample <span class="op">==</span><span class="st"> </span>mysample <span class="op">&amp;</span><span class="st"> </span>chr <span class="op">%in%</span><span class="st"> </span>chroms], <span class="dt">umapmetric =</span> <span class="st">&quot;euclidean&quot;</span>, </a>
+<a class="sourceLine" id="cb177-9" data-line-number="9">            <span class="dt">field =</span> <span class="st">&quot;copy&quot;</span>, <span class="dt">minPts =</span> minPts, <span class="dt">min_dist =</span> <span class="fl">0.1</span>, <span class="dt">seed =</span> <span class="dv">123</span>)</a>
+<a class="sourceLine" id="cb177-10" data-line-number="10">    }</a>
+<a class="sourceLine" id="cb177-11" data-line-number="11">    </a>
+<a class="sourceLine" id="cb177-12" data-line-number="12">    chromshm &lt;-<span class="st"> </span><span class="kw">unique</span>(hscn<span class="op">$</span>chr)</a>
+<a class="sourceLine" id="cb177-13" data-line-number="13">    chromshm &lt;-<span class="st"> </span>chromshm[<span class="op">!</span>chromshm <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;14&quot;</span>, <span class="st">&quot;16&quot;</span>, <span class="st">&quot;18&quot;</span>, <span class="st">&quot;19&quot;</span>, <span class="st">&quot;21&quot;</span>, <span class="st">&quot;22&quot;</span>)]</a>
+<a class="sourceLine" id="cb177-14" data-line-number="14">    </a>
+<a class="sourceLine" id="cb177-15" data-line-number="15">    hm &lt;-<span class="st"> </span><span class="kw">plotHeatmap</span>(hscn[sample <span class="op">==</span><span class="st"> </span>mysample], <span class="dt">clusters =</span> cl<span class="op">$</span>clustering, <span class="dt">tree =</span> cl<span class="op">$</span>tree, </a>
+<a class="sourceLine" id="cb177-16" data-line-number="16">        <span class="dt">reorderclusters =</span> T, <span class="dt">plottree =</span> F, <span class="dt">show_legend =</span> show_legend, <span class="dt">show_library_label =</span> F, </a>
+<a class="sourceLine" id="cb177-17" data-line-number="17">        <span class="dt">chrlabels =</span> chromshm)</a>
+<a class="sourceLine" id="cb177-18" data-line-number="18">    hmchr &lt;-<span class="st"> </span>grid<span class="op">::</span><span class="kw">grid.grabExpr</span>(ComplexHeatmap<span class="op">::</span><span class="kw">draw</span>(hm, <span class="dt">column_title =</span> mysample, </a>
+<a class="sourceLine" id="cb177-19" data-line-number="19">        <span class="dt">column_title_gp =</span> <span class="kw">gpar</span>(<span class="dt">fontsize =</span> <span class="dv">12</span>), <span class="dt">heatmap_legend_side =</span> <span class="st">&quot;bottom&quot;</span>, <span class="dt">annotation_legend_side =</span> <span class="st">&quot;bottom&quot;</span>, </a>
+<a class="sourceLine" id="cb177-20" data-line-number="20">        <span class="dt">show_heatmap_legend =</span> show_legend), <span class="dt">width =</span> w, <span class="dt">height =</span> h)</a>
+<a class="sourceLine" id="cb177-21" data-line-number="21">    </a>
+<a class="sourceLine" id="cb177-22" data-line-number="22">    hscn_clone &lt;-<span class="st"> </span>hscn[sample <span class="op">==</span><span class="st"> </span>mysample] <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(cl<span class="op">$</span>clustering) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(chr, </a>
+<a class="sourceLine" id="cb177-23" data-line-number="23">        start, end, clone_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">state =</span> schnapps<span class="op">:::</span><span class="kw">Mode</span>(state), <span class="dt">state_min =</span> schnapps<span class="op">:::</span><span class="kw">Mode</span>(state_min), </a>
+<a class="sourceLine" id="cb177-24" data-line-number="24">        <span class="dt">BAF =</span> <span class="kw">median</span>(BAF), <span class="dt">state_phase =</span> schnapps<span class="op">:::</span><span class="kw">Mode</span>(state_phase), <span class="dt">state_AS_phased =</span> schnapps<span class="op">:::</span><span class="kw">Mode</span>(state_phase), </a>
+<a class="sourceLine" id="cb177-25" data-line-number="25">        <span class="dt">state_BAF =</span> schnapps<span class="op">:::</span><span class="kw">Mode</span>(state_BAF), <span class="dt">copy =</span> <span class="kw">median</span>(copy)) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb177-26" data-line-number="26"><span class="st">        </span>dplyr<span class="op">::</span><span class="kw">rename</span>(<span class="dt">cell_id =</span> clone_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">cell_id =</span> <span class="kw">paste0</span>(<span class="st">&quot;Cluster &quot;</span>, </a>
+<a class="sourceLine" id="cb177-27" data-line-number="27">        cell_id)) <span class="op">%&gt;%</span><span class="st"> </span>dplyr<span class="op">::</span><span class="kw">mutate</span>(<span class="dt">Bcopy =</span> BAF <span class="op">*</span><span class="st"> </span>copy, <span class="dt">Acopy =</span> (<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>BAF) <span class="op">*</span><span class="st"> </span>copy)</a>
+<a class="sourceLine" id="cb177-28" data-line-number="28">    </a>
+<a class="sourceLine" id="cb177-29" data-line-number="29">    hscn_clone &lt;-<span class="st"> </span><span class="kw">consensuscopynumber</span>(hscn[sample <span class="op">==</span><span class="st"> </span>mysample], cl<span class="op">$</span>clustering) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb177-30" data-line-number="30"><span class="st">        </span><span class="kw">mutate</span>(<span class="dt">cell_id =</span> <span class="kw">paste0</span>(<span class="st">&quot;Cluster &quot;</span>, cell_id))</a>
+<a class="sourceLine" id="cb177-31" data-line-number="31">    </a>
+<a class="sourceLine" id="cb177-32" data-line-number="32">    bpsum &lt;-<span class="st"> </span>bps <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(cell_id <span class="op">%in%</span><span class="st"> </span>cl<span class="op">$</span>clustering<span class="op">$</span>cell_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(cl<span class="op">$</span>clustering) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb177-33" data-line-number="33"><span class="st">        </span><span class="kw">group_by</span>(sample, chromosome_<span class="dv">1</span>, position_<span class="dv">1</span>, chromosome_<span class="dv">2</span>, position_<span class="dv">2</span>, type, </a>
+<a class="sourceLine" id="cb177-34" data-line-number="34">            rearrangement_type, clone_id) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">read_count =</span> <span class="kw">sum</span>(read_count)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb177-35" data-line-number="35"><span class="st">        </span><span class="kw">filter</span>(read_count <span class="op">&gt;</span><span class="st"> </span><span class="dv">1</span> <span class="op">|</span><span class="st"> </span>rearrangement_type <span class="op">==</span><span class="st"> &quot;foldback&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb177-36" data-line-number="36"><span class="st">        </span><span class="kw">mutate</span>(<span class="dt">cell_id =</span> <span class="kw">paste0</span>(<span class="st">&quot;Cluster &quot;</span>, clone_id))</a>
+<a class="sourceLine" id="cb177-37" data-line-number="37">    </a>
+<a class="sourceLine" id="cb177-38" data-line-number="38">    glisthom &lt;-<span class="st"> </span><span class="kw">list</span>()</a>
+<a class="sourceLine" id="cb177-39" data-line-number="39">    glist &lt;-<span class="st"> </span><span class="kw">list</span>()</a>
+<a class="sourceLine" id="cb177-40" data-line-number="40">    </a>
+<a class="sourceLine" id="cb177-41" data-line-number="41">    <span class="cf">for</span> (mycl <span class="cf">in</span> <span class="kw">unique</span>(hscn_clone<span class="op">$</span>cell_id)) {</a>
+<a class="sourceLine" id="cb177-42" data-line-number="42">        cndat &lt;-<span class="st"> </span>hscn_clone <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(cell_id <span class="op">==</span><span class="st"> </span>mycl)  <span class="co">#%&gt;% rephasebins(.) %&gt;% .$newhscn</span></a>
+<a class="sourceLine" id="cb177-43" data-line-number="43">        glisthom[[mycl]] &lt;-<span class="st"> </span><span class="kw">plotCNprofileBAF</span>(cndat, <span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>, <span class="dt">annotateregions =</span> annotateregions, </a>
+<a class="sourceLine" id="cb177-44" data-line-number="44">            <span class="dt">genes =</span> genes, <span class="dt">homolog =</span> <span class="ot">TRUE</span>, <span class="dt">pointsize =</span> <span class="fl">0.5</span>, <span class="dt">alphaval =</span> <span class="fl">0.5</span>, <span class="dt">svalpha =</span> <span class="fl">0.25</span>, </a>
+<a class="sourceLine" id="cb177-45" data-line-number="45">            <span class="dt">SV =</span> bpsum <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(cell_id <span class="op">==</span><span class="st"> </span>mycl), <span class="dt">chrfilt =</span> chroms, <span class="dt">maxCN =</span> <span class="dv">24</span>, </a>
+<a class="sourceLine" id="cb177-46" data-line-number="46">            <span class="dt">y_axis_trans =</span> <span class="st">&quot;squashy&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ggtitle</span>(mycl) <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;plain&quot;</span>, </a>
+<a class="sourceLine" id="cb177-47" data-line-number="47">            <span class="dt">size =</span> <span class="dv">14</span>))</a>
+<a class="sourceLine" id="cb177-48" data-line-number="48">        glist[[mycl]] &lt;-<span class="st"> </span><span class="kw">plotCNprofile</span>(cndat, <span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>, <span class="dt">annotateregions =</span> annotateregions, </a>
+<a class="sourceLine" id="cb177-49" data-line-number="49">            <span class="dt">genes =</span> genes, <span class="dt">pointsize =</span> <span class="fl">0.5</span>, <span class="dt">alphaval =</span> <span class="fl">0.5</span>, <span class="dt">svalpha =</span> <span class="fl">0.25</span>, <span class="dt">SV =</span> bpsum <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb177-50" data-line-number="50"><span class="st">                </span><span class="kw">filter</span>(cell_id <span class="op">==</span><span class="st"> </span>mycl), <span class="dt">chrfilt =</span> chroms, <span class="dt">maxCN =</span> <span class="dv">24</span>, <span class="dt">y_axis_trans =</span> <span class="st">&quot;squashy&quot;</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb177-51" data-line-number="51"><span class="st">            </span><span class="kw">ggtitle</span>(mycl) <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">plot.title =</span> <span class="kw">element_text</span>(<span class="dt">face =</span> <span class="st">&quot;plain&quot;</span>, <span class="dt">size =</span> <span class="dv">14</span>))</a>
+<a class="sourceLine" id="cb177-52" data-line-number="52">    }</a>
+<a class="sourceLine" id="cb177-53" data-line-number="53">    </a>
+<a class="sourceLine" id="cb177-54" data-line-number="54">    <span class="kw">return</span>(<span class="kw">list</span>(<span class="dt">glist =</span> glist, <span class="dt">hm =</span> hmchr, <span class="dt">cl =</span> cl, <span class="dt">glisthom =</span> glisthom))</a>
+<a class="sourceLine" id="cb177-55" data-line-number="55">}</a></code></pre></div>
+</div>
+<div id="sa1049" class="section level2">
+<h2><span class="header-section-number">8.2</span> SA1049</h2>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1">chroms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;6&quot;</span>, <span class="st">&quot;7&quot;</span>, <span class="st">&quot;8&quot;</span>, <span class="st">&quot;9&quot;</span>, <span class="st">&quot;12&quot;</span>, <span class="st">&quot;17&quot;</span>, <span class="st">&quot;19&quot;</span>)</a>
+<a class="sourceLine" id="cb178-2" data-line-number="2">gene_idx_SA1049 &lt;-<span class="st"> </span><span class="kw">get_gene_idx</span>(<span class="kw">c</span>(<span class="st">&quot;FGFR1&quot;</span>, <span class="st">&quot;KRAS&quot;</span>), <span class="dt">chr =</span> chroms)</a>
+<a class="sourceLine" id="cb178-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb178-4" data-line-number="4">clsa1049 &lt;-<span class="st"> </span><span class="kw">umap_clustering</span>(hscn[sample <span class="op">==</span><span class="st"> &quot;SA1049&quot;</span> <span class="op">&amp;</span><span class="st"> </span>chr <span class="op">%in%</span><span class="st"> </span>chroms], <span class="dt">umapmetric =</span> <span class="st">&quot;euclidean&quot;</span>, </a>
+<a class="sourceLine" id="cb178-5" data-line-number="5">    <span class="dt">field =</span> <span class="st">&quot;copy&quot;</span>, <span class="dt">minPts =</span> <span class="dv">30</span>, <span class="dt">min_dist =</span> <span class="fl">0.1</span>, <span class="dt">seed =</span> <span class="dv">123</span>)</a>
+<a class="sourceLine" id="cb178-6" data-line-number="6">cndat &lt;-<span class="st"> </span>hscn[sample <span class="op">==</span><span class="st"> &quot;SA1049&quot;</span> <span class="op">&amp;</span><span class="st"> </span>cell_id <span class="op">%in%</span><span class="st"> </span>clsa1049<span class="op">$</span>clustering<span class="op">$</span>cell_id]</a>
+<a class="sourceLine" id="cb178-7" data-line-number="7">phasing &lt;-<span class="st"> </span><span class="kw">rephasebins</span>(cndat, <span class="dt">clusterfirst =</span> <span class="ot">TRUE</span>, <span class="dt">cl =</span> clsa1049<span class="op">$</span>clustering <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(clone_id <span class="op">!=</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb178-8" data-line-number="8"><span class="st">    &quot;0&quot;</span>))</a>
+<a class="sourceLine" id="cb178-9" data-line-number="9">cndat &lt;-<span class="st"> </span>phasing<span class="op">$</span>newhscn</a>
+<a class="sourceLine" id="cb178-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb178-11" data-line-number="11">sa1049 &lt;-<span class="st"> </span><span class="kw">rearrangement_plots</span>(cndat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.table</span>(), <span class="st">&quot;SA1049&quot;</span>, <span class="dt">bps =</span> bps, <span class="dt">chroms =</span> chroms, </a>
+<a class="sourceLine" id="cb178-12" data-line-number="12">    <span class="dt">annotateregions =</span> gene_idx_SA1049, <span class="dt">cl =</span> clsa1049)</a>
+<a class="sourceLine" id="cb178-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb178-14" data-line-number="14"><span class="kw">print</span>(<span class="kw">plot_grid</span>(<span class="dt">plotlist =</span> sa1049<span class="op">$</span>glisthom, <span class="dt">ncol =</span> <span class="dv">3</span>))</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-141-1.png" width="960" /></p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb179-1" data-line-number="1">cnplot2 &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(sa1049<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster C</span><span class="st">`</span> <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.x =</span> <span class="kw">element_blank</span>(), </a>
+<a class="sourceLine" id="cb179-2" data-line-number="2">    <span class="dt">axis.text.x =</span> <span class="kw">element_blank</span>(), <span class="dt">axis.ticks.x =</span> <span class="kw">element_blank</span>()) <span class="op">+</span><span class="st"> </span><span class="kw">geom_text</span>(<span class="dt">data =</span> gene_idx_SA1049, </a>
+<a class="sourceLine" id="cb179-3" data-line-number="3">    ggplot2<span class="op">::</span><span class="kw">aes</span>(<span class="dt">x =</span> idx <span class="op">-</span><span class="st"> </span><span class="dv">72</span>, <span class="dt">y =</span> <span class="dv">20</span>, <span class="dt">label =</span> ensembl_gene_symbol), <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, </a>
+<a class="sourceLine" id="cb179-4" data-line-number="4">    <span class="dt">alpha =</span> <span class="fl">0.75</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;CN&quot;</span>), <span class="ot">NULL</span>, sa1049<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster F</span><span class="st">`</span> <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.x =</span> <span class="kw">element_blank</span>(), </a>
+<a class="sourceLine" id="cb179-5" data-line-number="5">    <span class="dt">axis.text.x =</span> <span class="kw">element_blank</span>(), <span class="dt">axis.ticks.x =</span> <span class="kw">element_blank</span>()) <span class="op">+</span><span class="st"> </span>ggforce<span class="op">::</span><span class="kw">geom_bezier</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(<span class="dt">x =</span> idx, </a>
+<a class="sourceLine" id="cb179-6" data-line-number="6">    <span class="dt">y =</span> copy, <span class="dt">group =</span> id), <span class="dt">col =</span> <span class="st">&quot;firebrick3&quot;</span>, <span class="dt">data =</span> sa1049<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster F</span><span class="st">`</span><span class="op">$</span>layers[[<span class="dv">5</span>]]<span class="op">$</span>data <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb179-7" data-line-number="7"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(chromosome_<span class="dv">1</span> <span class="op">==</span><span class="st"> &quot;12&quot;</span> <span class="op">&amp;</span><span class="st"> </span>chromosome_<span class="dv">2</span> <span class="op">==</span><span class="st"> &quot;8&quot;</span>)) <span class="op">+</span><span class="st"> </span>ggforce<span class="op">::</span><span class="kw">geom_bezier</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(<span class="dt">x =</span> idx, </a>
+<a class="sourceLine" id="cb179-8" data-line-number="8">    <span class="dt">y =</span> copy, <span class="dt">group =</span> id), <span class="dt">col =</span> <span class="st">&quot;firebrick3&quot;</span>, <span class="dt">data =</span> sa1049<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster F</span><span class="st">`</span><span class="op">$</span>layers[[<span class="dv">5</span>]]<span class="op">$</span>data <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb179-9" data-line-number="9"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(chromosome_<span class="dv">1</span> <span class="op">==</span><span class="st"> &quot;8&quot;</span> <span class="op">&amp;</span><span class="st"> </span>chromosome_<span class="dv">2</span> <span class="op">==</span><span class="st"> &quot;12&quot;</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;CN&quot;</span>), <span class="ot">NULL</span>, </a>
+<a class="sourceLine" id="cb179-10" data-line-number="10">    sa1049<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster E</span><span class="st">`</span> <span class="op">+</span><span class="st"> </span>ggforce<span class="op">::</span><span class="kw">geom_bezier</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(<span class="dt">x =</span> idx, <span class="dt">y =</span> copy, </a>
+<a class="sourceLine" id="cb179-11" data-line-number="11">        <span class="dt">group =</span> id), <span class="dt">col =</span> <span class="st">&quot;firebrick3&quot;</span>, <span class="dt">data =</span> sa1049<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster E</span><span class="st">`</span><span class="op">$</span>layers[[<span class="dv">5</span>]]<span class="op">$</span>data <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb179-12" data-line-number="12"><span class="st">        </span>dplyr<span class="op">::</span><span class="kw">filter</span>(chromosome_<span class="dv">1</span> <span class="op">==</span><span class="st"> &quot;12&quot;</span> <span class="op">&amp;</span><span class="st"> </span>chromosome_<span class="dv">2</span> <span class="op">==</span><span class="st"> &quot;6&quot;</span>)) <span class="op">+</span><span class="st"> </span>ggforce<span class="op">::</span><span class="kw">geom_bezier</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(<span class="dt">x =</span> idx, </a>
+<a class="sourceLine" id="cb179-13" data-line-number="13">        <span class="dt">y =</span> copy, <span class="dt">group =</span> id), <span class="dt">col =</span> <span class="st">&quot;firebrick3&quot;</span>, <span class="dt">data =</span> sa1049<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster E</span><span class="st">`</span><span class="op">$</span>layers[[<span class="dv">5</span>]]<span class="op">$</span>data <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb179-14" data-line-number="14"><span class="st">        </span>dplyr<span class="op">::</span><span class="kw">filter</span>(chromosome_<span class="dv">1</span> <span class="op">==</span><span class="st"> &quot;12&quot;</span> <span class="op">&amp;</span><span class="st"> </span>chromosome_<span class="dv">2</span> <span class="op">==</span><span class="st"> &quot;8&quot;</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;CN&quot;</span>), </a>
+<a class="sourceLine" id="cb179-15" data-line-number="15">    <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="fl">0.1</span>, <span class="dv">1</span>, <span class="fl">0.1</span>, <span class="fl">1.3</span>))</a>
+<a class="sourceLine" id="cb179-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb179-17" data-line-number="17">sa1049plot &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(sa1049<span class="op">$</span>hm, <span class="ot">NULL</span>, cnplot2, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">rel_widths =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="fl">0.05</span>, </a>
+<a class="sourceLine" id="cb179-18" data-line-number="18">    <span class="fl">1.2</span>))</a>
+<a class="sourceLine" id="cb179-19" data-line-number="19">sa1049plot</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-142-1.png" width="672" /></p>
+</div>
+<div id="sa604" class="section level2">
+<h2><span class="header-section-number">8.3</span> SA604</h2>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" data-line-number="1">mysample &lt;-<span class="st"> &quot;SA604&quot;</span></a>
+<a class="sourceLine" id="cb180-2" data-line-number="2">mychr &lt;-<span class="st"> &quot;12&quot;</span></a>
+<a class="sourceLine" id="cb180-3" data-line-number="3">chroms &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;6&quot;</span>, <span class="st">&quot;8&quot;</span>, <span class="st">&quot;12&quot;</span>, <span class="st">&quot;19&quot;</span>, <span class="st">&quot;20&quot;</span>)</a>
+<a class="sourceLine" id="cb180-4" data-line-number="4">gene_idx_SA604 &lt;-<span class="st"> </span><span class="kw">get_gene_idx</span>(<span class="kw">c</span>(<span class="kw">c</span>(<span class="st">&quot;KRAS&quot;</span>, <span class="st">&quot;MYC&quot;</span>, <span class="st">&quot;CCNE1&quot;</span>)), <span class="dt">chr =</span> chroms) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">idx =</span> <span class="kw">ifelse</span>(ensembl_gene_symbol <span class="op">==</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb180-5" data-line-number="5"><span class="st">    &quot;KRAS&quot;</span>, idx <span class="op">+</span><span class="st"> </span><span class="dv">40</span>, idx <span class="op">-</span><span class="st"> </span><span class="dv">48</span>))</a>
+<a class="sourceLine" id="cb180-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb180-7" data-line-number="7">clSA604 &lt;-<span class="st"> </span><span class="kw">umap_clustering</span>(hscn[sample <span class="op">==</span><span class="st"> </span>mysample <span class="op">&amp;</span><span class="st"> </span>chr <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;12&quot;</span>, <span class="st">&quot;20&quot;</span>)], <span class="dt">minPts =</span> <span class="dv">30</span>, </a>
+<a class="sourceLine" id="cb180-8" data-line-number="8">    <span class="dt">min_dist =</span> <span class="fl">0.1</span>, <span class="dt">seed =</span> <span class="dv">123</span>)</a>
+<a class="sourceLine" id="cb180-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb180-10" data-line-number="10">cndat &lt;-<span class="st"> </span>hscn[cell_id <span class="op">%in%</span><span class="st"> </span>clSA604<span class="op">$</span>clustering<span class="op">$</span>cell_id]</a>
+<a class="sourceLine" id="cb180-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb180-12" data-line-number="12">sa604 &lt;-<span class="st"> </span><span class="kw">rearrangement_plots</span>(cndat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">as.data.table</span>(), mysample, <span class="dt">bps =</span> bps, <span class="dt">chroms =</span> chroms, </a>
+<a class="sourceLine" id="cb180-13" data-line-number="13">    <span class="dt">annotateregions =</span> <span class="kw">get_gene_idx</span>(<span class="kw">c</span>(<span class="st">&quot;KRAS&quot;</span>, <span class="st">&quot;MYC&quot;</span>, <span class="st">&quot;CCNE1&quot;</span>), <span class="dt">chr =</span> chroms), <span class="dt">cl =</span> clSA604)</a>
+<a class="sourceLine" id="cb180-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb180-15" data-line-number="15"><span class="kw">print</span>(<span class="kw">plot_grid</span>(<span class="dt">plotlist =</span> sa604<span class="op">$</span>glisthom, <span class="dt">ncol =</span> <span class="dv">2</span>))</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-143-1.png" width="960" /></p>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb181-1" data-line-number="1">cnplot2 &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(sa604<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster A</span><span class="st">`</span> <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.x =</span> <span class="kw">element_blank</span>(), </a>
+<a class="sourceLine" id="cb181-2" data-line-number="2">    <span class="dt">axis.text.x =</span> <span class="kw">element_blank</span>(), <span class="dt">axis.ticks.x =</span> <span class="kw">element_blank</span>()) <span class="op">+</span><span class="st"> </span><span class="kw">geom_text</span>(<span class="dt">data =</span> gene_idx_SA604, </a>
+<a class="sourceLine" id="cb181-3" data-line-number="3">    ggplot2<span class="op">::</span><span class="kw">aes</span>(<span class="dt">x =</span> idx, <span class="dt">y =</span> <span class="dv">20</span>, <span class="dt">label =</span> ensembl_gene_symbol), <span class="dt">col =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.75</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb181-4" data-line-number="4"><span class="st">    </span><span class="kw">ylab</span>(<span class="st">&quot;CN&quot;</span>), <span class="ot">NULL</span>, sa604<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster B</span><span class="st">`</span> <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">axis.title.x =</span> <span class="kw">element_blank</span>(), </a>
+<a class="sourceLine" id="cb181-5" data-line-number="5">    <span class="dt">axis.text.x =</span> <span class="kw">element_blank</span>(), <span class="dt">axis.ticks.x =</span> <span class="kw">element_blank</span>()) <span class="op">+</span><span class="st"> </span>ggforce<span class="op">::</span><span class="kw">geom_bezier</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(<span class="dt">x =</span> idx, </a>
+<a class="sourceLine" id="cb181-6" data-line-number="6">    <span class="dt">y =</span> copy, <span class="dt">group =</span> id), <span class="dt">col =</span> <span class="st">&quot;firebrick3&quot;</span>, <span class="dt">data =</span> sa604<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster B</span><span class="st">`</span><span class="op">$</span>layers[[<span class="dv">5</span>]]<span class="op">$</span>data <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb181-7" data-line-number="7"><span class="st">    </span>dplyr<span class="op">::</span><span class="kw">filter</span>(chromosome_<span class="dv">1</span> <span class="op">==</span><span class="st"> &quot;12&quot;</span> <span class="op">&amp;</span><span class="st"> </span>chromosome_<span class="dv">2</span> <span class="op">==</span><span class="st"> &quot;20&quot;</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;CN&quot;</span>), <span class="ot">NULL</span>, </a>
+<a class="sourceLine" id="cb181-8" data-line-number="8">    sa604<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster C</span><span class="st">`</span> <span class="op">+</span><span class="st"> </span>ggforce<span class="op">::</span><span class="kw">geom_bezier</span>(ggplot2<span class="op">::</span><span class="kw">aes</span>(<span class="dt">x =</span> idx, <span class="dt">y =</span> copy, </a>
+<a class="sourceLine" id="cb181-9" data-line-number="9">        <span class="dt">group =</span> id), <span class="dt">col =</span> <span class="st">&quot;firebrick3&quot;</span>, <span class="dt">data =</span> sa604<span class="op">$</span>glisthom<span class="op">$</span><span class="st">`</span><span class="dt">Cluster C</span><span class="st">`</span><span class="op">$</span>layers[[<span class="dv">5</span>]]<span class="op">$</span>data <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb181-10" data-line-number="10"><span class="st">        </span>dplyr<span class="op">::</span><span class="kw">filter</span>(chromosome_<span class="dv">1</span> <span class="op">==</span><span class="st"> &quot;12&quot;</span> <span class="op">&amp;</span><span class="st"> </span>chromosome_<span class="dv">2</span> <span class="op">==</span><span class="st"> &quot;20&quot;</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;CN&quot;</span>), </a>
+<a class="sourceLine" id="cb181-11" data-line-number="11">    <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="fl">0.1</span>, <span class="dv">1</span>, <span class="fl">0.1</span>, <span class="fl">1.3</span>))</a>
+<a class="sourceLine" id="cb181-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb181-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb181-14" data-line-number="14">sa604plot &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(sa604<span class="op">$</span>hm, <span class="ot">NULL</span>, cnplot2, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">rel_widths =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="fl">0.05</span>, </a>
+<a class="sourceLine" id="cb181-15" data-line-number="15">    <span class="fl">1.2</span>))</a>
+<a class="sourceLine" id="cb181-16" data-line-number="16">sa604plot</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-144-1.png" width="672" /></p>
+</div>
+<div id="sa604-time-series" class="section level2">
+<h2><span class="header-section-number">8.4</span> SA604 time series</h2>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb182-1" data-line-number="1">pal &lt;-<span class="st"> </span><span class="kw">colorRampPalette</span>(RColorBrewer<span class="op">::</span><span class="kw">brewer.pal</span>(<span class="dv">12</span>, <span class="st">&quot;Paired&quot;</span>))(<span class="dv">13</span>)</a>
+<a class="sourceLine" id="cb182-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb182-3" data-line-number="3">(sa604passage &lt;-<span class="st"> </span>sa604<span class="op">$</span>cl<span class="op">$</span>clustering <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb182-4" data-line-number="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">passage =</span> <span class="kw">str_extract</span>(cell_id, <span class="st">&quot;X[0-9+]&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb182-5" data-line-number="5"><span class="st">  </span><span class="kw">group_by</span>(passage, clone_id) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb182-6" data-line-number="6"><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">n =</span> <span class="kw">n</span>()) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb182-7" data-line-number="7"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">f =</span> n <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(n)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb182-8" data-line-number="8"><span class="st">  </span><span class="kw">ungroup</span>() <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb182-9" data-line-number="9"><span class="st">  </span><span class="kw">complete</span>(passage, <span class="kw">nesting</span>(clone_id), <span class="dt">fill =</span> <span class="kw">list</span>(<span class="dt">f =</span> <span class="dv">0</span>, <span class="dt">n =</span> <span class="dv">0</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb182-10" data-line-number="10"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">passageidx =</span> <span class="kw">as.numeric</span>(<span class="kw">str_remove</span>(passage, <span class="st">&quot;X&quot;</span>))) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb182-11" data-line-number="11"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> passageidx, <span class="dt">y =</span> f, <span class="dt">col =</span> clone_id)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb182-12" data-line-number="12"><span class="st">  </span><span class="kw">scale_color_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Paired&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb182-13" data-line-number="13"><span class="st">  </span><span class="co">#scale_color_manual(values = pal) +</span></a>
+<a class="sourceLine" id="cb182-14" data-line-number="14"><span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">size =</span> <span class="fl">1.3</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb182-15" data-line-number="15"><span class="st">  </span><span class="kw">theme_cowplot</span>(<span class="dt">font_size =</span> <span class="dv">14</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb182-16" data-line-number="16"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;SA604 Passage&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb182-17" data-line-number="17"><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;Frequency&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb182-18" data-line-number="18"><span class="st">  </span><span class="kw">scale_y_log10</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">1.0</span>), <span class="dt">limits =</span> <span class="kw">c</span>(<span class="fl">0.01</span>, <span class="fl">1.0</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb182-19" data-line-number="19"><span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">6</span>,<span class="dv">7</span>, <span class="dv">8</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb182-20" data-line-number="20"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>()))</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-145-1.png" width="672" /></p>
+<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb183-1" data-line-number="1">gene_df &lt;-<span class="st"> </span><span class="kw">rbindlist</span>(<span class="kw">list</span>(<span class="kw">gene_copynumber</span>(hscn[sample <span class="op">==</span><span class="st"> &quot;SA604&quot;</span>], <span class="st">&quot;KRAS&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(sa604<span class="op">$</span>cl<span class="op">$</span>clustering),</a>
+<a class="sourceLine" id="cb183-2" data-line-number="2">  <span class="kw">gene_copynumber</span>(hscn[sample <span class="op">==</span><span class="st"> &quot;SA1049&quot;</span>], <span class="st">&quot;KRAS&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">left_join</span>(sa1049<span class="op">$</span>cl<span class="op">$</span>clustering)))</a>
+<a class="sourceLine" id="cb183-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb183-4" data-line-number="4">(geneplot &lt;-<span class="st"> </span>gene_df <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb183-5" data-line-number="5"><span class="st">    </span><span class="kw">filter</span>(copy <span class="op">&lt;</span><span class="st"> </span><span class="dv">20</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb183-6" data-line-number="6"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="kw">paste0</span>(ensembl_gene_symbol, <span class="st">&quot; (&quot;</span>, sample,clone_id, <span class="st">&quot;)&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb183-7" data-line-number="7"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">id =</span> <span class="kw">paste0</span>(sample, <span class="st">&quot; (&quot;</span>, clone_id, <span class="st">&quot;)&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb183-8" data-line-number="8"><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> id, <span class="dt">y =</span> copy, <span class="dt">fill =</span> sample)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-9" data-line-number="9"><span class="st">  </span><span class="kw">geom_violin</span>(<span class="dt">scale =</span> <span class="st">&quot;width&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="dt">width =</span> <span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-10" data-line-number="10"><span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">alpha =</span> <span class="fl">0.5</span>, <span class="dt">size =</span> <span class="fl">0.3</span>, <span class="dt">position =</span> <span class="kw">position_jitterdodge</span>(<span class="dt">jitter.width =</span> <span class="fl">0.1</span>, <span class="dt">jitter.height =</span> <span class="fl">0.0</span>, <span class="dt">dodge.width =</span> <span class="dv">1</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-11" data-line-number="11"><span class="st">  </span><span class="co">#coord_flip() +</span></a>
+<a class="sourceLine" id="cb183-12" data-line-number="12"><span class="st">  </span><span class="kw">theme_cowplot</span>(<span class="dt">font_size =</span> <span class="dv">14</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-13" data-line-number="13"><span class="st">  </span><span class="kw">scale_fill_brewer</span>(<span class="dt">palette =</span> <span class="st">&quot;Dark2&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-14" data-line-number="14"><span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.title =</span> <span class="kw">element_blank</span>(), <span class="dt">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-15" data-line-number="15"><span class="st">  </span><span class="kw">scale_x_discrete</span>(<span class="dt">guide =</span> <span class="kw">guide_axis</span>(<span class="dt">angle =</span> <span class="dv">45</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-16" data-line-number="16"><span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>sample, <span class="dt">scales =</span> <span class="st">&quot;free_x&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-17" data-line-number="17"><span class="st">  </span><span class="kw">panel_border</span>() <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-18" data-line-number="18"><span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-19" data-line-number="19"><span class="st">  </span><span class="kw">ylim</span>(<span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">20</span>)) <span class="op">+</span></a>
+<a class="sourceLine" id="cb183-20" data-line-number="20"><span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;KRAS Copy Number&quot;</span>))</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-146-1.png" width="672" /></p>
+</div>
+<div id="main-figure-2" class="section level2">
+<h2><span class="header-section-number">8.5</span> Main figure</h2>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb184-1" data-line-number="1">cnlegend &lt;-<span class="st"> </span><span class="kw">get_legend</span>(<span class="kw">plotCNprofile</span>(hscn) <span class="op">+</span><span class="st"> </span><span class="kw">theme_cowplot</span>(<span class="dt">font_size =</span> <span class="dv">11</span>, <span class="dt">rel_small =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb184-2" data-line-number="2"><span class="st">    </span><span class="kw">guides</span>(<span class="dt">col =</span> <span class="kw">guide_legend</span>(<span class="st">&quot;CN&quot;</span>, <span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">override.aes =</span> <span class="kw">list</span>(<span class="dt">alpha =</span> <span class="dv">1</span>, <span class="dt">size =</span> <span class="fl">2.5</span>, </a>
+<a class="sourceLine" id="cb184-3" data-line-number="3">        <span class="dt">shape =</span> <span class="dv">15</span>))))</a>
+<a class="sourceLine" id="cb184-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb184-5" data-line-number="5">homlegend &lt;-<span class="st"> </span><span class="kw">get_legend</span>(<span class="kw">plotCNprofileBAF</span>(hscn, <span class="dt">homolog =</span> T) <span class="op">+</span><span class="st"> </span><span class="kw">theme_cowplot</span>(<span class="dt">font_size =</span> <span class="dv">11</span>, </a>
+<a class="sourceLine" id="cb184-6" data-line-number="6">    <span class="dt">rel_small =</span> <span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="kw">guides</span>(<span class="dt">col =</span> <span class="kw">guide_legend</span>(<span class="st">&quot;Allele&quot;</span>, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">override.aes =</span> <span class="kw">list</span>(<span class="dt">alpha =</span> <span class="dv">1</span>, </a>
+<a class="sourceLine" id="cb184-7" data-line-number="7">    <span class="dt">size =</span> <span class="fl">2.5</span>, <span class="dt">shape =</span> <span class="dv">15</span>))))</a>
+<a class="sourceLine" id="cb184-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb184-9" data-line-number="9">l3 &lt;-<span class="st"> </span><span class="kw">get_legend</span>(<span class="kw">data.frame</span>(<span class="dt">x =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">2</span>, <span class="dt">yx =</span> <span class="kw">c</span>(<span class="st">&quot;Foldback&quot;</span>, <span class="st">&quot;Rearrangement&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb184-10" data-line-number="10"><span class="st">    </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x =</span> x, <span class="dt">y =</span> y, <span class="dt">col =</span> yx)) <span class="op">+</span><span class="st"> </span><span class="kw">theme_cowplot</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(SV_colors[[<span class="st">&quot;Foldback&quot;</span>]], </a>
+<a class="sourceLine" id="cb184-11" data-line-number="11">    <span class="st">&quot;grey30&quot;</span>), <span class="dt">name =</span> <span class="st">&quot;&quot;</span>))</a>
+<a class="sourceLine" id="cb184-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb184-13" data-line-number="13">mylegends &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(<span class="ot">NULL</span>, cnlegend, homlegend, l3, <span class="ot">NULL</span>, <span class="dt">ncol =</span> <span class="dv">5</span>, <span class="dt">rel_widths =</span> <span class="kw">c</span>(<span class="fl">1.5</span>, </a>
+<a class="sourceLine" id="cb184-14" data-line-number="14">    <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="fl">1.5</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb185-1" data-line-number="1">bottom &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(<span class="ot">NULL</span>, geneplot, sa604passage, <span class="ot">NULL</span>, <span class="dt">ncol =</span> <span class="dv">4</span>, <span class="dt">rel_widths =</span> <span class="kw">c</span>(<span class="fl">0.2</span>, </a>
+<a class="sourceLine" id="cb185-2" data-line-number="2">    <span class="fl">1.3</span>, <span class="dv">1</span>, <span class="fl">0.2</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;d&quot;</span>))</a>
+<a class="sourceLine" id="cb185-3" data-line-number="3">gall &lt;-<span class="st"> </span><span class="kw">plot_grid</span>(<span class="kw">plot_grid</span>(sa1049plot, <span class="ot">NULL</span>, sa604plot, <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, </a>
+<a class="sourceLine" id="cb185-4" data-line-number="4">    <span class="st">&quot;&quot;</span>, <span class="st">&quot;b&quot;</span>), <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="fl">1.2</span>, <span class="fl">0.07</span>, <span class="fl">1.2</span>)), mylegends, bottom, <span class="dt">ncol =</span> <span class="dv">1</span>, <span class="dt">rel_heights =</span> <span class="kw">c</span>(<span class="dv">1</span>, </a>
+<a class="sourceLine" id="cb185-5" data-line-number="5">    <span class="fl">0.1</span>, <span class="fl">0.35</span>))</a>
+<a class="sourceLine" id="cb185-6" data-line-number="6">gall</a></code></pre></div>
+<p><img src="schnapps_paper_files/figure-html/unnamed-chunk-148-1.png" width="960" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="figure-5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="supplementary-figures.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["schnapps_paper.pdf", "schnapps_paper.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
